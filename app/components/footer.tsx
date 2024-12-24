@@ -17,7 +17,7 @@ export function ArrowIcon() {
 
 export default function Footer() {
   return (
-    <>
+    <div className="mb-4">
       <div className="grid grid-cols-2">
         <a
           className="text-neutral-600 dark:text-neutral-400 hover:text-neutral-800 dark:hover:text-neutral-100 transition-all flex items-center"
@@ -56,6 +56,6 @@ export default function Footer() {
           <span className="ml-2 h-7">LinkedIn</span>
         </a>
       </div>
-    </>
+    </div>
   );
 }
