@@ -4,27 +4,27 @@ import Publications from "./components/publications"
 export default function Page() {
   return (
     <section>
-      <h1 className="mb-8 text-2xl font-semibold tracking-tighter">
+      <h1 className="mb-4 text-2xl font-semibold tracking-tighter">
         Hello! I'm Avery Reyna.
       </h1>
       <p className="mb-4">
         I'm a Software Engineer working on data quality at Capital One. Before that, I researched human-computer interaction and computational social science with supervision from Pamela Wisniewski and Jonathan Powell. I also collaborated with teams improving developer experience at ActBlue, building predictive models at Swing Left, and researching technology policy at New America.
       </p>
 
-      <h2 className="mb-8 text-2xl font-semibold tracking-tighter">
+      <h2 className="mb-4 text-2xl font-semibold tracking-tighter">
         Recent Publications
       </h2>
-      <div className="my-8">
+      <div className="mb-4">
         <Publications />
       </div>
 
-      <h2 className="mb-8 text-2xl font-semibold tracking-tighter">
+      <h2 className="mb-4 text-2xl font-semibold tracking-tighter">
         Journey
       </h2>
       <p className='mb-4'>
       My undergraduate journey was a ride through a carnival of disciplines. This voyage didn't just fill my brain, but ignited my passion for interdisciplinary research. Below is the work I did connecting dots between seemingly unrelated fields:
       </p>
-      <div className="grid grid-cols-2">
+      <div className="grid grid-cols-2 mb-4">
         <a
           className="text-neutral-600 dark:text-neutral-400 hover:text-neutral-800 dark:hover:text-neutral-100 transition-all flex items-center"
           rel="noopener noreferrer"
@@ -99,7 +99,7 @@ export default function Page() {
         </a>
       </div>
 
-    <h2 className="mb-8 text-2xl font-semibold tracking-tighter">
+    <h2 className="mb-4 text-2xl font-semibold tracking-tighter">
       Contact
     </h2>
 
