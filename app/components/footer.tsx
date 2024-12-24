@@ -32,19 +32,19 @@ export default function Footer() {
           className="text-neutral-600 dark:text-neutral-400 hover:text-neutral-800 dark:hover:text-neutral-100 transition-all flex items-center"
           rel="noopener noreferrer"
           target="_blank"
-          href="https://github.com/averyreyna"
+          href="https://linkedin.com/in/averyreyna"
         >
           <ArrowIcon />
-          <span className="ml-2 h-7">GitHub</span>
+          <span className="ml-2 h-7">Google Scholar</span>
         </a>
         <a
           className="text-neutral-600 dark:text-neutral-400 hover:text-neutral-800 dark:hover:text-neutral-100 transition-all flex items-center"
           rel="noopener noreferrer"
           target="_blank"
-          href="https://linkedin.com/in/averyreyna"
+          href="https://github.com/averyreyna"
         >
           <ArrowIcon />
-          <span className="ml-2 h-7">Google Scholar</span>
+          <span className="ml-2 h-7">GitHub</span>
         </a>
         <a
           className="text-neutral-600 dark:text-neutral-400 hover:text-neutral-800 dark:hover:text-neutral-100 transition-all flex items-center"
