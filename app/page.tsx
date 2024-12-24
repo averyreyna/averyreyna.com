@@ -1,4 +1,3 @@
-// import { BlogPosts } from 'app/components/posts'
 import Footer, { ArrowIcon } from "./components/footer"
 import Publications from "./components/publications"
 
@@ -9,7 +8,7 @@ export default function Page() {
         Hello! I'm Avery Reyna.
       </h1>
       <p className="mb-4">
-        I'm a Software Engineer working on data quality management at Capital One. Before that, I researched human-computer interaction and computational social science with supervision from Pamela Wisniewski and Jonathan Powell. I also dove into collaborations with teams improving developer experience at ActBlue, building predictive models at Swing Left, and researching technology policy at New America.
+        I'm a Software Engineer working on data quality at Capital One. Before that, I researched human-computer interaction and computational social science with supervision from Pamela Wisniewski and Jonathan Powell. I also collaborated with teams improving developer experience at ActBlue, building predictive models at Swing Left, and researching technology policy at New America.
       </p>
 
       <h2 className="mb-8 text-2xl font-semibold tracking-tighter">
@@ -23,7 +22,7 @@ export default function Page() {
         Journey
       </h2>
       <p className='mb-4'>
-      My undergraduate journey was a wild ride through a carnival of disciplines. This voyage didn't just fill my brain, but ignited my passion for interdisciplinary research. Below is the work I did connecting dots between seemingly unrelated fields:
+      My undergraduate journey was a ride through a carnival of disciplines. This voyage didn't just fill my brain, but ignited my passion for interdisciplinary research. Below is the work I did connecting dots between seemingly unrelated fields:
       </p>
       <div className="grid grid-cols-2">
         <a
@@ -99,7 +98,12 @@ export default function Page() {
           <p className="ml-2 h-7">Artificial Intelligence</p>
         </a>
       </div>
-    <Footer />
+
+    <h2 className="mb-8 text-2xl font-semibold tracking-tighter">
+      Contact
+    </h2>
+
+      <Footer />
     </section>
   )
 }

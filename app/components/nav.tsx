@@ -10,7 +10,7 @@ const navItems = {
   '/publications': {
     name: 'Publications',
   },
-  '/research': {
+  'https://research.averyreyna.com/': {
     name: 'Research',
   },
 }

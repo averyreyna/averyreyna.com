@@ -17,53 +17,45 @@ export function ArrowIcon() {
 
 export default function Footer() {
   return (
-    <footer className="mb-16">
-      <ul className="font-sm mt-8 flex flex-col space-x-0 space-y-2 text-neutral-600 md:flex-row md:space-x-4 md:space-y-0 dark:text-neutral-300">
-        <li>
-          <a
-            className="text-neutral-600 dark:text-neutral-400 hover:text-neutral-800 dark:hover:text-neutral-100 transition-all flex items-center"
-            rel="noopener noreferrer"
-            target="_blank"
-            href="mailto:avery.reyna16@gmail.com"
-          >
-            <ArrowIcon />
-            <p className="ml-2 h-7">Email</p>
-          </a>
-        </li>
-        <li>
-          <a
-            className="text-neutral-600 dark:text-neutral-400 hover:text-neutral-800 dark:hover:text-neutral-100 transition-all flex items-center"
-            rel="noopener noreferrer"
-            target="_blank"
-            href="https://github.com/averyreyna"
-          >
-            <ArrowIcon />
-            <p className="ml-2 h-7">GitHub</p>
-          </a>
-        </li>
-        <li>
-          <a
-            className="text-neutral-600 dark:text-neutral-400 hover:text-neutral-800 dark:hover:text-neutral-100 transition-all flex items-center"
-            rel="noopener noreferrer"
-            target="_blank"
-            href="https://scholar.google.com/citations?user=WecCIHwAAAAJ&hl=en"
-          >
-            <ArrowIcon />
-            <p className="ml-2 h-7">Google Scholar</p>
-          </a>
-        </li>
-        <li>
-          <a
-            className="text-neutral-600 dark:text-neutral-400 hover:text-neutral-800 dark:hover:text-neutral-100 transition-all flex items-center"
-            rel="noopener noreferrer"
-            target="_blank"
-            href="https://www.linkedin.com/in/avery-reyna"
-          >
-            <ArrowIcon />
-            <p className="ml-2 h-7">LinkedIn</p>
-          </a>
-        </li>
-      </ul>
-    </footer>
-  )
+    <>
+      <div className="grid grid-cols-2">
+        <a
+          className="text-neutral-600 dark:text-neutral-400 hover:text-neutral-800 dark:hover:text-neutral-100 transition-all flex items-center"
+          rel="noopener noreferrer"
+          target="_blank"
+          href=""
+        >
+          <ArrowIcon />
+          <span className="ml-2 h-7">Email</span>
+        </a>
+        <a
+          className="text-neutral-600 dark:text-neutral-400 hover:text-neutral-800 dark:hover:text-neutral-100 transition-all flex items-center"
+          rel="noopener noreferrer"
+          target="_blank"
+          href="https://github.com/averyreyna"
+        >
+          <ArrowIcon />
+          <span className="ml-2 h-7">GitHub</span>
+        </a>
+        <a
+          className="text-neutral-600 dark:text-neutral-400 hover:text-neutral-800 dark:hover:text-neutral-100 transition-all flex items-center"
+          rel="noopener noreferrer"
+          target="_blank"
+          href="https://linkedin.com/in/averyreyna"
+        >
+          <ArrowIcon />
+          <span className="ml-2 h-7">Google Scholar</span>
+        </a>
+        <a
+          className="text-neutral-600 dark:text-neutral-400 hover:text-neutral-800 dark:hover:text-neutral-100 transition-all flex items-center"
+          rel="noopener noreferrer"
+          target="_blank"
+          href="mailto:avery@averyreyna.com"
+        >
+          <ArrowIcon />
+          <span className="ml-2 h-7">LinkedIn</span>
+        </a>
+      </div>
+    </>
+  );
 }
