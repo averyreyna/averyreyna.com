@@ -6,7 +6,7 @@ export default function PublicationsPage() {
       <h1 className="font-bold text-2xl mb-8 tracking-tighter">
         Publications
       </h1>
-      <div className="prose prose-neutral dark:prose-invert">
+      <div className="my-8">
         <Publications />
       </div>
     </section>
