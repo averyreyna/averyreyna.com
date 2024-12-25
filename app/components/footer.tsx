@@ -23,7 +23,7 @@ export default function Footer() {
           className="text-neutral-600 dark:text-neutral-400 hover:text-neutral-800 dark:hover:text-neutral-100 transition-all flex items-center"
           rel="noopener noreferrer"
           target="_blank"
-          href=""
+          href="mailto:avery@averyreyna.com"
         >
           <ArrowIcon />
           <span className="ml-2 h-7">Email</span>
@@ -32,7 +32,7 @@ export default function Footer() {
           className="text-neutral-600 dark:text-neutral-400 hover:text-neutral-800 dark:hover:text-neutral-100 transition-all flex items-center"
           rel="noopener noreferrer"
           target="_blank"
-          href="https://linkedin.com/in/averyreyna"
+          href="https://scholar.google.com/citations?user=WecCIHwAAAAJ&hl=en"
         >
           <ArrowIcon />
           <span className="ml-2 h-7">Google Scholar</span>
@@ -50,7 +50,7 @@ export default function Footer() {
           className="text-neutral-600 dark:text-neutral-400 hover:text-neutral-800 dark:hover:text-neutral-100 transition-all flex items-center"
           rel="noopener noreferrer"
           target="_blank"
-          href="mailto:avery@averyreyna.com"
+          href="https://linkedin.com/in/avery-reyna"
         >
           <ArrowIcon />
           <span className="ml-2 h-7">LinkedIn</span>
