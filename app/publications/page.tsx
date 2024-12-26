@@ -1,5 +1,9 @@
 import Publications from '../components/publications';
 
+export const metadata = {
+  title: 'Avery Reyna | Publications',
+}
+
 export default function PublicationsPage() {
   return (
     <section>
