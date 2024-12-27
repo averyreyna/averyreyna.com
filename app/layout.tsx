@@ -11,15 +11,14 @@ import { baseUrl } from './sitemap'
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
   title: {
-    default: 'Next.js Portfolio Starter',
-    template: '%s | Next.js Portfolio Starter',
+    default: 'Avery Reyna',
+    template: 'Next.js Portfolio Starter',
   },
-  description: 'This is my portfolio.',
+  description: 'This is my personal website.',
   openGraph: {
-    title: 'My Portfolio',
-    description: 'This is my portfolio.',
+    title: 'Personal Website',
     url: baseUrl,
-    siteName: 'My Portfolio',
+    siteName: 'Personal Website',
     locale: 'en_US',
     type: 'website',
   },
@@ -52,6 +51,15 @@ export default function RootLayout({
         GeistMono.variable
       )}
     >
+      <head>
+        <meta name="apple-mobile-web-app-title" content="Avery Reyna" />
+        <link rel="shortcut icon" href="/favicon.ico" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+        <link rel="manifest" href="/site.webmanifest" />
+        <meta name="theme-color" content="#ffffff" />
+      </head>
       <body className="antialiased max-w-xl mx-4 mt-8 lg:mx-auto">
         <main className="flex-auto min-w-0 mt-6 flex flex-col px-2 md:px-0">
           <Navbar />

@@ -7,11 +7,11 @@ const navItems = {
   '/blog': {
     name: 'Blog',
   },
+  '/projects': {
+    name: 'Projects',
+  },
   '/publications': {
     name: 'Publications',
-  },
-  'https://research.averyreyna.com/': {
-    name: 'Research',
   },
 }
 
