@@ -9,8 +9,13 @@ interface Project {
 const projects: Project[] = [
   {
     title: 'Help Supporters',
-    link: 'https://dl.acm.org/doi/10.1145/3613904.3642816',
-    date: '2024-03-01'
+    link: '',
+    date: '2024-01-02'
+  },
+  {
+    title: 'SpaceNav',
+    link: '',
+    date: '2023-01-02'
   }
 ]
 
