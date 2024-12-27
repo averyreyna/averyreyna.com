@@ -1,17 +1,17 @@
-import Publications from '../components/publications';
+import { Projects } from '../components/projects';
 
 export const metadata = {
-  title: 'Avery Reyna | Publications',
+  title: 'Avery Reyna | Projects',
 }
 
-export default function PublicationsPage() {
+export default function ProjectsPage() {
   return (
     <section>
       <h1 className="font-bold text-2xl mb-8 tracking-tighter">
-        Publications
+        Projects
       </h1>
       <div className="my-8">
-        <Publications />
+        <Projects />
       </div>
     </section>
   );
