@@ -1,0 +1,37 @@
+---
+title: 'SpaceNav'
+publishedAt: '2023-10-23'
+summary: 'Summary about the SpaceNav project.'
+---
+
+SpaceNav is one of the two projects I worked on at Columbia University in the Computer-Enabled Abilities Laboratory with Brian Smith. The project was published at the ACM SIGACCESS Conference on Computers and Accessibility (ASSETS) 2023.
+
+SpaceNav explores a fundamental question: How can we make desktop screen readers more spatially aware without requiring additional hardware? While mobile screen readers have evolved to offer rich spatial interactions through touchscreens, desktop screen readers have remained relatively unchanged in presenting spatial information.
+
+## What's the Challenge?
+
+For many blind and low vision (BLV) users, desktop screen readers are still the primary tool for navigating the web. However, these tools present information in a strictly linear fashion, making it difficult to understand the spatial layout of websites. This creates a disconnect between how sighted users experience web content and how it's presented through screen readers.
+
+## The SpaceNav System
+
+SpaceNav reimagines how screen readers can convey spatial information through two key configurations. The first is SpaceNav-Input, which gives users a spatial compass for navigation. Users can navigate content directionally using arrow keys instead of being limited to Tab and Shift+Tab navigation while maintaining traditional navigation methods when preferred. This allows users to move through content in a way that matches their mental model of the page layout.
+
+The second configuration, SpaceNav-Output, adds an extra layer of spatial awareness through audio. Screen reader speech comes from the actual 2D position of elements on the page, with higher-pitched audio indicating elements higher on the page. Using stereo headphones, users experience a natural sense of left-right positioning, and unique audio cues alert them when elements move during scrolling.
+
+## Technical Implementation
+
+The system is built using the Web Audio API for spatial audio effects and HTML, CSS, and TypeScript for the web interface. We developed custom audio processing to handle element positioning and scrolling events. Importantly, we implemented these features without requiring additional hardware beyond standard stereo headphones, making the system accessible to anyone with a standard computer setup.
+
+## Research Insights
+
+Our study with nine BLV participants revealed fascinating insights about spatial interactions in screen readers. Many users experienced reduced cognitive load and gained a better understanding of website layouts. They particularly valued how the system improved communication with sighted users about page organization. The spatial audio helped bridge the gap between visual and audio representations of web content, making it easier to discuss layouts with sighted colleagues and friends.
+
+However, we also encountered essential challenges. Some longtime screen reader users found the spatial audio unnecessary, having developed their effective mental models for navigation. There were also concerns about integrating new controls with existing screen reader commands. This highlighted the need to balance innovation and familiarity in assistive technology design carefully.
+
+## Applications Beyond Web Browsing
+
+The potential applications of SpaceNav extend far beyond basic web browsing. In education, it could help explain complex computer science concepts like binary trees by providing spatial context. For gaming, it offers new possibilities for creating more immersive experiences for BLV players. The system could also transform how presentations are delivered to mixed audiences of sighted and BLV users, creating a more inclusive knowledge-sharing environment. In workplace settings, SpaceNav's spatial awareness features could improve collaboration by providing a shared understanding of visual layouts between sighted and BLV team members.
+
+## Future Directions
+
+Upon my departure, the team was developing SpaceNav-Chrome, a browser extension that will bring spatial audio screen reading to any website. This ambitious next step will work with popular sites like Google, CNN, and Reddit, incorporating intelligent scrolling detection with audio feedback while maintaining compatibility with existing screen reader functions.
