@@ -26,7 +26,7 @@ export default function Page() {
       </p>
       <div className="grid grid-cols-2 mb-4">
         <a
-          className="text-neutral-600 dark:text-neutral-400 hover:text-neutral-800 dark:hover:text-neutral-100 transition-all flex items-center"
+          className="text-neutral-600 dark:text-neutral-400 hover:text-neutral-800 dark:hover:text-neutral-100 transition-all flex items-center text-[13px] sm:text-base"
           rel="noopener noreferrer"
           target="_blank"
           href="https://www.cfr.org/in-brief/latin-americas-vaccination-efforts-what-know"
@@ -35,7 +35,7 @@ export default function Page() {
           <span className="ml-2 h-7">Vaccination Efforts</span>
         </a>
         <a
-          className="text-neutral-600 dark:text-neutral-400 hover:text-neutral-800 dark:hover:text-neutral-100 transition-all flex items-center"
+          className="text-neutral-600 dark:text-neutral-400 hover:text-neutral-800 dark:hover:text-neutral-100 transition-all flex items-center text-[13px] sm:text-base"
           rel="noopener noreferrer"
           target="_blank"
           href="https://www.newamerica.org/digital-impact-governance-initiative/blog/integrated-data-in-the-united-states-a-look-at-new-yorks-workforce-portal"
@@ -44,7 +44,7 @@ export default function Page() {
           <span className="ml-2 h-7">Integrated Data</span>
         </a>
         <a
-          className="text-neutral-600 dark:text-neutral-400 hover:text-neutral-800 dark:hover:text-neutral-100 transition-all flex items-center"
+          className="text-neutral-600 dark:text-neutral-400 hover:text-neutral-800 dark:hover:text-neutral-100 transition-all flex items-center text-[13px] sm:text-base"
           rel="noopener noreferrer"
           target="_blank"
           href="https://politicalviolenceataglance.org/2022/06/14/reflecting-on-coup-risk-in-mali"
@@ -53,7 +53,7 @@ export default function Page() {
           <p className="ml-2 h-7">Reflecting on Coup Risk</p>
         </a>
         <a
-          className="text-neutral-600 dark:text-neutral-400 hover:text-neutral-800 dark:hover:text-neutral-100 transition-all flex items-center"
+          className="text-neutral-600 dark:text-neutral-400 hover:text-neutral-800 dark:hover:text-neutral-100 transition-all flex items-center text-[13px] sm:text-base"
           rel="noopener noreferrer"
           target="_blank"
           href="https://www.newamerica.org/digital-impact-governance-initiative/blog/what-is-digital-public-infrastructure-a-top-10-reading-guide/"
@@ -62,7 +62,7 @@ export default function Page() {
           <p className="ml-2 h-7">Digital Public Infrastructure</p>
         </a>
         <a
-          className="text-neutral-600 dark:text-neutral-400 hover:text-neutral-800 dark:hover:text-neutral-100 transition-all flex items-center"
+          className="text-neutral-600 dark:text-neutral-400 hover:text-neutral-800 dark:hover:text-neutral-100 transition-all flex items-center text-[13px] sm:text-base"
           rel="noopener noreferrer"
           target="_blank"
           href="https://www.justsecurity.org/82471/anti-coup-strategies-should-address-civilian-coup-allies"
@@ -71,7 +71,7 @@ export default function Page() {
           <p className="ml-2 h-7">Anti-Coup Strategies</p>
         </a>
         <a
-          className="text-neutral-600 dark:text-neutral-400 hover:text-neutral-800 dark:hover:text-neutral-100 transition-all flex items-center"
+          className="text-neutral-600 dark:text-neutral-400 hover:text-neutral-800 dark:hover:text-neutral-100 transition-all flex items-center text-[13px] sm:text-base"
           rel="noopener noreferrer"
           target="_blank"
           href="https://theloop.ecpr.eu/interdisciplinary-social-science-and-the-limits-of-quantitative-research"
@@ -80,7 +80,7 @@ export default function Page() {
           <p className="ml-2 h-7">Limits of Quantitative Research</p>
         </a>
         <a
-          className="text-neutral-600 dark:text-neutral-400 hover:text-neutral-800 dark:hover:text-neutral-100 transition-all flex items-center"
+         className="text-neutral-600 dark:text-neutral-400 hover:text-neutral-800 dark:hover:text-neutral-100 transition-all flex items-center text-[13px] sm:text-base"
           rel="noopener noreferrer"
           target="_blank"
           href="https://www.newamerica.org/digital-impact-governance-initiative/reports/digital-transformation-opportunities-and-challenges-in-the-lower-mekong-region"
@@ -89,7 +89,7 @@ export default function Page() {
           <p className="ml-2 h-7">Digital Transformation</p>
         </a>
         <a
-          className="text-neutral-600 dark:text-neutral-400 hover:text-neutral-800 dark:hover:text-neutral-100 transition-all flex items-center"
+          className="text-neutral-600 dark:text-neutral-400 hover:text-neutral-800 dark:hover:text-neutral-100 transition-all flex items-center text-[13px] sm:text-base"
           rel="noopener noreferrer"
           target="_blank"
           href="https://theloop.ecpr.eu/the-threat-of-artificial-intelligence-is-not-just-real-its-here"
