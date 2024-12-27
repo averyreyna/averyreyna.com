@@ -1,19 +1,14 @@
 import { notFound } from 'next/navigation'
 import { CustomMDX } from 'app/components/mdx'
-import { getProjectPosts } from '../utils'
+import { formatDate, getProjectPosts } from 'app/projects/utils'
 import { baseUrl } from 'app/sitemap'
-import Link from 'next/link'
 
 export async function generateStaticParams() {
-  try {
-    const posts = getProjectPosts()
-    return posts.map((post) => ({
-      slug: post.slug,
-    }))
-  } catch (error) {
-    console.error('Error generating static params:', error)
-    return []
-  }
+  let posts = getProjectPosts()
+
+  return posts.map((post) => ({
+    slug: post.slug,
+  }))
 }
 
 export function generateMetadata({ params }) {
@@ -22,7 +17,15 @@ export function generateMetadata({ params }) {
     return
   }
 
-  let { title, publishedAt: publishedTime, summary: description } = post.metadata
+  let {
+    title,
+    publishedAt: publishedTime,
+    summary: description,
+    image,
+  } = post.metadata
+  let ogImage = image
+    ? image
+    : `${baseUrl}/og?title=${encodeURIComponent(title)}`
 
   return {
     title,
@@ -33,11 +36,22 @@ export function generateMetadata({ params }) {
       type: 'article',
       publishedTime,
       url: `${baseUrl}/projects/${post.slug}`,
+      images: [
+        {
+          url: ogImage,
+        },
+      ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title,
+      description,
+      images: [ogImage],
     },
   }
 }
 
-export default function Project({ params }) {
+export default function Projects({ params }) {
   let post = getProjectPosts().find((post) => post.slug === params.slug)
 
   if (!post) {
@@ -45,56 +59,40 @@ export default function Project({ params }) {
   }
 
   return (
-    <section className="max-w-2xl mx-auto">
-      <h1 className="font-bold text-3xl tracking-tight mb-4">
+    <section>
+      <script
+        type="application/ld+json"
+        suppressHydrationWarning
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'ProjectPosting',
+            headline: post.metadata.title,
+            datePublished: post.metadata.publishedAt,
+            dateModified: post.metadata.publishedAt,
+            description: post.metadata.summary,
+            image: post.metadata.image
+              ? `${baseUrl}${post.metadata.image}`
+              : `/og?title=${encodeURIComponent(post.metadata.title)}`,
+            url: `${baseUrl}/projects/${post.slug}`,
+            author: {
+              '@type': 'Avery Reyna',
+              name: 'My Project Posts',
+            },
+          }),
+        }}
+      />
+      <h1 className="title font-semibold text-2xl tracking-tighter">
         {post.metadata.title}
       </h1>
       <div className="flex justify-between items-center mt-2 mb-8 text-sm">
         <p className="text-sm text-neutral-600 dark:text-neutral-400">
-          {new Date(post.metadata.publishedAt).toLocaleDateString('en-US', {
-            year: 'numeric',
-            month: 'long',
-            day: 'numeric'
-          })}
+          {formatDate(post.metadata.publishedAt)}
         </p>
       </div>
-      <article className="prose dark:prose-invert">
+      <article className="prose">
         <CustomMDX source={post.content} />
       </article>
     </section>
-  )
-}
-
-export function Projects() {
-  let allProjects = getProjectPosts()
-
-  return (
-    <div>
-      {allProjects
-        .sort((a, b) => {
-          if (new Date(a.metadata.publishedAt) > new Date(b.metadata.publishedAt)) {
-            return -1
-          }
-          return 1
-        })
-        .map((post) => (
-          <Link
-            key={post.slug}
-            className="flex flex-col space-y-1 mb-4"
-            href={`/projects/${post.slug}`}
-          >
-            <div className="w-full flex flex-col md:flex-row space-x-0 md:space-x-2">
-              <p className="text-neutral-600 dark:text-neutral-400 w-[100px] tabular-nums">
-                {new Date(post.metadata.publishedAt).getFullYear()}
-              </p>
-              <div>
-                <p className="text-neutral-900 dark:text-neutral-100 tracking-tight">
-                  {post.metadata.title}
-                </p>
-              </div>
-            </div>
-          </Link>
-        ))}
-    </div>
   )
 }
