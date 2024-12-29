@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
   title: {
     default: 'Avery Reyna',
-    template: 'Next.js Portfolio Starter'
+    template: '%s',
   },
   description: 'This is my personal website.',
   openGraph: {
@@ -53,10 +53,10 @@ export default function RootLayout({
     >
       <head>
         <meta name="apple-mobile-web-app-title" content="Avery Reyna" />
-        <link rel="shortcut icon" href="/app/favicon-for-app/favicon.ico" />
-        <link rel="apple-touch-icon" sizes="180x180" href="/app/favicon-for-app//apple-touch-icon.png" />
-        <link rel="icon" type="image/png" sizes="32x32" href="/app/favicon-for-app//favicon-32x32.png" />
-        <link rel="icon" type="image/png" sizes="16x16" href="/app/favicon-for-app//favicon-16x16.png" />
+        <link rel="shortcut icon" href="/favicon-for-app/favicon.ico" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/favicon-for-app/apple-touch-icon.png" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-for-app/favicon-32x32.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-for-app/favicon-16x16.png" />
         <link rel="manifest" href="/site.webmanifest" />
         <meta name="theme-color" content="#ffffff" />
       </head>

@@ -148,3 +148,14 @@ table {
 .title {
   text-wrap: balance;
 }
+
+/* Hide scrollbar for all elements */
+* {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+/* Hide scrollbar for Webkit browsers */
+*::-webkit-scrollbar {
+  display: none;
+}
