@@ -44,8 +44,21 @@ function CustomLink(props) {
   return <a target="_blank" rel="noopener noreferrer" {...props} />
 }
 
-function RoundedImage(props) {
-  return <Image alt={props.alt} className="rounded-lg" {...props} />
+function RoundedImage({ caption, ...props }) {
+  return (
+    <figure className="my-8 mx-auto">
+      <div className="overflow-hidden border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 p-2">
+        <Image 
+          src={''} alt={''} className="w-full h-auto object-cover"
+          {...props}        />
+      </div>
+      {caption && (
+        <figcaption className="mt-2 text-sm text-center text-gray-600 dark:text-gray-400">
+          {caption}
+        </figcaption>
+      )}
+    </figure>
+  )
 }
 
 function Code({ children, ...props }) {
@@ -107,3 +120,5 @@ export function CustomMDX(props) {
     />
   )
 }
+
+
