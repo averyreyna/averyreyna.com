@@ -1,0 +1,43 @@
+---
+title: 'Help Supporters'
+publishedAt: '2024-05-11'
+summary: 'Summary about the Help Supporters project.'
+---
+
+Help Supporters is the second project I worked on with Brian Smith at Columbia University, exploring how technology can facilitate face-to-face help between blind and low-vision (BLV) individuals and sighted strangers in public spaces. Published at CHI 2024, this work investigates an intriguing paradox in public assistance: while many sighted people are eager to help BLV individuals, such interactions rarely occur due to complex social barriers that affect both parties.
+
+## The Challenge of Public Space Assistance
+
+BLV individuals frequently encounter challenges when navigating public environments—from understanding their immediate surroundings to reading signs and getting directions to specific destinations. The popularity of remote assistance platforms like BeMyEyes, which has thirteen times more sighted volunteers than BLV users, demonstrates that there's no shortage of people willing to help. However, face-to-face assistance in public spaces remains surprisingly rare.
+
+The root of this disconnect lies in social dynamics rather than technological limitations. BLV individuals often feel anxious about approaching and asking strangers for help, while sighted people frequently experience uncertainty about when and how to offer assistance. Even when help does occur, both parties struggle with effective communication and boundary respect. Sighted helpers, particularly those with limited experience interacting with BLV individuals, often find providing clear, non-visual descriptions and directions challenging.
+
+## Our Approach
+
+To address these challenges, we developed and evaluated four innovative prototypes that support different aspects of help interactions. Our approach divides the helping process into two critical phases: the connection phase, where help is initially sought and offered, and the collaboration phase, where assistance is provided.
+
+For the connection phase, we created two distinct solutions. The Person-Finder Glasses utilize HoloLens technology to empower BLV users to locate potential helpers. Through computer vision technology, these glasses detect nearby individuals and provide audio cues that guide BLV users toward them, enabling more natural face-to-face requests for assistance. Our second solution, the Volunteer Platform, takes a different approach by creating a mobile app that connects BLV users with nearby sighted volunteers. This platform allows BLV users to specify their needs and time requirements while allowing sighted volunteers to share their availability and experience level, facilitating matches leading to in-person meetings.
+
+![](/help_supporters/person_finder_glasses.png)
+
+The collaboration phase is supported by two complementary tools designed to improve the quality of help provided. The Pictorial Display is a wearable screen mounted on the BLV user's chest that shows real-time guidance using Bitmoji illustrations. This approach helps sighted helpers improve their assistance techniques and creates a more lighthearted atmosphere during interactions. Our second collaboration tool, the Vague Directions Flagger, is a smartphone app that monitors sighted helpers' speech in real time. It identifies vague or potentially confusing language and privately suggests more specific ways to give directions, allowing helpers to improve their communication without embarrassment.
+
+## Technical Implementation
+
+Each prototype represents a unique technical approach to supporting help interactions. The Person-Finder Glasses leverage Unity on Microsoft HoloLens, incorporating sophisticated facial tracking capabilities to detect potential helpers. The Volunteer Platform is implemented as a web app using React JS, providing a responsive and accessible interface for both user groups. The Pictorial Display combines a wearable smartphone screen with a custom-built control dashboard, while the Vague Directions Flagger utilizes React.js and advanced speech processing capabilities to provide real-time language feedback.
+
+## User Study
+
+To evaluate our prototypes, we conducted a mixed-ability study with 20 participants (10 BLV individuals with varying levels of visual impairment and 10 sighted university students). Each two-hour study session paired BLV and sighted participants to test all four prototypes in public spaces, including building lobbies, lounges, and cafes. The study began with pre-study interviews about past help experiences, followed by guided prototype testing sessions, and concluded with in-depth post-study interviews to gather detailed feedback. Experimenters coordinated the interactions throughout the sessions and operated the prototype features using Wizard-of-Oz techniques where needed.
+
+## Research Insights
+
+During the connection phase, BLV and sighted participants strongly preferred the app-based Volunteer Platform over the Person-Finder Glasses. The platform's ability to reduce social pressure by allowing a discrete decline of requests was particularly valued by users. We also discovered that BLV users emphasized knowing potential helpers' experience with BLV individuals, with some explicitly preferring female helpers. Both groups emphasized the importance of understanding each other's availability and knowledge level before initiating help.
+
+![](/help_supporters/interdependence_framwork.png)
+
+The collaboration phase yielded equally valuable findings as well. Sighted helpers particularly appreciated receiving specific corrections about their language and directions, finding the visual examples through Bitmoji illustrations especially effective. Content that helped them empathize with BLV experiences proved crucial for improving their assistance quality. While helpers wanted validation of their performance, they strongly preferred to receive feedback about mistakes privately. Maintaining eye contact while viewing their surroundings emerged as a critical factor in successful interactions.
+
+## Future Directions
+
+This research opens new avenues for technology to support face-to-face help while respecting both parties' needs and autonomy. Future work can explore several promising directions. We plan to conduct longitudinal field studies in diverse environments to understand how these technologies function in varied real-world settings. We aim to expand our research beyond urban U.S. participants to ensure our solutions work for a broader population. We're also investigating methods for generating real-time instructions at scale and developing ways for BLV users to have more control over when and how technology intervenes in their interactions.
