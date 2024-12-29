@@ -1,6 +1,7 @@
+import { Metadata } from 'next';
 import Publications from '../components/publications';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'Avery Reyna | Publications',
 }
 

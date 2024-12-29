@@ -1,6 +1,7 @@
 import { ProjectPosts } from 'app/components/projects'
+import { Metadata } from 'next'
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'Avery Reyna | Projects',
 }
 

@@ -53,9 +53,16 @@ export function getBlogPosts() {
   return getMDXData(path.join(process.cwd(), 'app', 'blog', 'posts'))
 }
 
-export function formatDate(date: string, withTime = false): string {
-  const options: Intl.DateTimeFormatOptions = {
-    year: 'numeric'
+export function formatDate(date: string, usedYears?: Set<number>): string {
+  const year = new Date(date).getFullYear()
+  
+  if (usedYears) {
+    if (!usedYears.has(year)) {
+      usedYears.add(year)
+      return year.toString()
+    }
+    return ''
   }
-  return new Date(date).toLocaleDateString('en-US', options)
+
+  return year.toString()
 }
