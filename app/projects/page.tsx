@@ -1,18 +1,14 @@
-import { Projects } from '../components/projects';
+import { ProjectPosts } from 'app/components/projects'
 
 export const metadata = {
   title: 'Avery Reyna | Projects',
 }
 
-export default function ProjectsPage() {
+export default function Page() {
   return (
     <section>
-      <h1 className="font-bold text-2xl mb-8 tracking-tighter">
-        Projects
-      </h1>
-      <div className="my-8">
-        <Projects />
-      </div>
+      <h1 className="font-semibold text-2xl mb-8 tracking-tighter">Projects</h1>
+      <ProjectPosts />
     </section>
-  );
+  )
 }

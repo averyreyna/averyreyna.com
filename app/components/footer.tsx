@@ -20,7 +20,7 @@ export default function Footer() {
     <div className="mb-4">
       <div className="grid grid-cols-2">
         <a
-          className="text-neutral-600 dark:text-neutral-400 hover:text-neutral-800 dark:hover:text-neutral-100 transition-all flex items-center"
+          className="text-neutral-600 dark:text-neutral-400 hover:text-neutral-800 dark:hover:text-neutral-100 transition-all flex items-center text-[13px] sm:text-base"
           rel="noopener noreferrer"
           target="_blank"
           href="mailto:avery@averyreyna.com"
@@ -29,7 +29,7 @@ export default function Footer() {
           <span className="ml-2 h-7">Email</span>
         </a>
         <a
-          className="text-neutral-600 dark:text-neutral-400 hover:text-neutral-800 dark:hover:text-neutral-100 transition-all flex items-center"
+          className="text-neutral-600 dark:text-neutral-400 hover:text-neutral-800 dark:hover:text-neutral-100 transition-all flex items-center text-[13px] sm:text-base"
           rel="noopener noreferrer"
           target="_blank"
           href="https://scholar.google.com/citations?user=WecCIHwAAAAJ&hl=en"
@@ -38,7 +38,7 @@ export default function Footer() {
           <span className="ml-2 h-7">Google Scholar</span>
         </a>
         <a
-          className="text-neutral-600 dark:text-neutral-400 hover:text-neutral-800 dark:hover:text-neutral-100 transition-all flex items-center"
+          className="text-neutral-600 dark:text-neutral-400 hover:text-neutral-800 dark:hover:text-neutral-100 transition-all flex items-center text-[13px] sm:text-base"
           rel="noopener noreferrer"
           target="_blank"
           href="https://github.com/averyreyna"
@@ -47,7 +47,7 @@ export default function Footer() {
           <span className="ml-2 h-7">GitHub</span>
         </a>
         <a
-          className="text-neutral-600 dark:text-neutral-400 hover:text-neutral-800 dark:hover:text-neutral-100 transition-all flex items-center"
+          className="text-neutral-600 dark:text-neutral-400 hover:text-neutral-800 dark:hover:text-neutral-100 transition-all flex items-center text-[13px] sm:text-base"
           rel="noopener noreferrer"
           target="_blank"
           href="https://linkedin.com/in/avery-reyna"
