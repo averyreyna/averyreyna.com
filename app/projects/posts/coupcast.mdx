@@ -4,4 +4,36 @@ publishedAt: '2023-05-15'
 summary: 'Summary about the CoupCast project.'
 ---
 
-This is a test!
+CoupCast is an innovative early warning system I maintained with Jonathan Powell that uses machine learning to forecast the risk of coups worldwide. The project fundamentally transforms our understanding of political risk assessment by leveraging advanced random forest models to analyze historical patterns and identify key risk factors contributing to political instability.
+
+At its core, CoupCast functions as a political weather forecast system. Just as meteorologists combine historical weather patterns with current conditions to predict tomorrow's weather, CoupCast combines decades of political data with current situations to forecast potential instability. The system generates monthly estimates of coup risk for every country worldwide, analyzing long-term structural conditions and immediate triggers that might spark a coup.
+
+## System Architecture
+
+The foundation of CoupCast rests on the comprehensive Rulers, Elections, and Irregular Governance (REIGN) dataset, which tracks monthly political conditions across 201 sovereign states since 1950. This extensive database contains detailed information about political institutions, election outcomes, and the personal characteristics of more than 2,300 world leaders who have governed these nations for at least seven consecutive days. This rich historical record of leadership transitions and political conditions forms the bedrock of our predictive capabilities.
+
+The heart of CoupCast's predictive engine utilizes sophisticated random forest models that process multiple risk factors simultaneously. The system analyzes everything from historical coup attempts and economic indicators to food security metrics and armed conflict data. CoupCast can provide nuanced risk assessments that capture the complex interplay between various factors affecting political stability by incorporating this wide range of variables.
+
+## Understanding CoupCast's Outputs
+
+CoupCast generates two primary types of risk assessments: monthly and annual risk percentages. The monthly assessments are continuously updated as new data becomes available, providing a dynamic view of changing political landscapes. These risk percentages shouldn't be interpreted through the lens of specific thresholds, but rather as relative indicators that help contextualize coup risk across different countries and time periods.
+
+The system's outputs provide valuable insights for stakeholders, from policymakers and international organizations to researchers and security analysts. The forecasts can be used to identify trends in political stability, plan intervention strategies, and better understand the complex dynamics that lead to political upheaval.
+
+## The Mali Case Study: CoupCast in Action
+
+The predictive power of CoupCast was particularly evident in our analysis of Mali during 2021-2022. The system identified Mali as having the second-highest coup risk globally, behind only Sudan. This assessment wasn't merely theoretical, but based on a complex web of interconnected factors that the system identified and analyzed.
+
+![](/coupcast/mali_coup_data.png)
+
+Mali's elevated risk stemmed from multiple sources. The country had experienced approximately eight coup attempts since gaining independence in 1960, creating a historical pattern that the system recognized as significant. Additionally, Mali had been grappling with a decade-long jihadist insurgency, which had created persistent security challenges and political instability.
+
+The economic situation further complicated matters. Mali was experiencing stagnating per capita GDP, growing inflationary pressures, and a worsening hunger crisis. These financial challenges were compounded by the global impacts of COVID-19 and surging food prices due to international conflicts.
+
+Perhaps most notably, CoupCast showed particular sensitivity to electoral timing in Mali. The system's risk assessments peaked around scheduled election dates—a pattern that proved prescient when successive coups subsequently voided these elections. After President Ibrahim Keïta's downfall in August 2020, the coupists announced a two-year transition, voiding the original October 2021 election. The May 2021 coup then reset the transitional process, voiding the election scheduled for February 2022.
+
+## Future Plans
+
+As we continue to develop CoupCast, we're exploring ways to enhance its capabilities and expand its applications. The system's ability to process complex political, economic, and social factors makes it an invaluable tool for understanding and anticipating political instability. We're working on incorporating new data sources, refining our predictive algorithms, and developing more detailed regional analysis capabilities.
+
+The ultimate goal is to create a more comprehensive understanding of political stability dynamics, enabling better-informed decision-making and more effective risk mitigation strategies. Whether used for policy planning, academic research, or security assessment, CoupCast represents a significant step forward in our ability to understand and predict political upheaval.
