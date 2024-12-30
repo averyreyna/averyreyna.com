@@ -47,7 +47,7 @@ function CustomLink(props) {
 function RoundedImage({ caption, ...props }) {
   return (
     <figure className="my-8 mx-auto">
-      <div className="overflow-hidden border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 p-2">
+      <div className="overflow-hidden border border-gray-200 dark:border-gray-800 bg-gray-50 dark:bg-gray-900 p-2">
         <Image 
           src={''} alt={''} className="w-full h-auto object-cover"
           {...props}        />
