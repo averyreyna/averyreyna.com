@@ -26,7 +26,7 @@ export default function Footer() {
           href="mailto:avery@averyreyna.com"
         >
           <ArrowIcon />
-          <span className="ml-2 h-7">Email</span>
+          <span className="ml-2 flex items-center">Email</span>
         </a>
         <a
           className="text-neutral-600 dark:text-neutral-400 hover:text-neutral-800 dark:hover:text-neutral-100 transition-all flex items-center text-[13px] sm:text-base"
@@ -35,7 +35,7 @@ export default function Footer() {
           href="https://scholar.google.com/citations?user=WecCIHwAAAAJ&hl=en"
         >
           <ArrowIcon />
-          <span className="ml-2 h-7">Google Scholar</span>
+          <span className="ml-2 flex items-center">Google Scholar</span>
         </a>
         <a
           className="text-neutral-600 dark:text-neutral-400 hover:text-neutral-800 dark:hover:text-neutral-100 transition-all flex items-center text-[13px] sm:text-base"
@@ -44,7 +44,7 @@ export default function Footer() {
           href="https://github.com/averyreyna"
         >
           <ArrowIcon />
-          <span className="ml-2 h-7">GitHub</span>
+          <span className="ml-2 flex items-center">GitHub</span>
         </a>
         <a
           className="text-neutral-600 dark:text-neutral-400 hover:text-neutral-800 dark:hover:text-neutral-100 transition-all flex items-center text-[13px] sm:text-base"
@@ -53,7 +53,7 @@ export default function Footer() {
           href="https://linkedin.com/in/avery-reyna"
         >
           <ArrowIcon />
-          <span className="ml-2 h-7">LinkedIn</span>
+          <span className="ml-2 flex items-center">LinkedIn</span>
         </a>
       </div>
     </div>
