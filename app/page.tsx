@@ -50,7 +50,7 @@ export default function Page() {
         href="https://politicalviolenceataglance.org/2022/06/14/reflecting-on-coup-risk-in-mali"
       >
         <ArrowIcon />
-        <span className="ml-2 flex items-center">Reflecting on Coup Risk</span>
+        <span className="ml-2 flex items-center">Coup Risk</span>
       </a>
       <a
         className="text-neutral-600 dark:text-neutral-400 hover:text-neutral-800 dark:hover:text-neutral-100 transition-all flex items-center text-xs sm:text-base whitespace-nowrap overflow-hidden"
@@ -59,7 +59,7 @@ export default function Page() {
         href="https://www.newamerica.org/digital-impact-governance-initiative/blog/what-is-digital-public-infrastructure-a-top-10-reading-guide/"
       >
         <ArrowIcon />
-        <span className="ml-2 flex items-center">Digital Public Infrastructure</span>
+        <span className="ml-2 flex items-center">Public Infrastructure</span>
       </a>
       <a
         className="text-neutral-600 dark:text-neutral-400 hover:text-neutral-800 dark:hover:text-neutral-100 transition-all flex items-center text-xs sm:text-base whitespace-nowrap overflow-hidden"
@@ -77,7 +77,7 @@ export default function Page() {
         href="https://theloop.ecpr.eu/interdisciplinary-social-science-and-the-limits-of-quantitative-research"
       >
         <ArrowIcon />
-        <span className="ml-2 flex items-center">Limits of Quantitative Research</span>
+        <span className="ml-2 flex items-center">Quantitative Research</span>
       </a>
       <a
         className="text-neutral-600 dark:text-neutral-400 hover:text-neutral-800 dark:hover:text-neutral-100 transition-all flex items-center text-xs sm:text-base whitespace-nowrap overflow-hidden"
