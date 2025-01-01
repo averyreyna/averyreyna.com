@@ -149,38 +149,20 @@ table {
   text-wrap: balance;
 }
 
+/* Global scrollbar hiding */
+* {
+  -ms-overflow-style: none !important;  /* IE and Edge */
+  scrollbar-width: none !important;     /* Firefox */
+}
+
+*::-webkit-scrollbar {
+  display: none !important;             /* Chrome, Safari, Opera */
+  width: 0 !important;
+}
+
+/* Enable smooth scrolling behavior */
 html, body {
-  -ms-overflow-style: none; /* IE and Edge */
-  scrollbar-width: none; /* Firefox */
-  overflow-y: scroll; /* Enable vertical scrolling */
-  -webkit-overflow-scrolling: touch; /* Enable smooth scrolling on iOS */
-}
-
-html::-webkit-scrollbar,
-body::-webkit-scrollbar {
-  display: none;
-}
-
-/* light mode scrollbar */
-@media (prefers-color-scheme: light) {
-  ::-webkit-scrollbar {
-    width: 8px;
-    background-color: white;
-  }
-  
-  ::-webkit-scrollbar-thumb {
-    background-color: white;
-  }
-}
-
-/* dark mode scrollbar */
-@media (prefers-color-scheme: dark) {
-  ::-webkit-scrollbar {
-    width: 8px;
-    background-color: black;
-  }
-  
-  ::-webkit-scrollbar-thumb {
-    background-color: black;
-  }
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior-y: contain;
 }
