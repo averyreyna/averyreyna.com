@@ -13,9 +13,9 @@ export const metadata: Metadata = {
     default: 'Avery Reyna',
     template: '%s',
   },
-  description: 'This is my personal website.',
+  description: 'Avery Reyna\'s personal website',
   openGraph: {
-    title: 'Personal Website',
+    title: 'Avery Reyna',
     url: baseUrl,
     siteName: 'Avery Reyna',
     locale: 'en_US',
