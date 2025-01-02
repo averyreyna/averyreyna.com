@@ -23,10 +23,8 @@ const Connections: React.FC = () => {
   const [isDark, setIsDark] = useState(false);
 
   useEffect(() => {
-    // Check initial dark mode
     setIsDark(window.matchMedia('(prefers-color-scheme: dark)').matches);
 
-    // Listen for changes in color scheme
     const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
     const handler = (e: MediaQueryListEvent) => setIsDark(e.matches);
     mediaQuery.addEventListener('change', handler);
@@ -61,14 +59,14 @@ const Connections: React.FC = () => {
     d3.select(svgRef.current).selectAll("*").remove();
 
     const nodes: Node[] = [
-      { id: "vaccination", label: "Vaccination Efforts", url: "/work/vaccination", labelPosition: "right" },
-      { id: "coup", label: "Coup Risk", url: "/work/coup", labelPosition: "right" },
-      { id: "anticoup", label: "Anti-Coup Strategies", url: "/work/anticoup", labelPosition: "left" },
-      { id: "digital", label: "Digital Transformation", url: "/work/digital", labelPosition: "right" },
-      { id: "data", label: "Integrated Data", url: "/work/data", labelPosition: "left" },
-      { id: "infrastructure", label: "Public Infrastructure", url: "/work/infrastructure", labelPosition: "right" },
-      { id: "quantitative", label: "Quantitative Research", url: "/work/quantitative", labelPosition: "right" },
-      { id: "ai", label: "Artificial Intelligence", url: "/work/ai", labelPosition: "left" }
+      { id: "vaccination", label: "Vaccination Efforts", url: "https://www.cfr.org/in-brief/latin-americas-vaccination-efforts-what-know", labelPosition: "right" },
+      { id: "coup", label: "Coup Risk", url: "https://politicalviolenceataglance.org/2022/06/14/reflecting-on-coup-risk-in-mali", labelPosition: "right" },
+      { id: "anticoup", label: "Anti-Coup Strategies", url: "https://www.justsecurity.org/82471/anti-coup-strategies-should-address-civilian-coup-allies", labelPosition: "left" },
+      { id: "digital", label: "Digital Transformation", url: "https://www.newamerica.org/digital-impact-governance-initiative/reports/digital-transformation-opportunities-and-challenges-in-the-lower-mekong-region", labelPosition: "right" },
+      { id: "data", label: "Integrated Data", url: "https://www.newamerica.org/digital-impact-governance-initiative/blog/integrated-data-in-the-united-states-a-look-at-new-yorks-workforce-portal", labelPosition: "left" },
+      { id: "infrastructure", label: "Public Infrastructure", url: "https://www.newamerica.org/digital-impact-governance-initiative/blog/what-is-digital-public-infrastructure-a-top-10-reading-guide/", labelPosition: "right" },
+      { id: "quantitative", label: "Quantitative Research", url: "https://theloop.ecpr.eu/interdisciplinary-social-science-and-the-limits-of-quantitative-research", labelPosition: "right" },
+      { id: "ai", label: "Artificial Intelligence", url: "https://theloop.ecpr.eu/the-threat-of-artificial-intelligence-is-not-just-real-its-here", labelPosition: "left" }
     ];
 
     const links: Link[] = [
@@ -124,7 +122,6 @@ const Connections: React.FC = () => {
       .data(nodes)
       .join("g");
 
-    // Add click area (larger transparent circle)
     node.append("circle")
       .attr("r", nodeRadius * 2)
       .attr("fill", "transparent")
@@ -152,13 +149,11 @@ const Connections: React.FC = () => {
         window.location.href = d.url;
       });
 
-    // Add visible node
     node.append("circle")
       .attr("class", "visible-node")
       .attr("r", nodeRadius)
       .attr("fill", colors.nodeColor);
 
-    // Add labels
     node.append("text")
       .attr("fill", colors.textColor)
       .attr("font-size", `${fontSize}px`)
