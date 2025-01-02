@@ -18,7 +18,7 @@ export function ArrowIcon() {
 export default function Footer() {
   return (
     <div className="mb-4">
-      <div className="grid grid-cols-2">
+      <div className="flex gap-4 mt-1">
         <a
           className="text-neutral-600 dark:text-neutral-400 hover:text-neutral-800 dark:hover:text-neutral-100 transition-all flex items-center text-xs sm:text-base whitespace-nowrap overflow-hidden"
           rel="noopener noreferrer"
