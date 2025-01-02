@@ -126,8 +126,8 @@ pre::-webkit-scrollbar {
 }
 
 pre {
-  -ms-overflow-style: none; /* IE and Edge */
-  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
 /* remove safari input shadow on mobile */
@@ -149,14 +149,14 @@ table {
   text-wrap: balance;
 }
 
-/* Global scrollbar hiding */
+/* global scrollbar hiding */
 * {
-  -ms-overflow-style: none !important;  /* IE and Edge */
-  scrollbar-width: none !important;     /* Firefox */
+  -ms-overflow-style: none !important;
+  scrollbar-width: none !important;
 }
 
 *::-webkit-scrollbar {
-  display: none !important;             /* Chrome, Safari, Opera */
+  display: none !important;
   width: 0 !important;
 }
 
