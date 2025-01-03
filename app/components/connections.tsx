@@ -127,21 +127,25 @@ const Connections: React.FC = () => {
       .attr("fill", "transparent")
       .style("cursor", "pointer")
       .on("mouseover", function(this: SVGCircleElement) {
-        const parent = this.parentElement;
-        if (parent) {
-          d3.select(parent).select(".visible-node")
-            .transition()
-            .duration(200)
-            .attr("fill", colors.nodeHoverColor);
+        if (window.innerWidth >= 640) {
+          const parent = this.parentElement;
+          if (parent) {
+            d3.select(parent).select(".visible-node")
+              .transition()
+              .duration(200)
+              .attr("fill", colors.nodeHoverColor);
+          }
         }
       })
       .on("mouseout", function(this: SVGCircleElement) {
-        const parent = this.parentElement;
-        if (parent) {
-          d3.select(parent).select(".visible-node")
-            .transition()
-            .duration(200)
-            .attr("fill", colors.nodeColor);
+        if (window.innerWidth >= 640) {
+          const parent = this.parentElement;
+          if (parent) {
+            d3.select(parent).select(".visible-node")
+              .transition()
+              .duration(200)
+              .attr("fill", colors.nodeColor);
+          }
         }
       })
       .on("click", (event, d: any) => {
@@ -213,7 +217,7 @@ const Connections: React.FC = () => {
   return (
     <div 
       ref={containerRef}
-      className="w-full h-64 mx-auto max-w-3xl transition-colors duration-300"
+      className="w-full h-48 sm:h-64 mx-auto max-w-3xl transition-colors duration-300"
     >
       <svg 
         ref={svgRef}
