@@ -20,7 +20,7 @@ export default function Page() {
       </div>
 
       <h2 className="mb-4 text-2xl font-semibold tracking-tighter">
-        Connections
+        Concept Mesh
       </h2>
       <div className="mb-4">
         <Connections />
