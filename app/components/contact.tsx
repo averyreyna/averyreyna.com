@@ -15,7 +15,7 @@ export function ArrowIcon() {
   )
 }
 
-export default function Footer() {
+export default function Contact() {
   return (
     <div className="mb-4">
       <div className="flex gap-4 mt-1">

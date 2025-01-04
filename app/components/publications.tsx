@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { ArrowIcon } from './footer';
+import { ArrowIcon } from './contact';
 
 interface Link {
   text: string;

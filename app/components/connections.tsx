@@ -114,10 +114,16 @@ const Connections: React.FC = () => {
     const simulation = d3.forceSimulation(nodes as any)
       .force("link", d3.forceLink(links).id((d: any) => d.id)
         .distance(linkDistance))
-      .force("charge", d3.forceManyBody().strength(isMobile ? -200 : -300))
+      .force("charge", d3.forceManyBody().strength(isMobile ? -200 : -250))
       .force("center", d3.forceCenter(0, 0))
-      .force("x", d3.forceX().strength(0.1))
-      .force("y", d3.forceY().strength(0.1))
+      .force("x", d3.forceX().strength(0.075))
+      .force("y", d3.forceY().strength(isMobile ? 0.1 : 0.1)
+        .y((d: any) => {
+          if (!isMobile && (d.id === "vaccination" || d.id === "digital" || d.id === "infrastructure" || d.id === "ai")) {
+            return -dimensions.height / 6;
+          }
+          return 0;
+        }))
       .force("collision", d3.forceCollide().radius(nodeRadius * 2.5));
 
     const link = svg.append("g")
