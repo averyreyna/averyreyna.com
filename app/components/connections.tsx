@@ -21,6 +21,17 @@ const Connections: React.FC = () => {
   const svgRef = useRef<SVGSVGElement>(null);
   const [dimensions, setDimensions] = useState({ width: 0, height: 0 });
   const [isDark, setIsDark] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 640);
+    };
+    
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
 
   useEffect(() => {
     setIsDark(window.matchMedia('(prefers-color-scheme: dark)').matches);
@@ -81,9 +92,9 @@ const Connections: React.FC = () => {
       { source: "infrastructure", target: "digital", strength: 1 }
     ];
 
-    const nodeRadius = 5;
-    const fontSize = 12;
-    const linkDistance = 30;
+    const nodeRadius = isMobile ? 3 : 8;
+    const fontSize = isMobile ? 8 : 16;
+    const linkDistance = isMobile ? 40 : 70;
 
     const colors = {
       nodeColor: isDark ? '#64748b' : '#4b5563',
@@ -94,16 +105,16 @@ const Connections: React.FC = () => {
 
     const svg = d3.select(svgRef.current)
       .attr("viewBox", [
-        -dimensions.width / 3,
-        -dimensions.height / 3,
-        dimensions.width * 0.8,
-        dimensions.height * 0.8
+        -dimensions.width / 2,
+        -dimensions.height / 2,
+        dimensions.width,
+        dimensions.height
       ]);
 
     const simulation = d3.forceSimulation(nodes as any)
       .force("link", d3.forceLink(links).id((d: any) => d.id)
         .distance(linkDistance))
-      .force("charge", d3.forceManyBody().strength(-150))
+      .force("charge", d3.forceManyBody().strength(isMobile ? -200 : -300))
       .force("center", d3.forceCenter(0, 0))
       .force("x", d3.forceX().strength(0.1))
       .force("y", d3.forceY().strength(0.1))
@@ -114,7 +125,7 @@ const Connections: React.FC = () => {
       .data(links)
       .join("line")
       .attr("stroke", colors.linkColor)
-      .attr("stroke-width", 1)
+      .attr("stroke-width", isMobile ? 0.5 : 1)
       .attr("stroke-opacity", 0.6);
 
     const node = svg.append("g")
@@ -163,10 +174,11 @@ const Connections: React.FC = () => {
       .attr("font-size", `${fontSize}px`)
       .attr("text-anchor", d => d.labelPosition === 'left' ? 'end' : 'start')
       .attr("x", d => {
+        const spacing = isMobile ? 5 : 8;
         switch(d.labelPosition) {
-          case 'left': return -nodeRadius - 8;
-          case 'right': return nodeRadius + 8;
-          default: return nodeRadius + 8;
+          case 'left': return -nodeRadius - spacing;
+          case 'right': return nodeRadius + spacing;
+          default: return nodeRadius + spacing;
         }
       })
       .attr("y", "0.31em")
@@ -212,7 +224,7 @@ const Connections: React.FC = () => {
     return () => {
       simulation.stop();
     };
-  }, [dimensions, isDark]);
+  }, [dimensions, isDark, isMobile]);
 
   return (
     <div 
