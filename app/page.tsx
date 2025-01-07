@@ -28,7 +28,7 @@ const sampleProjects: Project[] = [
   },
   {
     slug: "/projects/ai-road-trip",
-    title: "AI Road Trip",
+    title: "MAPPERing Communities of Interest",
     description: "Prototyped first of its kind AI-powered short form video generator",
     location: "Google",
     year: "2024",
@@ -81,7 +81,7 @@ export default function Home() {
                   Capital One
                 </h2>
                 <p className="mt-1 mb-0 text-gray-500 text-lg phone:text-base">
-                  {/* Research work description */}
+                  Placeholder text about the work I did
                 </p>
               </div>
             </div>
@@ -100,7 +100,7 @@ export default function Home() {
                   Undergraduate Research
                 </h2>
                 <p className="mt-1 mb-0 text-gray-500 text-lg phone:text-base">
-                  Exploring interconnected ideas and concepts.
+                  I graduated from the University of Central Florida majoring in Social Sciences with minors in Cultural Anthropology, Political Science, and Sociology. With this interdisciplinary background, I published research on computational social science and human-computer interaction with supervision from Jonathan Powell and Pamela Wisniewski, and other faculty across the country.
                 </p>
               </div>
             </div>

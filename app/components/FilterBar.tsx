@@ -1,4 +1,3 @@
-// components/FilterBar.tsx
 "use client";
 
 import React from 'react';
