@@ -1,9 +1,47 @@
-import React from 'react';
-import Footer from "./components/footer";
+"use client";
+
+import React, { useState } from 'react';
 import Publications from "./components/publications";
-import Connections from "./components/connections";
+import { FilterBar } from './components/FilterBar';
+import { ArchivePost } from './components/ArchivePost';
+
+interface Project {
+  slug: string;
+  title: string;
+  description: string;
+  location: string;
+  year: string;
+  tags: string;
+  image?: string;
+}
+
+// Sample project data - replace with your actual data
+const sampleProjects: Project[] = [
+  {
+    slug: "/projects/gentype",
+    title: "GenType",
+    description: "AI-powered alphabet creator, at labs.google/gentype",
+    location: "Google",
+    year: "2024",
+    tags: "machine learning, video, fullstack",
+    image: "/path/to/gentype-image.jpg"
+  },
+  {
+    slug: "/projects/ai-road-trip",
+    title: "AI Road Trip",
+    description: "Prototyped first of its kind AI-powered short form video generator",
+    location: "Google",
+    year: "2024",
+    tags: "machine learning, video, fullstack",
+    image: "/path/to/roadtrip-image.jpg"
+  }
+];
 
 export default function Home() {
+  const [allProjects] = useState<Project[]>(sampleProjects);
+  const [selectedProjects, setSelectedProjects] = useState<Project[]>(sampleProjects);
+  const [selectedTags, setSelectedTags] = useState<string[]>([]);
+
   return (
     <div className="absolute inset-0 w-screen overflow-x-hidden font-sans bg-white">
       {/* Hero Section */}
@@ -22,14 +60,14 @@ export default function Home() {
             </a>
             <a
               href="/blog"
-              className="bg-gray-100 p-2 rounded-md px-3 py-2 text-base hover:bg-gray-200 phone:text-sm"
+              className="bg-gray-100 p-2 rounded-md px-3 py-2 text-base hover:bg-gray-200 phone:text-sm ml-2"
             >
               Blog
             </a>
           </div>
         </div>
         <div className="w-2/3 phone:w-full bg-gray-100 rounded-md h-full flex justify-end items-end phone:mt-4 phone:h-64">
-          {/* You can add a hero image or component here */}
+          {/* Hero image placeholder */}
         </div>
       </header>
 
@@ -43,7 +81,7 @@ export default function Home() {
                   Capital One
                 </h2>
                 <p className="mt-1 mb-0 text-gray-500 text-lg phone:text-base">
-                  {/* Research work in computational social science and HCI. */}
+                  {/* Research work description */}
                 </p>
               </div>
             </div>
@@ -53,13 +91,13 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Concept Mesh Section */}
+        {/* Research Section */}
         <section className="mb-16">
           <div className="flex space-x-16 phone:flex-col phone:space-x-0">
             <div className="w-1/3 phone:w-full">
               <div className="sticky top-24 phone:static">
                 <h2 className="text-2xl text-gray-900 phone:text-lg">
-                  Undergradute Research
+                  Undergraduate Research
                 </h2>
                 <p className="mt-1 mb-0 text-gray-500 text-lg phone:text-base">
                   Exploring interconnected ideas and concepts.
@@ -72,7 +110,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Contact Section */}
+        {/* Project Archive Section */}
         <section className="mb-16">
           <div className="flex space-x-16 phone:flex-col phone:space-x-0">
             <div className="w-1/3 phone:w-full">
@@ -83,10 +121,23 @@ export default function Home() {
                 <p className="mt-1 mb-0 text-gray-500 text-lg phone:text-base">
                   All projects, big and small.
                 </p>
+                {/* Filter Bar */}
+                <FilterBar
+                  allProjects={allProjects}
+                  selectedProjects={selectedProjects}
+                  setSelectedProjects={setSelectedProjects}
+                  selectedTags={selectedTags}
+                  setSelectedTags={setSelectedTags}
+                />
               </div>
             </div>
             <div className="w-2/3 phone:w-full phone:mt-4">
-              {/* <Footer /> */}
+              {/* Projects Display */}
+              <div className="space-y-4">
+                {selectedProjects.map((project, index) => (
+                  <ArchivePost key={project.slug} post={project} />
+                ))}
+              </div>
             </div>
           </div>
         </section>
