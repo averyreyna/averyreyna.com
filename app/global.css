@@ -31,6 +31,15 @@
 
 html {
   min-width: 360px;
+  font-family: 'ABC Oracle', system-ui, -apple-system, sans-serif;
+}
+
+body {
+  font-family: 'ABC Oracle', system-ui, -apple-system, sans-serif;
+}
+
+.prose {
+  font-family: 'ABC Oracle', system-ui, -apple-system, sans-serif;
 }
 
 .prose .anchor {
@@ -165,4 +174,31 @@ html, body {
   overflow-y: scroll;
   -webkit-overflow-scrolling: touch;
   overscroll-behavior-y: contain;
+}
+
+@font-face {
+  font-family: 'ABC Oracle';
+  src: url('/dinamo/ABC Oracle/ABCOracle-Regular-Trial.woff2') format('woff2'),
+    url('/dinamo/ABC Oracle/ABCOracle-Regular-Trial.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'ABC Oracle';
+  src: url('/dinamo/ABC Oracle/ABCOracle-Medium-Trial.woff2') format('woff2'),
+    url('/dinamo/ABC Oracle/ABCOracle-Medium-Trial.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'ABC Oracle';
+  src: url('/dinamo/ABC Oracle/ABCOracle-Bold-Trial.woff2') format('woff2'),
+    url('/dinamo/ABC Oracle/ABCOracle-Bold-Trial.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
 }
