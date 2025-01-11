@@ -1,10 +1,10 @@
 import Footer from "./components/footer"
-import Publications from "./components/publications"
 import Connections from "./components/connections"
+import Projects from "./components/archive"
 
 export default function Page() {
   return (
-    <section>
+    <section className="mx-auto" style={{ maxWidth: '1400px' }}>
       <h1 className="mb-4 text-2xl font-semibold tracking-tighter">
         Hello! I'm Avery Reyna.
       </h1>
@@ -13,10 +13,10 @@ export default function Page() {
       </p>
 
       <h2 className="mb-4 text-2xl font-semibold tracking-tighter">
-        Recent Publications
+        Projects
       </h2>
-      <div className="mb-4">
-        <Publications />
+      <div className="mb-8">
+        <Projects />
       </div>
 
       <h2 className="mb-4 text-2xl font-semibold tracking-tighter">
@@ -26,9 +26,9 @@ export default function Page() {
         <Connections />
       </div>
 
-    <h2 className="mb-4 text-2xl font-semibold tracking-tighter">
-      Contact
-    </h2>
+      <h2 className="mb-4 text-2xl font-semibold tracking-tighter">
+        Contact
+      </h2>
 
       <Footer />
     </section>
