@@ -9,6 +9,12 @@ const MusicalKeyDisplay = () => {
     energy: 0.75,
     tempo: 120
   });
+  const [animationValues, setAnimationValues] = useState({
+    x1: 0,
+    y1: 0,
+    x2: 0,
+    y2: 0
+  });
 
   const timeBasedKeys = {
     morning: [
@@ -77,6 +83,30 @@ const MusicalKeyDisplay = () => {
     return () => clearInterval(interval);
   }, []);
 
+  // Add fluid animation effect
+  useEffect(() => {
+    let animationFrameId;
+    let startTime;
+
+    const animate = (timestamp) => {
+      if (!startTime) startTime = timestamp;
+      const progress = (timestamp - startTime) / 1000; // Convert to seconds
+      
+      // Create multiple flowing animations with different frequencies
+      const x1 = Math.sin(progress / 8) * 100;
+      const y1 = Math.cos(progress / 12) * 100;
+      const x2 = Math.sin(progress / 10 + Math.PI) * 100;
+      const y2 = Math.cos(progress / 15 + Math.PI/4) * 100;
+
+      setAnimationValues({ x1, y1, x2, y2 });
+      
+      animationFrameId = requestAnimationFrame(animate);
+    };
+
+    animationFrameId = requestAnimationFrame(animate);
+    return () => cancelAnimationFrame(animationFrameId);
+  }, []);
+
   useEffect(() => {
     const updateBackground = () => {
       let color1, color2;
@@ -122,25 +152,40 @@ const MusicalKeyDisplay = () => {
       }
 
       const energyFactor = Math.max(0, Math.min(100, keyInfo.energy * 100));
-      const gradient = `linear-gradient(45deg, 
-        ${color1} 0%, 
-        ${color1} ${energyFactor * 0.3}%, 
-        color-mix(in srgb, ${color1} 70%, ${color2} 30%) ${energyFactor * 0.6}%, 
-        color-mix(in srgb, ${color1} 30%, ${color2} 70%) ${energyFactor * 0.9}%, 
-        ${color2} ${energyFactor + 10}%, 
-        ${color2} 100%)`;
+      
+      // Create a more complex gradient using radial-gradient and multiple color stops
+      const gradient = `
+        radial-gradient(
+          circle at ${50 + animationValues.x1/2}% ${50 + animationValues.y1/2}%, 
+          ${color1} 0%, 
+          ${color1} ${energyFactor * 0.3}%, 
+          color-mix(in srgb, ${color1} 70%, ${color2} 30%) ${energyFactor * 0.6}%,
+          color-mix(in srgb, ${color1} 30%, ${color2} 70%) ${energyFactor * 0.9}%,
+          ${color2} ${energyFactor + 10}%
+        ),
+        radial-gradient(
+          circle at ${50 + animationValues.x2/2}% ${50 + animationValues.y2/2}%, 
+          ${color2} 0%,
+          transparent 60%
+        )
+      `;
+      
       setBackground(gradient);
     };
 
     updateBackground();
-  }, [keyInfo]);
+  }, [keyInfo, animationValues]);
 
   const timeOfDay = getTimeOfDay();
 
   return (
     <div 
-      className="h-full w-full rounded-md flex p-4 justify-end items-end"
-      style={{ background }}
+      className="h-full w-full rounded-md flex p-4 justify-end items-end overflow-hidden"
+      style={{ 
+        background,
+        transition: 'background 0.1s ease-in-out',
+        backgroundBlendMode: 'soft-light'
+      }}
     >
       <div 
         className="text-mono bg-opacity-50 p-4 px-4 rounded-md bg-white 
