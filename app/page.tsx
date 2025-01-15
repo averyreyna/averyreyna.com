@@ -53,10 +53,10 @@ export default function Page() {
     <div className="absolute inset-0 w-screen overflow-x-hidden font-sans bg-white">
       <div className="h-1/2 bg-white flex p-16 space-x-16 phone:flex-col phone:w-full phone:p-4 phone:space-x-0 phone:h-auto">
         <div className="w-1/3 phone:w-full text-gray-500">
-          <h1 className="mb-4 text-2xl font-semibold tracking-tighter text-gray-900">
+          <h1 className="text-2xl font-semibold tracking-tighter text-gray-900">
             Hello! I'm Avery Reyna.
           </h1>
-          <p className="text-2xl">
+          <p className="text-lg">
             I'm a Software Engineer at Capital One, managing data quality across the enterprise.
           </p>
         </div>
@@ -65,11 +65,11 @@ export default function Page() {
         </div>
       </div>
 
-      <div className="bg-white w-screen p-16 phone:pt-2 flex flex-col items-center phone:p-0">
+      <div className="bg-white w-screen px-16 pt-16 pb-2 phone:pt-2 flex flex-col items-center phone:p-0">
         <div className="flex space-x-0 mb-12 mx-auto phone:space-x-0 justify-center w-full phone:w-full phone:flex-col">
           <div className="flex flex-col pr-0 w-1/3 phone:invisible phone:h-0 phone:w-0 phone:px-0">
             <div className="flex flex-col w-full space-x-0 sticky top-20 bg-white">
-              <div className="text-2xl text-left text-gray-900 w-full mb-1 phone:w-full phone:p-4 phone:pt-8 phone:pb-0 phone:mb-0">
+              <div className="text-2xl font-semibold tracking-tighter text-gray-900">
                 Projects
               </div>
               <div className="text-gray-500 text-lg mb-0">
@@ -106,18 +106,8 @@ export default function Page() {
           </div>
         </div>
 
-        <div className="h-24 phone:h-0"></div>
-        <div className="w-full flex space-x-16 phone:flex-col phone:space-x-0">
-          <div className="w-1/3 phone:w-full">
-            <div className="sticky top-24 phone:static">
-              <h2 className="text-2xl w-full text-gray-900 phone:text-lg font-semibold tracking-tighter">
-                Contact
-              </h2>
-            </div>
-          </div>
-          <div className="w-2/3 phone:w-full phone:mt-4">
-            <Footer />
-          </div>
+        <div className="w-full flex justify-center">
+          <Footer />
         </div>
       </div>
     </div>

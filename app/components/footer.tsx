@@ -1,3 +1,6 @@
+import Link from 'next/link';
+import { useState } from 'react';
+
 export function ArrowIcon() {
   return (
     <svg
@@ -17,44 +20,29 @@ export function ArrowIcon() {
 
 export default function Footer() {
   return (
-    <div className="mb-4">
-      <div className="flex gap-4 mt-1">
-        <a
-          className="text-neutral-600 dark:text-neutral-400 hover:text-neutral-800 dark:hover:text-neutral-100 transition-all flex items-center text-xs sm:text-base whitespace-nowrap overflow-hidden"
-          rel="noopener noreferrer"
-          target="_blank"
-          href="mailto:avery@averyreyna.com"
-        >
-          <ArrowIcon />
-          <span className="ml-2 flex items-center">Email</span>
+    <div className="px-4 mt-0 mx-auto py-18 pb-32 ">
+      {/* <div>
+        Built by me. Inspired by{' '}
+        <a className="underline" target="_blank" href="https://gossipsweb.net/">
+          Gossip's Web
         </a>
-        <a
-          className="text-neutral-600 dark:text-neutral-400 hover:text-neutral-800 dark:hover:text-neutral-100 transition-all flex items-center text-xs sm:text-base whitespace-nowrap overflow-hidden"
-          rel="noopener noreferrer"
-          target="_blank"
-          href="https://scholar.google.com/citations?user=WecCIHwAAAAJ&hl=en"
-        >
-          <ArrowIcon />
-          <span className="ml-2 flex items-center">Google Scholar</span>
+        .
+      </div> */}
+
+      <div className="text-sm bg-gray-100 text-gray-500 rounded-3xl p-8  max-w-[800px] mx-auto">
+        If you made it this far, we probably have some shared interests. Send me an {' '}
+        <a className="underline" href="mailto:avery.reyna16@gmail.com">
+          email
         </a>
+        {' '} or check out my{' '}
         <a
-          className="text-neutral-600 dark:text-neutral-400 hover:text-neutral-800 dark:hover:text-neutral-100 transition-all flex items-center text-xs sm:text-base whitespace-nowrap overflow-hidden"
-          rel="noopener noreferrer"
           target="_blank"
-          href="https://github.com/averyreyna"
+          className="underline"
+          href="https://are.na/avryryn"
         >
-          <ArrowIcon />
-          <span className="ml-2 flex items-center">GitHub</span>
+          Are.na
         </a>
-        <a
-          className="text-neutral-600 dark:text-neutral-400 hover:text-neutral-800 dark:hover:text-neutral-100 transition-all flex items-center text-xs sm:text-base whitespace-nowrap overflow-hidden"
-          rel="noopener noreferrer"
-          target="_blank"
-          href="https://linkedin.com/in/avery-reyna"
-        >
-          <ArrowIcon />
-          <span className="ml-2 flex items-center">LinkedIn</span>
-        </a>
+        .
       </div>
     </div>
   );
