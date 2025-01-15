@@ -28,12 +28,21 @@ const projects: Project[] = [
   },
   {
     title: "CoupCast",
-    description: "Utilizing machine learning to predict coups across the globe",
+    description: "Utilizing machine learning to predict politcal instabilty across the globe",
     image: "/coupcast/mali_coup_data.png",
     url: "/projects/coupcast",
     location: "ucf",
     year: 2023,
     tags: ["css", "machine learning"]
+  },
+  {
+    title: "Digital Transformation Efforts",
+    description: "Identifying opportunities and challenges in the Lower Mekong Region",
+    image: "/new_america/lower_mekong.png",
+    url: "https://www.newamerica.org/digital-impact-governance-initiative/reports/digital-transformation-opportunities-and-challenges-in-the-lower-mekong-region/",
+    location: "new america",
+    year: 2022,
+    tags: ["tech policy"]
   },
 ];
 
@@ -47,8 +56,8 @@ export default function Page() {
           <h1 className="mb-4 text-2xl font-semibold tracking-tighter text-gray-900">
             Hello! I'm Avery Reyna.
           </h1>
-          <p className="text-lg">
-            I'm a Software Engineer working on data quality management at Capital One.
+          <p className="text-2xl">
+            I'm a Software Engineer at Capital One, managing data quality across the enterprise.
           </p>
         </div>
         <div className="w-2/3 phone:w-full bg-gray-100 rounded-md h-full flex justify-end items-end phone:mt-4 phone:h-64">
@@ -56,13 +65,17 @@ export default function Page() {
         </div>
       </div>
 
-      <div className="bg-white w-screen p-16 phone:pt-2 flex flex-col items-center phone:p-4">
-        <div className="w-full phone:p-4 flex space-x-16 phone:flex-col phone:space-x-0">
-          <div className="w-1/3 phone:w-full">
-            <div className="sticky top-24 phone:static">
-              <h2 className="text-2xl w-full text-gray-900 phone:text-lg font-semibold tracking-tighter mb-2">
+      <div className="bg-white w-screen p-16 phone:pt-2 flex flex-col items-center phone:p-0">
+        <div className="flex space-x-0 mb-12 mx-auto phone:space-x-0 justify-center w-full phone:w-full phone:flex-col">
+          <div className="flex flex-col pr-0 w-1/3 phone:invisible phone:h-0 phone:w-0 phone:px-0">
+            <div className="flex flex-col w-full space-x-0 sticky top-20 bg-white">
+              <div className="text-2xl text-left text-gray-900 w-full mb-1 phone:w-full phone:p-4 phone:pt-8 phone:pb-0 phone:mb-0">
                 Projects
-              </h2>
+              </div>
+              <div className="text-gray-500 text-lg mb-0">
+                All projects, big and small.
+              </div>
+
               <div className="phone:hidden">
                 <ProjectFilter
                   allProjects={projects}
@@ -72,23 +85,28 @@ export default function Page() {
             </div>
           </div>
 
-          <div className="w-2/3 phone:w-full phone:mt-4">
-            <div className="hidden phone:block mb-4">
+          {/* phone version of header */}
+          <div className="hidden phone:block w-full px-4">
+            <div className="text-lg text-gray-900">Projects</div>
+            <div className="text-gray-500 text-base">
+              All projects, big and small.
+            </div>
+            <div className="mt-4">
               <ProjectFilter
                 allProjects={projects}
                 setFilteredProjects={setFilteredProjects}
               />
             </div>
-            
-            <div className="space-y-4">
-              {filteredProjects.map((project) => (
-                <ProjectCard key={project.title} project={project} />
-              ))}
-            </div>
+          </div>
+
+          <div className="flex flex-col w-2/3 space-y-4 phone:w-full mt-20 pl-16 phone:mt-0 phone:p-4">
+            {filteredProjects.map((project) => (
+              <ProjectCard key={project.title} project={project} />
+            ))}
           </div>
         </div>
 
-        <div className="h-32 phone:h-16"></div>
+        <div className="h-24 phone:h-0"></div>
         <div className="w-full flex space-x-16 phone:flex-col phone:space-x-0">
           <div className="w-1/3 phone:w-full">
             <div className="sticky top-24 phone:static">
