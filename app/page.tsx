@@ -1,7 +1,7 @@
 export default function Page() {
   return (
     <section>
-      <h1 className="mb-1 text-2xl font-semibold tracking-tighter">
+      <h1 className="mb-0 text-2xl font-semibold tracking-tighter">
         Hello! I'm Avery Reyna.
       </h1>
       <p className="mb-4">
@@ -47,8 +47,8 @@ export default function Page() {
           University of Central Florida
         </a>, I helped teach{' '}
         <a href="#" className="underline transition-all decoration-neutral-400 dark:decoration-neutral-600 underline-offset-2">
-          SYO3530
-        </a> (Social Power and Inequality), directed the UX Research team at{' '}
+          Social Power and Inequality
+        </a>, directed the UX Research team at{' '}
         <a href="#" className="underline transition-all decoration-neutral-400 dark:decoration-neutral-600 underline-offset-2">
           Knight Hacks
         </a>, and served on the{' '}
