@@ -6,7 +6,7 @@ interface Link {
   url: string;
 }
 
-interface Publication {
+interface Scholarship {
   title: string;
   url: string;
   venue: string;
@@ -14,7 +14,7 @@ interface Publication {
   links: Link[];
 }
 
-const publications: Publication[] = [
+const scholarship: Scholarship[] = [
   {
     title: 'Help Supporters: Exploring the Design Space of Assistive Technologies to Support Face-to-Face Help Between Blind and Sighted Strangers',
     url: '',
@@ -35,26 +35,80 @@ const publications: Publication[] = [
       { text: 'Paper', url: 'https://dl.acm.org/doi/10.1145/3597638.3614490' },
       { text: 'Project', url: 'https://ceal.cs.columbia.edu/spatialinteractions/' }
     ]
+  },
+  {
+    title: 'The Threat of Artificial Intelligence Is Not Just Real, It\’s Here',
+    url: '',
+    venue: 'The Loop: The ECPR’s Political Science Blog',
+    authors: ['Avery Reyna'],
+    links: [
+      { text: 'Article', url: 'https://theloop.ecpr.eu/the-threat-of-artificial-intelligence-is-not-just-real-its-here/' }
+    ]
+  },
+  {
+    title: 'Interdisciplinary Social Science and the Limits of Quantitative Research',
+    url: '',
+    venue: 'The Loop: The ECPR’s Political Science Blog',
+    authors: ['Avery Reyna'],
+    links: [
+      { text: 'Article', url: 'https://theloop.ecpr.eu/interdisciplinary-social-science-and-the-limits-of-quantitative-research/' }
+    ]
+  },
+  {
+    title: 'Anti-Coup Strategies Should Address Civilian Coup Allies',
+    url: '',
+    venue: 'Just Security',
+    authors: ['Salah Ben Hammou', 'Avery Reyna'],
+    links: [
+      { text: 'Article', url: 'https://www.justsecurity.org/82471/anti-coup-strategies-should-address-civilian-coup-allies/' }
+    ]
+  },
+  {
+    title: 'Reflecting on Coup Risk in Mali',
+    url: '',
+    venue: 'Political Violence at a Glance',
+    authors: ['Avery Reyna', 'Salah Ben Hammou'],
+    links: [
+      { text: 'Article', url: 'https://politicalviolenceataglance.org/2022/06/14/reflecting-on-coup-risk-in-mali/' }
+    ]
+  },
+  {
+    title: 'Integrated Data in the United States: A Look at New York\’s Workforce Portal',
+    url: '',
+    venue: 'New America',
+    authors: ['Avery Reyna'],
+    links: [
+      { text: 'Article', url: 'https://www.newamerica.org/digital-impact-governance-initiative/blog/integrated-data-in-the-united-states-a-look-at-new-yorks-workforce-portal/' }
+    ]
+  },
+  {
+    title: 'Vaccination Efforts in Latin America: What to Know',
+    url: '',
+    venue: 'Council on Foreign Relations',
+    authors: ['Avery Reyna'],
+    links: [
+      { text: 'Article', url: 'https://www.cfr.org/in-brief/latin-americas-vaccination-efforts-what-know' }
+    ]
   }
 ];
 
-export default function Publications() {
+export default function Scholarship() {
   return (
     <div className="flex flex-col gap-4 mx-auto">
-      {publications.map((publication) => (
-        <div key={publication.url} className="flex flex-col space-y-1 mb-2">
+      {scholarship.map((scholarship) => (
+        <div key={scholarship.url} className="flex flex-col space-y-1 mb-2">
           <div className="w-full flex flex-col">
             <p className="text-neutral-900 dark:text-neutral-100 tracking-tight">
-              {publication.title}
+              {scholarship.title}
             </p>
             <p className="text-neutral-600 dark:text-neutral-400">
-              {publication.venue}
+              {scholarship.venue}
             </p>
             <p className="text-sm text-neutral-600 dark:text-neutral-400">
-              {publication.authors.join(', ')}
+              {scholarship.authors.join(', ')}
             </p>
             <div className="flex gap-4 mt-1">
-              {publication.links.map((link, index) => (
+              {scholarship.links.map((link, index) => (
                 <a
                   key={index}
                   href={link.url}
