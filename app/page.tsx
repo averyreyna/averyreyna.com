@@ -1,36 +1,91 @@
-import Footer from "./components/footer"
-import Publications from "./components/publications"
-import Connections from "./components/connections"
-
 export default function Page() {
   return (
     <section>
-      <h1 className="mb-4 text-2xl font-semibold tracking-tighter">
+      <h1 className="mb-1 text-2xl font-semibold tracking-tighter">
         Hello! I'm Avery Reyna.
       </h1>
       <p className="mb-4">
-        I'm a Software Engineer working on data quality at Capital One. Before that, I researched computational social science and human-computer interaction with supervision from Jonathan Powell and Pamela Wisniewski. I also collaborated with teams improving developer experience at ActBlue, building predictive models at Swing Left, and researching technology policy at New America.
+        I want to build tools that enhance, not replace, the human experience.
       </p>
 
       <h2 className="mb-4 text-2xl font-semibold tracking-tighter">
-        Recent Publications
+        Currently
       </h2>
       <div className="mb-4">
-        <Publications />
+        I'm a Software Engineer at{' '}
+        <a href="#" className="underline transition-all decoration-neutral-400 dark:decoration-neutral-600 underline-offset-2">
+          Capital One
+        </a> monitoring data quality across the enterprise.
       </div>
 
       <h2 className="mb-4 text-2xl font-semibold tracking-tighter">
-        Concept Mesh
+        Previously
       </h2>
       <div className="mb-4">
-        <Connections />
+        I improved developer experience at{' '}
+        <a href="#" className="underline transition-all decoration-neutral-400 dark:decoration-neutral-600 underline-offset-2">
+          ActBlue
+        </a>, built machine learning models at{' '}
+        <a href="#" className="underline transition-all decoration-neutral-400 dark:decoration-neutral-600 underline-offset-2">
+          Swing Left
+        </a>, studied digital public infrastructure at{' '}
+        <a href="#" className="underline transition-all decoration-neutral-400 dark:decoration-neutral-600 underline-offset-2">
+          New America
+        </a>, and researched computational social science and human-computer interaction with{' '}
+        <a href="#" className="underline transition-all decoration-neutral-400 dark:decoration-neutral-600 underline-offset-2">
+          Jonathan Powell
+        </a> and{' '}
+        {' '}
+        <a href="#" className="underline transition-all decoration-neutral-400 dark:decoration-neutral-600 underline-offset-2">
+          Pamela Wisniewski
+        </a>.
       </div>
 
-    <h2 className="mb-4 text-2xl font-semibold tracking-tighter">
-      Contact
-    </h2>
+      <div className="mb-4">
+        At the{' '}
+        <a href="#" className="underline transition-all decoration-neutral-400 dark:decoration-neutral-600 underline-offset-2">
+          University of Central Florida
+        </a>, I helped teach{' '}
+        <a href="#" className="underline transition-all decoration-neutral-400 dark:decoration-neutral-600 underline-offset-2">
+          SYO3530
+        </a> (Social Power and Inequality), directed the UX Research team at{' '}
+        <a href="#" className="underline transition-all decoration-neutral-400 dark:decoration-neutral-600 underline-offset-2">
+          Knight Hacks
+        </a>, and served on the{' '}
+        <a href="#" className="underline transition-all decoration-neutral-400 dark:decoration-neutral-600 underline-offset-2">
+          Student Undergraduate Research Council
+        </a>.
+      </div>
 
-      <Footer />
+      <h2 className="mb-4 text-2xl font-semibold tracking-tighter">
+        Broadly
+      </h2>
+      <div className="mb-4">
+        My projects, research, and commentary have appeared in several outlets including the <i>European Consortium for Political Research</i>, <i>Just Security</i>, <i>Political Violence at a Glance</i>, <i>Orlando Sentinel</i>, <i>Futurism</i>, the <i>Washington Post</i>, and elsewhere.
+      </div>
+
+      <h2 className="mb-4 text-2xl font-semibold tracking-tighter">
+        Contact
+      </h2>
+      <div className="mb-4">
+        You can see my inspiration on{' '}
+        <a href="#" className="underline transition-all decoration-neutral-400 dark:decoration-neutral-600 underline-offset-2">
+          Are.na
+        </a>
+        , contact me through{' '}
+        <a href="#" className="underline transition-all decoration-neutral-400 dark:decoration-neutral-600 underline-offset-2">
+          email
+        </a>
+        , peruse my code on{' '}
+        <a href="#" className="underline transition-all decoration-neutral-400 dark:decoration-neutral-600 underline-offset-2">
+          GitHub
+        </a>
+        , and see my experience on{' '}
+        <a href="#" className="underline transition-all decoration-neutral-400 dark:decoration-neutral-600 underline-offset-2">
+          LinkedIn
+        </a>
+        .
+      </div>
     </section>
   )
 }
