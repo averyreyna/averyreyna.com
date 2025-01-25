@@ -54,6 +54,18 @@ export default function Page() {
         </a>, and served on the{' '}
         <a href="#" className="underline transition-all decoration-neutral-400 dark:decoration-neutral-600 underline-offset-2">
           Student Undergraduate Research Council
+        </a>. When I wasn't on campus, I spent my summers working with{' '}
+        <a href="#" className="underline transition-all decoration-neutral-400 dark:decoration-neutral-600 underline-offset-2">
+          Jim Thatcher
+        </a> at the{' '}
+        <a href="#" className="underline transition-all decoration-neutral-400 dark:decoration-neutral-600 underline-offset-2">
+          University of Washington
+        </a> and{' '}
+        <a href="#" className="underline transition-all decoration-neutral-400 dark:decoration-neutral-600 underline-offset-2">
+          Brian Smith
+        </a> at{' '}
+        <a href="#" className="underline transition-all decoration-neutral-400 dark:decoration-neutral-600 underline-offset-2">
+          Columbia University
         </a>.
       </div>
 
@@ -61,7 +73,17 @@ export default function Page() {
         Broadly
       </h2>
       <div className="mb-4">
-        My projects, research, and commentary have appeared in several outlets including the <i>European Consortium for Political Research</i>, <i>Just Security</i>, <i>Political Violence at a Glance</i>, <i>Orlando Sentinel</i>, <i>Futurism</i>, the <i>Washington Post</i>, and elsewhere.
+        My projects, research, and commentary have appeared in several outlets including the <i>European Consortium for Political Research</i>, <i>Just Security</i>, <i>Political Violence at a Glance</i>, <i>Orlando Sentinel</i>, <i>Futurism</i>, the <i>Washington Post</i>, and elsewhere. I have been invited to present my research at multiple conferences, including{' '}
+        <a href="#" className="underline transition-all decoration-neutral-400 dark:decoration-neutral-600 underline-offset-2">
+          FURC
+        </a>,{' '}
+        {' '}
+        <a href="#" className="underline transition-all decoration-neutral-400 dark:decoration-neutral-600 underline-offset-2">
+          NACIS
+        </a>, and various{' '}
+        <a href="#" className="underline transition-all decoration-neutral-400 dark:decoration-neutral-600 underline-offset-2">
+          showcases
+        </a> at my undergradute institution.
       </div>
 
       <h2 className="mb-4 text-2xl font-semibold tracking-tighter">
