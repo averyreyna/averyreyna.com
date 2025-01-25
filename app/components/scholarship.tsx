@@ -105,7 +105,7 @@ export default function Scholarship() {
   const usedYears = new Set<number>();
 
   return (
-    <div>
+    <div className="max-w-full">
       {scholarship
         .sort((a, b) => b.year - a.year)
         .map((item) => {
@@ -117,11 +117,11 @@ export default function Scholarship() {
               key={item.title}
               className="flex flex-col space-y-1 mb-4"
             >
-              <div className="w-full flex flex-col md:flex-row space-x-0 md:space-x-2">
+              <div className="w-full flex flex-row items-start">
                 <p className="text-neutral-600 dark:text-neutral-400 w-[100px] tabular-nums">
                   {showYear ? item.year : ''}
                 </p>
-                <div>
+                <div className="flex-1 pl-2">
                   <p className="text-neutral-900 dark:text-neutral-100 tracking-tight">
                     {item.title}
                   </p>
@@ -131,7 +131,7 @@ export default function Scholarship() {
                   <p className="text-neutral-600 dark:text-neutral-400 text-sm">
                     {item.authors.join(', ')}
                   </p>
-                  <div className="flex gap-2 mt-0.5">
+                  <div className="flex gap-2 mt-1">
                     {item.links.map((link, index) => (
                       <a
                         key={index}
