@@ -15,7 +15,13 @@ export default function Page() {
         I'm a Software Engineer at{' '}
         <a href="#" className="underline transition-all decoration-neutral-400 dark:decoration-neutral-600 underline-offset-2">
           Capital One
-        </a> monitoring data quality across the enterprise.
+        </a> monitoring data quality across the enterprise. Outside of work, I am either designing games in{' '}
+        <a href="#" className="underline transition-all decoration-neutral-400 dark:decoration-neutral-600 underline-offset-2">
+          Godot
+        </a> or maintaining civic technology{' '}
+        <a href="#" className="underline transition-all decoration-neutral-400 dark:decoration-neutral-600 underline-offset-2">
+          open source
+        </a> projects.
       </div>
 
       <h2 className="mb-4 text-2xl font-semibold tracking-tighter">
