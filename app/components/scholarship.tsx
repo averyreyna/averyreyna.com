@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowIcon } from './footer';
+import { ArrowIcon } from './arrow';
 
 interface Link {
   text: string;
