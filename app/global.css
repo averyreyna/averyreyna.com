@@ -1,5 +1,32 @@
 @import 'tailwindcss';
 
+@font-face {
+  font-family: 'ABC Favorit';
+  src: url('/dinamo/ABC Favorit/ABCFavorit-Regular-Trial.woff2') format('woff2'),
+    url('/dinamo/ABC Favorit/ABCFavorit-Regular-Trial.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'ABC Favorit';
+  src: url('/dinamo/ABC Favorit/ABCFavorit-Medium-Trial.woff2') format('woff2'),
+    url('/dinamo/ABC Favorit/ABCFavorit-Medium-Trial.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'ABC Favorit';
+  src: url('/dinamo/ABC Favorit/ABCFavorit-Bold-Trial.woff2') format('woff2'),
+    url('/dinamo/ABC Favorit/ABCFavorit-Bold-Trial.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
 ::selection {
   background-color: #47a3f3;
   color: #fefefe;
@@ -15,6 +42,7 @@
   --sh-jsxliterals: #6266d1;
   --sh-property: #e25a1c;
   --sh-entity: #e25a1c;
+  --font-sans: var(--font-abc-favorit);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -31,6 +59,18 @@
 
 html {
   min-width: 360px;
+  font-family: "ABC Favorit", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-feature-settings: "ss01", "ss03", "ss04", "ss05", "ss07", "tnum";
+}
+
+body {
+  font-family: "ABC Favorit", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-feature-settings: "ss01", "ss03", "ss04", "ss05", "ss07", "tnum";
+}
+
+.prose {
+  font-family: "ABC Favorit", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-feature-settings: "ss01", "ss03", "ss04", "ss05", "ss07", "tnum";
 }
 
 .prose .anchor {
