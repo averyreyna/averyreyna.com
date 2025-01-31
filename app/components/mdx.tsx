@@ -46,17 +46,36 @@ function CustomLink(props) {
 
 function RoundedImage({ caption, ...props }) {
   return (
-    <figure className="my-8 mx-auto">
+    <figure className="my-8 mx-auto max-w-xl">
       <div className="overflow-hidden border border-gray-200 dark:border-gray-800 bg-gray-50 dark:bg-gray-900 p-2">
         <Image 
           src={''} alt={''} className="w-full h-auto object-cover"
-          {...props}        />
+          {...props}        
+        />
       </div>
       {caption && (
         <figcaption className="mt-2 text-sm text-center text-gray-600 dark:text-gray-400">
           {caption}
         </figcaption>
       )}
+    </figure>
+  )
+}
+
+function RoundedVideo({ caption, src, ...props }) {
+  return (
+    <figure className="my-8 mx-auto max-w-xl">
+      <div className="overflow-hidden border border-gray-200 dark:border-gray-800 bg-gray-50 dark:bg-gray-900 p-2">
+        <video
+          className="w-full h-auto"
+          controls
+          playsInline
+          {...props}
+        >
+          <source src={src} type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+      </div>
     </figure>
   )
 }
@@ -107,6 +126,7 @@ let components = {
   h5: createHeading(5),
   h6: createHeading(6),
   Image: RoundedImage,
+  Video: RoundedVideo,
   a: CustomLink,
   code: Code,
   Table,
@@ -120,5 +140,3 @@ export function CustomMDX(props) {
     />
   )
 }
-
-
