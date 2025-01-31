@@ -136,12 +136,11 @@ export default function Scholarship() {
                       <a
                         key={index}
                         href={link.url}
-                        className="text-neutral-600 dark:text-neutral-400 hover:text-neutral-800 dark:hover:text-neutral-100 transition-all flex items-center text-sm"
+                        className="inline-flex items-center text-xs px-2 py-0.5 rounded-full bg-neutral-100 dark:bg-neutral-800 text-neutral-600 dark:text-neutral-400 [@media(hover:hover)]:hover:bg-neutral-200 [@media(hover:hover)]:dark:hover:bg-neutral-700 transition-all"
                         target="_blank"
                         rel="noopener noreferrer"
                       >
-                        <ArrowIcon />
-                        <span className="ml-1">{link.text}</span>
+                        <span>{link.text}</span>
                       </a>
                     ))}
                   </div>
