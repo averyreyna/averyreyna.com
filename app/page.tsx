@@ -15,7 +15,7 @@ export default function Page() {
         I'm a Software Engineer at{' '}
         <a href="https://www.capitalone.com/" target="_blank" className="underline transition-all decoration-neutral-400 dark:decoration-neutral-600 underline-offset-2">
           Capital One
-        </a> monitoring data quality across the enterprise. Outside of work, I am either designing rougelites in{' '}
+        </a> monitoring data quality across the enterprise. Outside of work, I am either designing games in{' '}
         <a href="https://godotengine.org/" target="_blank" className="underline transition-all decoration-neutral-400 dark:decoration-neutral-600 underline-offset-2">
           Godot
         </a> or maintaining civic technology{' '}
