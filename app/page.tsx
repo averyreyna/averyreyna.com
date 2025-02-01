@@ -87,7 +87,7 @@ export default function Page() {
         </a>, and various{' '}
         <a href="https://researchweek.ucf.edu/" target="_blank" className="underline transition-all decoration-neutral-400 dark:decoration-neutral-600 underline-offset-2">
           showcases
-        </a> at my undergradute institution.
+        </a> at my undergraduate institution.
       </div>
 
       <h2 className="mb-4 text-2xl font-semibold tracking-tighter">

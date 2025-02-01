@@ -4,13 +4,7 @@ publishedAt: '2024-05-11'
 summary: 'Summary about the Help Supporters project.'
 ---
 
-Help Supporters is the second project I worked on at Columbia University in Brian Smith's lab, published at CHI 2024.
-
-*Help Supporters explores how technology can bridge the social gap between blind people and sighted strangers who want to help them.*
-
-What do I mean by that?
-
-Consider how often you see a blind person getting help from a stranger in public. It's surprisingly rare, right? Yet platforms like BeMyEyes have 13 times more sighted volunteers than blind users. This reveals a fascinating paradox: while many sighted people are eager to help, face-to-face assistance rarely happens due to complex social barriers affecting both parties. Our research investigates how thoughtfully designed technology could facilitate these interactions.
+Help Supporters is the second project I worked on at Columbia University with Brian Smith. For this project, we explored how technology can bridge the social gap between blind people and sighted strangers who want to help them. Consider how often you see a blind person getting help from a stranger in public. It's surprisingly rare, right? Yet platforms like BeMyEyes have 13 times more sighted volunteers than blind users. This reveals a fascinating paradox: while many sighted people are eager to help, face-to-face assistance rarely happens due to complex social barriers affecting both parties. Our research investigates how thoughtfully designed technology could facilitate these interactions.
 
 <Video src="/help_supporters/help_supporters_presentation.mp4" />
 
@@ -33,7 +27,7 @@ The Person-Finder Glasses represent our first approach to facilitating initial c
   alt="'Person-Finder Glasses prototype"
   width={800}
   height={600}
-  caption="Left: A BLV user (in blue) wearing the Person-Finder Glasses to locate and greet a nearby stranger (in red) in a public environment. Right: A plan view diagram showing how the Person-Finder Glasses support the BLV user (in blue) to detect a nearby stranger (in red) and display auditory cues."
+  caption="The Person-Finder Glasses helping a BLV user locate and greet people in a public space, shown from side view (left) with auditory cues and overhead plan view (right) illustrating person detection."
 />
 
 The Volunteer Platform takes a fundamentally different approach to the connection challenge. This mobile application creates a structured environment for matching BLV users with nearby sighted volunteers. The platform allows BLV users to articulate specific needs, time requirements, and preferences, while sighted volunteers can indicate their availability, experience level, and location. This system addresses social anxiety in both direct approaches and unsolicited help offers by creating a mutually consensual framework for assistance.
@@ -46,13 +40,9 @@ The Vague Directions Flagger addresses the common problem of imprecise or visual
 
 ## Technical Implementation
 
-The Person-Finder Glasses prototype is built on Microsoft HoloLens (first-gen) using Unity's development framework. It leverages Microsoft's Holographic Face Tracking API for real-time face detection and processing. The system implements a spatial audio framework for directional guidance, with carefully calibrated feedback algorithms that account for natural walking patterns and maintain appropriate social distances through continuous monitoring.
+The Person-Finder Glasses prototype is built on Microsoft HoloLens (first-gen) using Unity's development framework. It leverages Microsoft's Holographic Face Tracking API for real-time face detection and processing. The system implements a spatial audio framework for directional guidance, with carefully calibrated feedback algorithms that account for natural walking patterns and maintain appropriate social distances through continuous monitoring. For the Volunteer Platform, it is deployed as a React.js web application with mobile-first responsive design principles. Its core functionality revolves around a real-time location-based matching engine that connects users based on their stored profiles and preferences. The platform features an accessibility-focused UI and implements secure communication channels between matched users.
 
-For the Volunteer Platform, it is deployed as a React.js web application with mobile-first responsive design principles. Its core functionality revolves around a real-time location-based matching engine that connects users based on their stored profiles and preferences. The platform features an accessibility-focused UI and implements secure communication channels between matched users.
-
-The Pictorial Display implementation centers on a wearable smartphone interface and runs on a custom HTML/JavaScript dashboard that integrates Bitmoji for dynamic visual feedback. It includes a real-time message selection algorithm and remote control capabilities for study facilitators, with display parameters optimized for public visibility.
-
-The Vague Directions Flagger is implemented as a React.js mobile application that processes speech input in real time and employs natural language processing to identify vague directional terms, matching them against a comprehensive phrase database. The system delivers private feedback through a context-aware suggestion engine.
+Running on a custom HTML and JavaScript dashboard, the Pictorial Display implementation centers on a wearable smartphone interface that integrates Bitmoji for dynamic visual feedback. It includes a real-time message selection algorithm and remote control capabilities for study facilitators, with display parameters optimized for public visibility. Designed as a React.js mobile application, the Vague Directions Flagger processes speech input in real time and employs natural language processing to identify vague directional terms, matching them against a comprehensive phrase database. The system delivers private feedback through a context-aware suggestion engine.
 
 ## Study Design
 
@@ -65,6 +55,8 @@ The study environment selection was intentionally varied to capture data about h
 ## Connection Phase Insights
 
 The study revealed a strong preference among BLV and sighted participants for the app-based Volunteer Platform over the Person-Finder Glasses. This preference was primarily driven by the platform's ability to reduce social pressure through discrete interaction options. Potential helpers particularly valued the ability to decline requests without direct confrontation, while BLV users appreciated the ability to review helper profiles before initiating contact.
+
+<Gif src="/help_supporters/help_supporters_interactions.gif" alt="Description" caption="" />
 
 The research uncovered essential insights about information preferences during the connection phase. BLV users particularly emphasized the importance of knowing potential helpers' experience with BLV individuals, with some explicitly preferring female helpers for comfort and safety reasons. Both groups stressed the importance of understanding each other's availability and knowledge level before initiating help interactions.
 
@@ -79,7 +71,7 @@ The study revealed complex interactions between eye contact, environmental aware
   alt="'Person-Finder Glasses prototype"
   width={800}
   height={600}
-  caption="A three-panel diagram showing how assistive technology (AT) facilitates interaction between blind/low vision (BLV) and sighted individuals. (A) shows general interdependence between people and environment, (B) depicts AT connecting BLV and sighted individuals, and (C) illustrates AT guiding the sighted person to help communicate environmental information to the BLV person."
+  caption="A diagram showing how assistive technology enables interaction between BLV and sighted individuals through three phases: interdependence, connection, and collaboration."
 />
 
 ## Broader Implications

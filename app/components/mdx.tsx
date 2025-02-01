@@ -76,6 +76,30 @@ function RoundedVideo({ caption, src, ...props }) {
           Your browser does not support the video tag.
         </video>
       </div>
+      {caption && (
+        <figcaption className="mt-2 text-sm text-center text-gray-600 dark:text-gray-400">
+          {caption}
+        </figcaption>
+      )}
+    </figure>
+  )
+}
+
+function RoundedGif({ caption, src, ...props }) {
+  return (
+    <figure className="my-8 mx-auto max-w-xl">
+      <div className="overflow-hidden border border-gray-200 dark:border-gray-800 bg-gray-50 dark:bg-gray-900 p-2">
+        <img
+          src={src}
+          className="w-full h-auto"
+          {...props}
+        />
+      </div>
+      {caption && (
+        <figcaption className="mt-2 text-sm text-center text-gray-600 dark:text-gray-400">
+          {caption}
+        </figcaption>
+      )}
     </figure>
   )
 }
@@ -127,6 +151,7 @@ let components = {
   h6: createHeading(6),
   Image: RoundedImage,
   Video: RoundedVideo,
+  Gif: RoundedGif,
   a: CustomLink,
   code: Code,
   Table,
