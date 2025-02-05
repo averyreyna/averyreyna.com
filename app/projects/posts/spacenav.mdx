@@ -16,6 +16,8 @@ The challenge is particularly evident in how desktop screen readers handle direc
 
 SpaceNav reimagines how screen readers can convey spatial information through two key configurations. The first is SpaceNav-Input, which gives users a spatial compass for navigation. Users can navigate content directionally using arrow keys instead of being limited to Tab and Shift+Tab navigation while maintaining traditional navigation methods when preferred. This allows users to move through content in a way that matches their mental model of the page layout.
 
+<Gif src="/spacenav/spatial_interactions_example.gif" alt="" caption="A visual representation of how spatial interactions are implemented on the first version of our news site, with the user navigating and highlighting HTML elements on the page." />
+
 The second configuration, SpaceNav-Output, adds an extra layer of spatial awareness through audio. Screen reader speech comes from the actual 2D position of elements on the page, with higher-pitched audio indicating elements higher on the page. Using stereo headphones, users experience a natural sense of left-right positioning, and unique audio cues alert them when elements move during scrolling.
 
 ## Technical Implementation
@@ -30,7 +32,7 @@ The study involved nine BLV participants, aged 22 to 65, who were either regular
 
 <Image 
   src="/spacenav/about_me_pages.png"
-  alt="'About Me' pages found within user studies"
+  alt=""
   width={800}
   height={600}
   caption="Two 'About Me' pages that a user study participant built using SpaceNav-Input (the left image) and SpaceNav-Output (the right image)."
@@ -48,7 +50,7 @@ The potential applications of SpaceNav extend far beyond basic web browsing. In 
 
 <Image 
   src="/spacenav/chrome_extension.png"
-  alt="'SpaceNav-Chrome example interactions"
+  alt=""
   width={800}
   height={600}
   caption="How we envision the SpaceNav-Chrome system working on standard websites such as CNN, incorporating spatial interactions onto more complicated user interfaces and experiences."
