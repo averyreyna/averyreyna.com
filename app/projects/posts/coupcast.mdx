@@ -12,18 +12,12 @@ At its core, CoupCast functions as a political weather forecast. Just as meteoro
 
 The Rulers, Elections, and Irregular Governance (REIGN) dataset forms the backbone of CoupCast's predictive capabilities. This comprehensive database tracks political conditions in every country every month, covering 201 sovereign states. The dataset includes every current member of the United Nations, including small island microstates, but excludes non-sovereign entities like Vatican City, Greenland, and Puerto Rico. The temporal coverage extends from January 1950 to the present, though many states enter the dataset only after achieving independence.
 
-REIGN has compiled detailed information on more than 2,300 world leaders who governed a qualifying country for at least seven consecutive days between January 1950 and the present. The dataset defines qualifying leaders as the recognized head of government, which is typically the president, prime minister, monarch, acting/interim head, or junta chairman. San Marino represents the only exception to the single-leader rule, with its unique system of two Captains Regent sharing equal power.
-
-### Leader Data
-
-For each leader, REIGN tracks four critical pieces of information:
+REIGN has compiled detailed information on more than 2,300 world leaders who governed a qualifying country for at least seven consecutive days between January 1950 and the present. The dataset defines qualifying leaders as the recognized head of government, which is typically the president, prime minister, monarch, acting/interim head, or junta chairman. San Marino represents the only exception to the single-leader rule, with its unique system of two Captains Regent sharing equal power. For each leader, REIGN tracks four critical pieces of information:
 
 1. **Age**: Calculated as the difference between the year of observation and birth year. This calculation method means leaders may be listed as one year older for months before their birth month.
 2. **Gender**: As of September 2016, approximately 96.5% of leaders were male, and 3.5% were female.
 3. **Military Career**: Leaders are coded based on whether their primary route to power is through a military or police career. This coding distinguishes between those who merely served in the military (like George H. W. Bush) and those who rose to power from high-ranking military positions (like Dwight D. Eisenhower). Approximately 16% of leaders emerged from military or police positions.
 4. **Election Month**: Records the month in which a popular election for their office first legitimized each leader's tenure. About 49% of leaders were elected at some point before or during their tenure.
-
-### Election Data
 
 The election component of REIGN provides detailed information about election schedules and outcomes for all elections related to leader selection or power. Each election is assigned a unique identifier and tracked across multiple dimensions:
 
@@ -34,8 +28,6 @@ The election component of REIGN provides detailed information about election sch
 5. **Victory**: Notes whether the incumbent or their chosen successor maintained power
 6. **Change**: Records whether the election resulted in leadership change
 7. **Run-off Status**: Distinguishes between single-round and multi-round elections
-
-### Election Classification System
 
 REIGN employs a sophisticated decision tree to categorize political events that could affect leadership or executive power. The classification system first distinguishes between referendums and contests for office, then follows a detailed branching logic to categorize each event appropriately. This systematic approach ensures consistent classification across different political systems and contexts. Five main categories emerge from this classification system:
 
@@ -66,22 +58,22 @@ The complementary log-log function is critical to the model's success. Unlike tr
   alt=""
   width={800}
   height={600}
-  caption="The dashed line shows the logit function and the solid line is the the complementary log-log function. Note that its asymmetry allows it to give very low values over a larger range."
+  caption="The dashed line shows the logit function and the solid line is the the complementary log-log function—note that its asymmetry allows it to give very low values over a larger range."
 />
-
-### Variable Processing and Integration
 
 CoupCast employs sophisticated data processing techniques to handle multiple types of predictor variables. The system uses linear and non-linear transformations for continuous variables like economic indicators to capture complex relationships. GDP data, for instance, undergoes logarithmic transformation to account for diminishing marginal effects, while population data is modeled with linear and squared terms to capture curvilinear relationships.
 
-### Regional Contagion Modeling
-
 The system models regional coup contagion through a population-weighted approach. Each country's regional coup risk score is calculated by summing the weighted coup history scores of other countries in the region, with weights determined by logged population values. This approach ensures that instability in larger states has a proportionally more significant impact on regional risk assessments. The region's total logged population then normalizes the regional score to enable cross-regional comparisons.
 
-### Economic and Social Indicator Integration
+Economic and social indicators are processed through a multiple imputation framework that combines data from the World Bank and various other sources.
 
-Economic and social indicators are processed through a multiple imputation framework that combines data from the World Bank and various other sources. For GDP data, the system uses the following imputation model:
+## General Predictive Accuracy
 
-## CoupCast's Predictions in Mali
+CoupCast has demonstrated remarkable predictive power in identifying high-risk situations for coup attempts. Between 1975 and 2016, one-third of all coups occurred in countries with the top 5% forecasted coup risk, and half occurred in countries ranked in the top 10% of risk predictions. Perhaps most tellingly, only about one in fifteen coups happened in countries where CoupCast had forecasted below-average coup risk. This shows the model's ability to identify high-risk situations while minimizing false positives.
+
+When examining the highest-risk scenarios, the model's predictive capabilities become even more impressive. For leader-months that fall above the 99th percentile of risk, CoupCast calculated approximately a 3% chance of a coup occurring within that month - making these situations about 11 times more likely to experience a coup than the average case. In the most extreme risk category (above the 99.9th percentile), the monthly coup probability rose to nearly 9%, representing a 32.8-fold increase in coup likelihood compared to typical conditions. However, it's important to note that even in these highest-risk scenarios, the model remains probabilistic rather than deterministic—even when conditions are most favorable for a coup, the vast majority of high-risk months still pass without an attempt.
+
+## CoupCast's Recent Predictions in Mali
 
 The predictive power of CoupCast was particularly evident in our analysis of Mali during 2021-2022. The system identified Mali as having the second-highest coup risk globally, behind only Sudan. This assessment wasn't merely theoretical, but based on a complex web of interconnected factors that the system identified and analyzed.
 
@@ -100,3 +92,21 @@ Perhaps most notably, CoupCast showed particular sensitivity to electoral timing
 ## Civilian-Military Dynamics
 
 While CoupCast's statistical engine primarily focuses on structural indicators and historical patterns, some research I conducted in tandem with this project has highlighted the crucial role of civilian actors in coup dynamics. Our analysis shows that incorporating civilian collaboration patterns could enhance the model's predictive capabilities, particularly in cases where traditional coup risk indicators may not fully capture the complexity of political instability.
+
+The REIGN dataset's current focus on leaders' military careers and election-related factors provides a strong foundation. Still, future iterations of CoupCast could benefit from systematically tracking civilian-military relationships. Key indicators could include pre-coup civilian mobilization patterns, business elite networks connected to military leadership, post-coup civilian political appointments, and media ownership patterns among military-aligned actors. These factors could be particularly valuable in distinguishing between scenarios where similar structural conditions lead to different outcomes based on civilian-military dynamics.
+
+<Image 
+  src="/coupcast/military_experience.png"
+  alt=""
+  width={800}
+  height={600}
+  caption="Civilian leaders face much higher coup risk in military governments, while having a military career background is associated with lower coup risk across both military and civilian governments."
+/>
+
+The complementary log-log function already employed by CoupCast is well-suited to incorporating such nuanced indicators, as it can effectively handle the asymmetric nature of coup probability distributions even when accounting for complex civilian collaboration patterns. By systematically expanding our data collection and analysis to capture these civilian-military dynamics, we can further improve CoupCast's ability to forecast political instability while maintaining its commitment to rigorous quantitative methodology.
+
+## Next Steps
+
+As we continue to develop CoupCast, we're exploring ways to enhance its capabilities and expand its applications. The system's ability to process complex political, economic, and social factors makes it an invaluable tool for understanding and anticipating political instability. We're working on incorporating new data sources, refining our predictive algorithms, and developing more detailed regional analysis capabilities.
+
+The ultimate goal is to create a more comprehensive understanding of political stability dynamics, enabling better-informed decision-making and more effective risk mitigation strategies. Whether used for policy planning, academic research, or security assessment, CoupCast represents a significant step forward in our ability to understand and predict political upheaval.
