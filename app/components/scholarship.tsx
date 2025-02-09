@@ -35,8 +35,7 @@ const scholarship: Scholarship[] = [
     authors: ['Arnavi Chheda-Kothary', 'David Rios', 'Kynnedy Simone Smith', 'Avery Reyna', 'Cecilia Zhang', 'Brian A. Smith'],
     links: [
       { text: 'ACM DL Page', url: 'https://dl.acm.org/doi/10.1145/3597638.3614490' },
-      { text: 'Paper', url: 'https://dl.acm.org/doi/10.1145/3597638.3614490' },
-      { text: 'Project', url: 'https://ceal.cs.columbia.edu/spatialinteractions/' }
+      { text: 'Paper', url: 'https://dl.acm.org/doi/10.1145/3597638.3614490' }
     ]
   },
   {

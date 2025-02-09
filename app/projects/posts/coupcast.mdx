@@ -65,8 +65,6 @@ CoupCast employs sophisticated data processing techniques to handle multiple typ
 
 The system models regional coup contagion through a population-weighted approach. Each country's regional coup risk score is calculated by summing the weighted coup history scores of other countries in the region, with weights determined by logged population values. This approach ensures that instability in larger states has a proportionally more significant impact on regional risk assessments. The region's total logged population then normalizes the regional score to enable cross-regional comparisons.
 
-Economic and social indicators are processed through a multiple imputation framework that combines data from the World Bank and various other sources.
-
 ## General Predictive Accuracy
 
 CoupCast has demonstrated remarkable predictive power in identifying high-risk situations for coup attempts. Between 1975 and 2016, one-third of all coups occurred in countries with the top 5% forecasted coup risk, and half occurred in countries ranked in the top 10% of risk predictions. Perhaps most tellingly, only about one in fifteen coups happened in countries where CoupCast had forecasted below-average coup risk. This shows the model's ability to identify high-risk situations while minimizing false positives.
