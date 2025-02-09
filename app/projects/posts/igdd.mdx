@@ -1,0 +1,101 @@
+---
+title: 'Instagram Data Donation'
+publishedAt: '2022-08-08'
+summary: 'Summary about the MOSafely project.'
+---
+
+I studied online risk behaviors and automated detection approaches through the lens of machine learning with Pamela Wisniewski and various PhD students at Boston University and Georgia Tech. A key challenge lies in identifying and understanding how youth experience various online risks, particularly in private conversations, while developing computational methods to detect these risks at scale. The challenge is significant on social media platforms, where traditional content moderation methods may not sufficiently address the complex nature of risky behaviors in private messages.
+
+<Video src="/igdd/igdd_presentation.mp4" />
+
+## Current State of Risk Detection Research
+
+Our systematic review of cyberbullying detection algorithms revealed significant gaps in how researchers approach online risk detection. Most existing detection systems rely heavily on performance metrics without adequately considering the human elements of online risks. We found that while 82.1% of studies incorporated some form of aggression or hostility detection, only 44.6% believed the repetitive nature of harassment, and just 37.5% accounted for power imbalances between perpetrators and victims. This disconnect between theoretical understanding of online risks and computational approaches has led to detection systems that may achieve high accuracy scores but fail to capture the nuanced nature of real-world risk behaviors.
+
+The annotation and evaluation methods used in existing research also showed concerning trends. Over 78% of studies relied on external annotators or crowd workers to label training data, with only 12.5% involving domain experts and even fewer incorporating feedback from youth. This approach to ground truth development often failed to capture the subjective nature of online risks and the varying perspectives of different stakeholders involved in risk incidents.
+
+## Human-Centered Detection Challenges
+
+Through our analysis, we identified critical gaps in how detection systems incorporate human perspectives and experiences. Most existing research (80.4%) did not speculate about or evaluate how their detection models would be utilized in real-life scenarios. This lack of consideration for practical application and human impact suggests a significant disconnect between technical development and real-world needs.
+
+<Image 
+  src="/igdd/lit_review.png"
+  alt=""
+  width={800}
+  height={600}
+  caption="The boxes display the number of papers examined and retained during each search iteration, with the number of retained papers and the final total of examined papers highlighted in bold."
+/>
+
+We also found that when researchers considered stakeholder perspectives, they often focused narrowly on platform moderators or adult observers rather than the youth who experienced these risks. Only 3.6% of studies explicitly considered how their detection systems might support victims of online harassment, and very few papers discussed potential negative consequences or unintended impacts of automated detection systems on user behavior and platform dynamics.
+
+## Instagram Data Donation System
+
+To address the gaps identified in existing research, we developed the Instagram Data Donation (IGDD) system—a novel approach to collecting and analyzing private social media data while maintaining youth agency and privacy. We recruited participants aged 13-21 with active Instagram accounts who experienced at least two uncomfortable or unsafe interactions. This approach directly addressed the limitation of previous research that relied primarily on public data or adult interpretations of youth experiences.
+
+The system enabled participants to download their Instagram data, including private direct messages, and upload it through a secure web-based platform. Participants flagged conversations that made them uncomfortable or unsafe, providing ground truth labels based on their lived experiences. This self-annotation approach captured nuanced aspects of risk that external annotators might miss, such as context-dependent harassment or subtle forms of manipulation.
+
+## Technical Implementation and Security
+
+The IGDD system was built using a comprehensive technical stack designed to ensure data security and user privacy. For AWS infrastructure, we made use of:
+
+- RDS for secure database storage
+- EC2 for system components and backend processing
+- S3 for encrypted data storage
+- Lambda for automated data processing
+- SES for automated communication
+
+As for the security measures, the team made sure to:
+- All data transitions were encrypted using SSL
+- Database encryption at rest and in transit
+- Secure user authentication and access controls
+- Regular security audits and vulnerability assessments
+
+The system processed and analyzed multiple media files, including personal media files (images, videos, GIFs), Instagram platform media, and external media URLs and links. To ensure data quality and participant authenticity, we implemented extensive verification processes that incorporated comprehensive quality checks of uploaded data, verification of participant eligibility and engagement, and multiple stages of data validation.
+
+<Image 
+  src="/igdd/igdd_system.png"
+  alt=""
+  width={800}
+  height={600}
+  caption="Instagram Data Donation system architecture showing the flow from user data submission through AWS cloud processing and storage to the conversation flagging interface."
+/>
+
+## Methodological Approach and Results
+
+Our methodology carefully balanced research needs with ethical considerations and the well-being of participants. The study design incorporated a comprehensive risk categorization framework that allowed participants to flag conversations across multiple dimensions of concern. These categories included nudity and pornographic content, sexual messages or solicitations, harassment and threats, hate speech, violence or threats of violence, promotion of illegal activities, and content related to self-injury. This framework enabled participants to accurately describe their uncomfortable or unsafe experiences while providing structured data for analysis.
+
+To ensure the validity and reliability of our data collection, we implemented strict verification procedures throughout the study. These procedures included time-based checks to identify unrealistic response patterns, multiple attention verification questions embedded within the surveys, cross-validation of participant responses for consistency, and a thorough quality assessment of the uploaded Instagram data files. This multi-layered verification approach helped maintain data integrity while respecting participant privacy and agency. As a result, we successfully collected data from 100 verified participants representing a diverse range of demographic backgrounds.
+
+<Image 
+  src="/igdd/igdd_ui.png"
+  alt=""
+  width={800}
+  height={600}
+  caption="IGDD interface showing the conversation selection panel (left), risk level and type categorization options (center), and additional contextual information collection (right) for participant risk flagging."
+/>
+
+Analysis of the collected data revealed several significant patterns in how youth experience and navigate online risks. Notably, 13.13% of conversations (1,452 out of 11,062) were flagged as unsafe by participants. A behavioral pattern showed that participants were more likely to disengage from conversations they perceived as dangerous, suggesting an active risk management strategy among youth. We also observed distinct differences in risk patterns between public and private content, highlighting the importance of analyzing private messages to understand online risks fully. Moreover, participants often used screenshots as documentation when seeking support from friends, indicating the importance of peer support networks in managing online risks. These findings particularly emphasized the importance of incorporating youth perspectives in research design and risk detection systems, as their lived experiences often revealed nuanced patterns that traditional detection approaches might miss.
+
+## Aside: Testing Text Summarization Models
+
+While processing the large volume of conversation data from our Instagram study, a key challenge emerged around efficiently analyzing message content while preserving crucial contextual information about risk behaviors. This challenge led to an independent investigation comparing two leading text summarization algorithms, TextRank and LexRank, for their effectiveness in processing social media conversations.
+
+The study evaluated how well each algorithm could identify key sentences that signal risk while reducing the overall volume of text requiring manual review. We tested these approaches on a subset of 20 conversations from our dataset, with 10 containing unsafe content and 10 containing safe interactions. Our analysis revealed that both algorithms could effectively extract sentences containing keywords indicating whether a conversation was safe or dangerous. Particularly interesting was the finding that the summary outputs often contained contextual indicators of risk that simple keyword filtering approaches might miss.
+
+<Image 
+  src="/igdd/keywords.png"
+  alt=""
+  width={800}
+  height={600}
+  caption="A comparative analysis of LexRank and TextRank performance in safe conversation analysis with the graphs illustrating the relationship between the number of sentences processed and keywords detected."
+/>
+
+This methodological innovation proved especially valuable when dealing with longer conversation threads, where manual review of every message would be impractical. The summarization techniques enabled more efficient processing of conversation data while maintaining high sensitivity to risk indicators. These findings suggest that incorporating sophisticated text summarization approaches could significantly improve the scalability of risk detection systems while preserving crucial contextual information about how risks manifest in conversations.
+
+## Next Steps and Reflections
+
+Building on all these insights, several critical areas warrant further investigation: developing real-time risk detection methods that preserve privacy and user agency; exploring how risk behaviors and detection needs vary across different social platforms and cultural contexts; designing intervention strategies that support rather than supplant youth coping mechanisms; and conducting longitudinal studies to understand how risk patterns evolve. Vital research examines how automated detection systems might interact with existing social support networks and platform dynamics, ensuring that technical innovations enhance rather than disrupt the ways youth work to keep themselves safe online.
+
+These projects on adolescent online safety reveal the interplay between technological affordances and social dynamics in youth online experiences. While computational methods offer promising approaches for detecting and preventing online risks, our research highlights how these technical solutions must be grounded in understanding young people's lived experiences. The tension between protection and agency emerged as a central theme—youth actively navigate risks online, often developing sophisticated coping strategies that overly protective automated systems might disrupt.
+
+The research also surfaces essential questions about power dynamics in online safety research. Traditional approaches often position youth as subjects to be protected rather than agents who actively shape their online experiences. Our work demonstrates how incorporating youth perspectives improves the technical effectiveness of detection systems and challenges assumptions about how online risks manifest and are managed. The use of screenshots as evidence when seeking peer support, for instance, reveals how youth leverage platform affordances in ways that adult-centric research approaches might overlook.
