@@ -1,7 +1,7 @@
 ---
 title: 'Instagram Data Donation'
 publishedAt: '2022-08-08'
-summary: 'Summary about the MOSafely project.'
+summary: 'Summary about the IGDD project.'
 ---
 
 I studied online risk behaviors and automated detection approaches through the lens of machine learning with Pamela Wisniewski and various PhD students at Boston University and Georgia Tech. A key challenge lies in identifying and understanding how youth experience various online risks, particularly in private conversations, while developing computational methods to detect these risks at scale. The challenge is significant on social media platforms, where traditional content moderation methods may not sufficiently address the complex nature of risky behaviors in private messages.
@@ -38,17 +38,18 @@ The system enabled participants to download their Instagram data, including priv
 
 The IGDD system was built using a comprehensive technical stack designed to ensure data security and user privacy. For AWS infrastructure, we made use of:
 
-- RDS for secure database storage
-- EC2 for system components and backend processing
-- S3 for encrypted data storage
-- Lambda for automated data processing
-- SES for automated communication
+1. RDS for secure database storage
+2. EC2 for system components and backend processing
+3. S3 for encrypted data storage
+4. Lambda for automated data processing
+5. SES for automated communication
 
-As for the security measures, the team made sure to:
-- All data transitions were encrypted using SSL
-- Database encryption at rest and in transit
-- Secure user authentication and access controls
-- Regular security audits and vulnerability assessments
+As for the security of this system, the team ensured that the proper measures were taken:
+
+1. All data transitions were encrypted using SSL
+2. Database encryption at rest and in transit
+3. Secure user authentication and access controls
+4. Regular security audits and vulnerability assessments
 
 The system processed and analyzed multiple media files, including personal media files (images, videos, GIFs), Instagram platform media, and external media URLs and links. To ensure data quality and participant authenticity, we implemented extensive verification processes that incorporated comprehensive quality checks of uploaded data, verification of participant eligibility and engagement, and multiple stages of data validation.
 
@@ -57,7 +58,7 @@ The system processed and analyzed multiple media files, including personal media
   alt=""
   width={800}
   height={600}
-  caption="Instagram Data Donation system architecture showing the flow from user data submission through AWS cloud processing and storage to the conversation flagging interface."
+  caption="IGDD system architecture showing the flow from user data submission through AWS cloud processing and storage to the conversation flagging interface."
 />
 
 ## Methodological Approach and Results
@@ -76,7 +77,7 @@ To ensure the validity and reliability of our data collection, we implemented st
 
 Analysis of the collected data revealed several significant patterns in how youth experience and navigate online risks. Notably, 13.13% of conversations (1,452 out of 11,062) were flagged as unsafe by participants. A behavioral pattern showed that participants were more likely to disengage from conversations they perceived as dangerous, suggesting an active risk management strategy among youth. We also observed distinct differences in risk patterns between public and private content, highlighting the importance of analyzing private messages to understand online risks fully. Moreover, participants often used screenshots as documentation when seeking support from friends, indicating the importance of peer support networks in managing online risks. These findings particularly emphasized the importance of incorporating youth perspectives in research design and risk detection systems, as their lived experiences often revealed nuanced patterns that traditional detection approaches might miss.
 
-## Aside: Testing Text Summarization Models
+## Testing Text Summarization Models
 
 While processing the large volume of conversation data from our Instagram study, a key challenge emerged around efficiently analyzing message content while preserving crucial contextual information about risk behaviors. This challenge led to an independent investigation comparing two leading text summarization algorithms, TextRank and LexRank, for their effectiveness in processing social media conversations.
 
@@ -94,8 +95,12 @@ This methodological innovation proved especially valuable when dealing with long
 
 ## Next Steps and Reflections
 
-Building on all these insights, several critical areas warrant further investigation: developing real-time risk detection methods that preserve privacy and user agency; exploring how risk behaviors and detection needs vary across different social platforms and cultural contexts; designing intervention strategies that support rather than supplant youth coping mechanisms; and conducting longitudinal studies to understand how risk patterns evolve. Vital research examines how automated detection systems might interact with existing social support networks and platform dynamics, ensuring that technical innovations enhance rather than disrupt the ways youth work to keep themselves safe online.
+Building on all these insights, several critical areas warrant further investigation:
+1. Developing real-time risk detection methods that preserve privacy and user agency
+2. Exploring how risk behaviors and detection needs vary across different social platforms and cultural contexts
+3. Designing intervention strategies that support rather than supplant youth coping mechanisms
+4. Conducting longitudinal studies to understand how risk patterns evolve.
 
-These projects on adolescent online safety reveal the interplay between technological affordances and social dynamics in youth online experiences. While computational methods offer promising approaches for detecting and preventing online risks, our research highlights how these technical solutions must be grounded in understanding young people's lived experiences. The tension between protection and agency emerged as a central theme—youth actively navigate risks online, often developing sophisticated coping strategies that overly protective automated systems might disrupt.
+This research surfaces essential questions about power dynamics in online safety research. Traditional approaches often position youth as subjects to be protected rather than agents who actively shape their online experiences and our work demonstrates how incorporating youth perspectives improves the technical effectiveness of detection systems and challenges assumptions about how online risks manifest and are managed. The use of screenshots as evidence when seeking peer support, for instance, reveals how youth leverage platform affordances in ways that adult-centric research approaches might overlook.
 
-The research also surfaces essential questions about power dynamics in online safety research. Traditional approaches often position youth as subjects to be protected rather than agents who actively shape their online experiences. Our work demonstrates how incorporating youth perspectives improves the technical effectiveness of detection systems and challenges assumptions about how online risks manifest and are managed. The use of screenshots as evidence when seeking peer support, for instance, reveals how youth leverage platform affordances in ways that adult-centric research approaches might overlook.
+These projects on adolescent online safety highlight the interplay between technological affordances and social dynamics in youth online experiences. While computational methods offer promising approaches for detecting and preventing online risks, our research highlights how these technical solutions must be grounded in understanding young people's lived experiences. The tension between protection and agency emerged as a central theme—youth actively navigate risks online, often developing sophisticated coping strategies that overly protective automated systems might disrupt.
