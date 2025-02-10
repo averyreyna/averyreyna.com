@@ -1,5 +1,4 @@
 import React from 'react';
-import { ArrowIcon } from './arrow';
 
 interface Link {
   text: string;
@@ -36,7 +35,7 @@ const scholarship: Scholarship[] = [
     links: [
       { text: 'ACM DL Page', url: 'https://dl.acm.org/doi/10.1145/3597638.3614490' },
       { text: 'Paper', url: 'https://dl.acm.org/doi/10.1145/3597638.3614490' },
-      { text: 'Project', url: 'https://ceal.cs.columbia.edu/spatialinteractions/' }
+      { text: 'Project', url: 'https://ceal.cs.columbia.edu/spatialinteractions' }
     ]
   },
   {

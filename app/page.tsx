@@ -48,29 +48,61 @@ export default function Page() {
 
       <div className="mb-4">
         At the{' '}
-        <a href="https://www.ucf.edu/" target="_blank" className="underline transition-all decoration-neutral-400 dark:decoration-neutral-600 underline-offset-2">
+        <a 
+          href="https://www.ucf.edu/" 
+          target="_blank" 
+          className="underline transition-all decoration-neutral-400 dark:decoration-neutral-600 underline-offset-2"
+        >
           University of Central Florida
-        </a>, I helped teach{' '}
-        <a href="https://sciences.ucf.edu/sociology/ucf_section/ds-social/" target="_blank" className="underline transition-all decoration-neutral-400 dark:decoration-neutral-600 underline-offset-2">
-          Social Power and Inequality
-        </a>, directed the UX Research team at{' '}
-        <a href="https://github.com/knighthacks" target="_blank" className="underline transition-all decoration-neutral-400 dark:decoration-neutral-600 underline-offset-2">
+        </a>, I directed the UX Research team at{' '}
+        <a 
+          href="https://github.com/knighthacks" 
+          target="_blank" 
+          className="underline transition-all decoration-neutral-400 dark:decoration-neutral-600 underline-offset-2"
+        >
           Knight Hacks
-        </a>, and served on the{' '}
-        <a href="https://academicsuccess.ucf.edu/our/current/leadership-opportunities/" target="_blank" className="underline transition-all decoration-neutral-400 dark:decoration-neutral-600 underline-offset-2">
+        </a>, served on the{' '}
+        <a 
+          href="https://academicsuccess.ucf.edu/our/current/leadership-opportunities/" 
+          target="_blank" 
+          className="underline transition-all decoration-neutral-400 dark:decoration-neutral-600 underline-offset-2"
+        >
           Student Undergraduate Research Council
+        </a>, and helped teach{' '}
+        <a 
+          href="https://sciences.ucf.edu/sociology/ucf_section/ds-social/" 
+          target="_blank" 
+          className="underline transition-all decoration-neutral-400 dark:decoration-neutral-600 underline-offset-2"
+        >
+          Social Power and Inequality
         </a>. When I wasn't on campus, I spent my summers working with{' '}
-        <a href="https://ceoas.oregonstate.edu/directory/jim-thatcher" target="_blank" className="underline transition-all decoration-neutral-400 dark:decoration-neutral-600 underline-offset-2">
-          Jim Thatcher
-        </a> at the{' '}
-        <a href="https://www.washington.edu/" target="_blank" className="underline transition-all decoration-neutral-400 dark:decoration-neutral-600 underline-offset-2">
-          University of Washington
-        </a> and{' '}
-        <a href="https://www.engineering.columbia.edu/faculty-staff/directory/brian-smith" target="_blank" className="underline transition-all decoration-neutral-400 dark:decoration-neutral-600 underline-offset-2">
+        <a 
+          href="https://www.engineering.columbia.edu/faculty-staff/directory/brian-smith" 
+          target="_blank" 
+          className="underline transition-all decoration-neutral-400 dark:decoration-neutral-600 underline-offset-2"
+        >
           Brian Smith
         </a> at{' '}
-        <a href="https://www.columbia.edu/" target="_blank" className="underline transition-all decoration-neutral-400 dark:decoration-neutral-600 underline-offset-2">
+        <a 
+          href="https://www.columbia.edu/" 
+          target="_blank" 
+          className="underline transition-all decoration-neutral-400 dark:decoration-neutral-600 underline-offset-2"
+        >
           Columbia University
+        </a> and{' '}
+        <a 
+          href="https://ceoas.oregonstate.edu/directory/jim-thatcher" 
+          target="_blank" 
+          className="underline transition-all decoration-neutral-400 dark:decoration-neutral-600 underline-offset-2"
+        >
+          Jim Thatcher
+        </a> at the{' '}
+        <a 
+          href="https://www.washington.edu/" 
+          target="_blank" 
+          className="underline transition-all decoration-neutral-400 dark:decoration-neutral-600 underline-offset-2"
+        >
+          University of Washington
         </a>.
       </div>
 
@@ -87,7 +119,7 @@ export default function Page() {
         </a>, and various{' '}
         <a href="https://researchweek.ucf.edu/" target="_blank" className="underline transition-all decoration-neutral-400 dark:decoration-neutral-600 underline-offset-2">
           showcases
-        </a> at my undergradute institution.
+        </a> at my undergraduate institution.
       </div>
 
       <h2 className="mb-4 text-2xl font-semibold tracking-tighter">

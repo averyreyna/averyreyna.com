@@ -1,0 +1,141 @@
+---
+title: 'Putting Mapper on a Map'
+publishedAt: '2021-08-25'
+summary: 'Summary about the Mapper project.'
+---
+
+I studied electoral disctricting through the lens of computational topology with Jim Thatcher during my time at the University of Washington. As districts are drawn and redrawn, a key challenge lies in identifying and preserving "communities of interest" or groups of people who share common social, economic, cultural, or other characteristics that suggest they should be represented together. The challenge is acute in areas with complex demographic patterns, where traditional geographic boundaries may not align with community boundaries. We explored a novel approach to detecting these communities using topological data analysis, specifically through an algorithm called Mapper.
+
+<Video src="/putting_mapper_on_a_map/mapper_presentation.mp4" />
+
+## Previous Approaches
+
+In recent years, the challenge of identifying communities of interest has been approached from multiple angles. Geographic information systems have been used extensively to analyze spatial patterns in demographic data, though these approaches often struggle to capture non-spatial relationships between communities. Social network analysis has offered insights into community formation and interaction patterns, particularly in urban environments. Still, it can be challenging to apply to electoral districting due to data privacy concerns and scale limitations.
+
+Recent work in computational topology has shown promise in analyzing voting patterns and detecting gerrymandering through techniques like persistent homology. These methods have demonstrated particular utility in identifying unusual district shapes and analyzing the stability of various district plans. Meanwhile, advances in machine learning have enabled more sophisticated analysis of demographic patterns, though these approaches often lack the interpretability needed for legal and policy applications.
+
+Legal scholarship has also contributed significantly to understanding communities of interest, mainly by analyzing court cases and legislative requirements. This work has highlighted the tension between various districting criteria and the challenge of balancing competing interests in the districting process.
+
+## The Promise of Topology
+
+Communities of interest (COI) have become increasingly central to electoral districting across the United States. Twenty-seven states now include preserving these communities in their criteria for districting, though precise definitions vary significantly. California's constitution provides one of the clearest frameworks, describing COIs as contiguous populations sharing common social and economic interests that warrant unified representation. However, identifying these communities poses significant challenges. Traditional approaches rely heavily on geographic proximity or simple demographic overlays, potentially missing critical socioeconomic patterns that cross spatial boundaries. This is where topological data analysis offers a novel perspective.
+
+At its core, Mapper functions as a lens for viewing complex data. Just as a microscope can reveal cellular structures invisible to the naked eye, Mapper helps visualize relationships and patterns in high-dimensional data that might otherwise remain hidden. The algorithm transforms data points into a network structure where nodes represent groups of similar data points, and connections between nodes indicate overlap. In the context of electoral districting, this approach offers an intriguing possibility: Could Mapper detect meaningful communities that traditional clustering methods miss? To explore this question, we focused our analysis on Mecklenburg County, North Carolina, a region with a rich history of redistricting challenges and demographic complexity.
+
+<Image 
+  src="/putting_mapper_on_a_map/intervals.png"
+  alt=""
+  width={800}
+  height={600}
+  caption="A visualization of the Mapper pipeline, showing the original data distribution (left), selection of a single cover element (middle), and the complete system of overlapping covers that form the basis for clustering (right)."
+/>
+
+## Mecklenburg County
+
+Mecklenburg County presents an ideal testing ground for this approach. Home to Charlotte, the state's most populous city, the county exhibits significant demographic and socioeconomic diversity across its neighborhoods. The county has also figured prominently in several high-profile Supreme Court cases regarding districting, including Cooper v. Harris and Rucho v. Common Cause. It is particularly relevant for studying how computational methods inform the districting process. Our analysis drew from American Community Survey (ACS) data at the census block group level, focusing on 11 key variables that could indicate potential communities of interest:
+
+1. Educational attainment (no high school diploma)
+2. Employment in most common industries
+3. SNAP enrollment
+4. White collar occupations
+5. English language proficiency
+6. Presence of minors in households
+7. Income levels (below 20th percentile)
+8. Housing tenure (renting vs. owning)
+9. Racial composition
+10. Housing cost burden
+11. Rural vs. urban classification
+
+## Methodological Innovation and Stability Analysis
+
+A key question in applying any new methodology is its stability—how much do the results change with slight parameter adjustments? Our investigation of Mapper's stability revealed several important insights. The implementation of Mapper required careful consideration of several parameters that could significantly affect the results:
+
+1. **Filter Function**: We employed truncated singular value decomposition (TSVD) to reduce the dimensionality of our data while preserving key relationships
+2. **Overlap**: Testing revealed that a 50% overlap between cover elements produced the most stable and interpretable results
+3. **Intervals**: We experimented with various numbers of intervals (3-9) in the cover
+4. **Clustering**: Single linkage clustering proved most effective for our purposes
+
+Our stability analysis revealed that nodes remained relatively consistent across small changes in overlap parameters, mainly when using TSVD with two components. This stability stemmed from the clustering algorithm's limited influence over node formation—changing overlap parameters merely shifted cover locations slightly, resulting in minimal changes to node contents. The results also showed reasonable stability when switching between single linkage and complete linkage clustering methods, though complete linkage produced fewer singleton nodes while maintaining the stability of larger groupings.
+
+<Image 
+  src="/putting_mapper_on_a_map/mapper_output.png"
+  alt=""
+  width={800}
+  height={600}
+  caption="The Mapper graph visualizing three key clusters of demographic patterns in Mecklenburg County, with node size showing number of block groups and color indicating socioeconomic status."
+/>
+
+However, stability decreased notably when the number of intervals was changed, primarily due to geometric considerations. This sensitivity to interval count suggests the importance of careful parameter selection based on the specific characteristics of the dataset being analyzed. One of the key innovations in our approach was the use of standardized data, which helped prevent variables with more significant variances from dominating the analysis. This standardization shifted emphasis toward variables like educational attainment and SNAP enrollment, providing a more balanced view of community characteristics.
+
+## Key Findings and Pattern Analysis
+
+Throughout multiple runs with varying parameters, specific patterns emerged consistently. Two nodes in particular, which we'll call Nodes 25 and 26, appeared repeatedly across different parameter settings. These nodes represented outliers along the first SVD component and showed significant overlap due to their origin in various covers. The persistence of these patterns across different parameter settings suggested we had identified genuinely distinct communities rather than artifacts of our methodology. Our analysis ultimately revealed three distinct clusters that warrant particular attention:
+
+### Cluster #1: Lower Education and Wealth Communities
+
+This cluster, comprising 135 block groups with roughly 226,000 residents, showed significantly higher proportions of SNAP enrollment, lower income levels, and lower educational attainment than county averages. Although it appeared relatively contiguous geographically, it was split across multiple districts in the 2011 and 2019 districting plans.
+
+<Image 
+  src="/putting_mapper_on_a_map/cluster_one.png"
+  alt=""
+  width={800}
+  height={600}
+  caption="Geographic distribution of Cluster 1 block groups overlaid on three iterations of district maps with the 2011 enacted plan, 2018 court-ordered plan, and 2019 enacted plan."
+/>
+
+### Cluster #2: Immigrant Families
+
+Consisting of 36 block groups with approximately 84,000 residents, this cluster showed distinctive characteristics regarding English language proficiency and the presence of children. These communities appeared more dispersed throughout the county, raising questions about whether geographic dispersion should preclude consideration as a community of interest.
+
+<Image 
+  src="/putting_mapper_on_a_map/cluster_two.png"
+  alt=""
+  width={800}
+  height={600}
+  caption="Geographic distribution of Cluster 2 block groups overlaid on three iterations of district maps with the 2011 enacted plan, 2018 court-ordered plan, and 2019 enacted plan."
+/>
+
+### Cluster #3: Affluent Suburban Families
+
+This smaller cluster of 21 block groups (roughly 55,000 residents) showed high rates of homeownership, white-collar employment, and the presence of children. While primarily located in suburban areas, the cluster appeared in distinct geographic groupings, challenging traditional notions of community contiguity.
+
+<Image 
+  src="/putting_mapper_on_a_map/cluster_three.png"
+  alt=""
+  width={800}
+  height={600}
+  caption="Geographic distribution of Cluster 3 block groups overlaid on three iterations of district maps with the 2011 enacted plan, 2018 court-ordered plan, and 2019 enacted plan."
+/>
+
+## The Role of SVD in Community Detection
+
+Our investigation revealed that Singular Value Decomposition (SVD) was crucial in Mapper's effectiveness. When using TSVD with two components and a relative gap of 0.3, covers typically form single nodes with occasional singletons. With one component and smaller gap sizes, covers are frequently split into multiple clusters. This pattern suggested that while SVD did much of the heavy lifting in identifying communities, the combination with hierarchical clustering provided additional insights into sub-communities that might be missed by dimensional reduction alone.
+
+One of the most striking findings emerged when comparing Mapper's results with traditional hierarchical clustering approaches. While hierarchical clustering struggled to identify cohesive communities, remarkably those dispersed geographically, Mapper successfully detected meaningful groupings that shared common characteristics despite spatial separation. This advantage stems from Mapper's fundamental approach: rather than forcing every point into precisely one cluster, it allows for overlapping communities and captures gradual transitions between different groups. This better reflects the reality of how communities form and interact.
+
+## Implications for Districting
+
+The application of Mapper to electoral districting reveals several promising capabilities that set it apart from traditional approaches. Its ability to detect subtle community patterns that conventional clustering methods often miss provides a new lens for understanding social and demographic relationships. The technique identifies overlapping communities, moving beyond the rigid boundaries typical of most districting approaches. This flexibility proves particularly valuable for highlighting historically marginalized communities that traditional methods might overlook, as these communities often exist within and across conventional geographic boundaries.
+
+However, significant challenges emerge when translating Mapper's insights into practical districting plans. The communities identified through this method often show geographic dispersion that conflicts with legal requirements for district contiguity. Additionally, the detected communities frequently fail to align with practical districting constraints - some are too large to fit within a single district. At the same time, others are too small to influence district boundaries significantly. Perhaps most challenging is balancing these newly identified communities against other crucial districting criteria, such as population equality and compactness, while preserving the social connections Mapper reveals.
+
+## Limitations and Historical Context
+
+The historical context of our study area presented both opportunities and challenges. Charlotte's complex history of segregation and urban development, including the use of highway systems to reorganize communities and practices like blockbusting, created deeply entrenched patterns in its demographic landscape. While this history made Mecklenburg County an ideal case study for detecting marginalized communities, it also complicated the interpretation of our results. Many patterns of inequality and separation are so deeply embedded in the urban fabric that is distinguishing between meaningful communities, and artifacts of historical discrimination require careful consideration.
+
+## Future Directions
+
+While our initial results show promise, several avenues for future research emerge:
+
+1. **Variable Selection**: Testing alternative variables less directly tied to socioeconomic status could reveal different types of communities. Geographic features or population dynamics might offer new insights while avoiding reinforcing existing socioeconomic patterns.
+2. **Geographic Integration**: Developing methods to better incorporate geographic constraints while preserving Mapper's ability to detect non-contiguous communities. Initial attempts to incorporate distance metrics into the clustering process showed limited impact, suggesting more sophisticated approaches were needed.
+3. **Validation**: Incorporating qualitative research to verify whether detected communities align with residents' lived experiences. This is particularly crucial given the complex relationship between statistical patterns and community identity.
+4. **Scaling**: Exploring applications to larger geographic areas and different political contexts. Current implementations face computational challenges with larger datasets, particularly in maintaining population balance across potential districts.
+5. **Alternative Approaches**: Investigating methods like the Traveling Salesman Problem for achieving better population balance, though potentially at the cost of maintaining demographic similarity.
+6. **Political Context Analysis**: Exploring applications in more politically diverse regions where the relationship between community detection and political representation might be more complex than in predominantly Democratic urban areas.
+
+## Closing Thoughts
+
+There are imaginary lines that shape our democratic experience—lines that determine who represents us, what laws govern us, and which communities we officially belong to. But communities, in their truest sense, rarely conform to these neat geometric boundaries. They flow across street lines, weave through neighborhoods, and sometimes stretch across entire cities. Our work with Mapper reveals both the promise and challenge of trying to capture these organic social patterns within the rigid framework of electoral districts.
+
+As we move forward in the endless cycle of redistricting, perhaps the most valuable contribution of this work is not in providing definitive answers but in expanding our conception of what communities can be. By revealing complex patterns of connection and overlap, we encourage a more nuanced approach to preserving communities of interest—one that recognizes the fundamental tension between the clean lines we draw on maps and the messy reality of human social bonds they attempt to contain.
