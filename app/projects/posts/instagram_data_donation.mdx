@@ -6,7 +6,7 @@ summary: 'Summary about the IGDD project.'
 
 I studied online risk behaviors and automated detection approaches through the lens of machine learning with Pamela Wisniewski and various PhD students at Boston University and Georgia Tech. A key challenge lies in identifying and understanding how youth experience various online risks, particularly in private conversations, while developing computational methods to detect these risks at scale. The challenge is significant on social media platforms, where traditional content moderation methods may not sufficiently address the complex nature of risky behaviors in private messages.
 
-<Video src="/igdd/igdd_presentation.mp4" />
+<Video src="/instagram_data_donation/igdd_presentation.mp4" />
 
 ## Current State of Risk Detection Research
 
@@ -19,7 +19,7 @@ The annotation and evaluation methods used in existing research also showed conc
 Through our analysis, we identified critical gaps in how detection systems incorporate human perspectives and experiences. Most existing research (80.4%) did not speculate about or evaluate how their detection models would be utilized in real-life scenarios. This lack of consideration for practical application and human impact suggests a significant disconnect between technical development and real-world needs.
 
 <Image 
-  src="/igdd/lit_review.png"
+  src="/instagram_data_donation/lit_review.png"
   alt=""
   width={800}
   height={600}
@@ -46,15 +46,15 @@ The IGDD system was built using a comprehensive technical stack designed to ensu
 
 As for the security of this system, the team ensured that the proper measures were taken:
 
-1. All data transitions were encrypted using SSL
-2. Database encryption at rest and in transit
-3. Secure user authentication and access controls
-4. Regular security audits and vulnerability assessments
+1. All data transitions were encrypted using SSL.
+2. Database encryption at rest and in transit.
+3. Secure user authentication and access controls.
+4. Regular security audits and vulnerability assessments.
 
-The system processed and analyzed multiple media files, including personal media files (images, videos, GIFs), Instagram platform media, and external media URLs and links. To ensure data quality and participant authenticity, we implemented extensive verification processes that incorporated comprehensive quality checks of uploaded data, verification of participant eligibility and engagement, and multiple stages of data validation.
+The system processed and analyzed multiple media files, including personal media files (images, videos, and GIFs), Instagram platform media, and external media URLs and links. To ensure data quality and participant authenticity, we implemented extensive verification processes that incorporated comprehensive quality checks of uploaded data, verification of participant eligibility and engagement, and multiple stages of data validation.
 
 <Image 
-  src="/igdd/igdd_system.png"
+  src="/instagram_data_donation/igdd_system.png"
   alt=""
   width={800}
   height={600}
@@ -68,7 +68,7 @@ Our methodology carefully balanced research needs with ethical considerations an
 To ensure the validity and reliability of our data collection, we implemented strict verification procedures throughout the study. These procedures included time-based checks to identify unrealistic response patterns, multiple attention verification questions embedded within the surveys, cross-validation of participant responses for consistency, and a thorough quality assessment of the uploaded Instagram data files. This multi-layered verification approach helped maintain data integrity while respecting participant privacy and agency. As a result, we successfully collected data from 100 verified participants representing a diverse range of demographic backgrounds.
 
 <Image 
-  src="/igdd/igdd_ui.png"
+  src="/instagram_data_donation/igdd_ui.png"
   alt=""
   width={800}
   height={600}
@@ -84,11 +84,11 @@ While processing the large volume of conversation data from our Instagram study,
 The study evaluated how well each algorithm could identify key sentences that signal risk while reducing the overall volume of text requiring manual review. We tested these approaches on a subset of 20 conversations from our dataset, with 10 containing unsafe content and 10 containing safe interactions. Our analysis revealed that both algorithms could effectively extract sentences containing keywords indicating whether a conversation was safe or dangerous. Particularly interesting was the finding that the summary outputs often contained contextual indicators of risk that simple keyword filtering approaches might miss.
 
 <Image 
-  src="/igdd/keywords.png"
+  src="/instagram_data_donation/lexrank_keywords.png"
   alt=""
   width={800}
   height={600}
-  caption="A comparative analysis of LexRank and TextRank performance in safe conversation analysis with the graphs illustrating the relationship between the number of sentences processed and keywords detected."
+  caption="LexRank algorithm's detection of safe keywords increases from 1 to 8 keywords as analyzed sentences grow from 1 to 10, with significant jumps at 4 and 8 sentences."
 />
 
 This methodological innovation proved especially valuable when dealing with longer conversation threads, where manual review of every message would be impractical. The summarization techniques enabled more efficient processing of conversation data while maintaining high sensitivity to risk indicators. These findings suggest that incorporating sophisticated text summarization approaches could significantly improve the scalability of risk detection systems while preserving crucial contextual information about how risks manifest in conversations.
@@ -96,11 +96,12 @@ This methodological innovation proved especially valuable when dealing with long
 ## Next Steps and Reflections
 
 Building on all these insights, several critical areas warrant further investigation:
-1. Developing real-time risk detection methods that preserve privacy and user agency
-2. Exploring how risk behaviors and detection needs vary across different social platforms and cultural contexts
-3. Designing intervention strategies that support rather than supplant youth coping mechanisms
+
+1. Developing real-time risk detection methods that preserve privacy and user agency.
+2. Exploring how risk behaviors and detection needs vary across different social platforms and cultural contexts.
+3. Designing intervention strategies that support rather than supplant youth coping mechanisms.
 4. Conducting longitudinal studies to understand how risk patterns evolve.
 
-This research surfaces essential questions about power dynamics in online safety research. Traditional approaches often position youth as subjects to be protected rather than agents who actively shape their online experiences and our work demonstrates how incorporating youth perspectives improves the technical effectiveness of detection systems and challenges assumptions about how online risks manifest and are managed. The use of screenshots as evidence when seeking peer support, for instance, reveals how youth leverage platform affordances in ways that adult-centric research approaches might overlook.
+This research surfaces essential questions about power dynamics in online safety research. Traditional approaches often position youth as subjects to be protected rather than agents who actively shape their online experiences and our work demonstrates how incorporating youth perspectives improves the technical effectiveness of detection systems and challenges assumptions about how online risks manifest and are managed. The use of screenshots as evidence when seeking peer support, for instance, reveals how youth leverage platform affordances in ways that adult-centric research approaches overlook.
 
-These projects on adolescent online safety highlight the interplay between technological affordances and social dynamics in youth online experiences. While computational methods offer promising approaches for detecting and preventing online risks, our research highlights how these technical solutions must be grounded in understanding young people's lived experiences. The tension between protection and agency emerged as a central theme—youth actively navigate risks online, often developing sophisticated coping strategies that overly protective automated systems might disrupt.
+These projects on adolescent online safety highlight the interplay between technological affordances and social dynamics in youth online experiences. While computational methods offer promising approaches for detecting and preventing online risks, our research highlights how these technical solutions must be grounded in understanding young people's lived experiences. The tension between protection and agency emerged as a central theme, where youth actively navigate risks online, often developing sophisticated coping strategies that overly protective automated systems might disrupt.

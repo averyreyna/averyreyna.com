@@ -1,12 +1,12 @@
 ---
-title: 'Mappering Communities of Interest'
+title: 'Putting Mapper on a Map'
 publishedAt: '2021-08-25'
 summary: 'Summary about the Mapper project.'
 ---
 
 I studied electoral disctricting through the lens of computational topology with Jim Thatcher during my time at the University of Washington. As districts are drawn and redrawn, a key challenge lies in identifying and preserving "communities of interest" or groups of people who share common social, economic, cultural, or other characteristics that suggest they should be represented together. The challenge is acute in areas with complex demographic patterns, where traditional geographic boundaries may not align with community boundaries. We explored a novel approach to detecting these communities using topological data analysis, specifically through an algorithm called Mapper.
 
-<Video src="/mappering_coi/mapper_presentation.mp4" />
+<Video src="/putting_mapper_on_a_map/mapper_presentation.mp4" />
 
 ## Previous Approaches
 
@@ -23,7 +23,7 @@ Communities of interest (COI) have become increasingly central to electoral dist
 At its core, Mapper functions as a lens for viewing complex data. Just as a microscope can reveal cellular structures invisible to the naked eye, Mapper helps visualize relationships and patterns in high-dimensional data that might otherwise remain hidden. The algorithm transforms data points into a network structure where nodes represent groups of similar data points, and connections between nodes indicate overlap. In the context of electoral districting, this approach offers an intriguing possibility: Could Mapper detect meaningful communities that traditional clustering methods miss? To explore this question, we focused our analysis on Mecklenburg County, North Carolina, a region with a rich history of redistricting challenges and demographic complexity.
 
 <Image 
-  src="/mappering_coi/intervals.png"
+  src="/putting_mapper_on_a_map/intervals.png"
   alt=""
   width={800}
   height={600}
@@ -58,7 +58,7 @@ A key question in applying any new methodology is its stability—how much do th
 Our stability analysis revealed that nodes remained relatively consistent across small changes in overlap parameters, mainly when using TSVD with two components. This stability stemmed from the clustering algorithm's limited influence over node formation—changing overlap parameters merely shifted cover locations slightly, resulting in minimal changes to node contents. The results also showed reasonable stability when switching between single linkage and complete linkage clustering methods, though complete linkage produced fewer singleton nodes while maintaining the stability of larger groupings.
 
 <Image 
-  src="/mappering_coi/mapper_output.png"
+  src="/putting_mapper_on_a_map/mapper_output.png"
   alt=""
   width={800}
   height={600}
@@ -76,7 +76,7 @@ Throughout multiple runs with varying parameters, specific patterns emerged cons
 This cluster, comprising 135 block groups with roughly 226,000 residents, showed significantly higher proportions of SNAP enrollment, lower income levels, and lower educational attainment than county averages. Although it appeared relatively contiguous geographically, it was split across multiple districts in the 2011 and 2019 districting plans.
 
 <Image 
-  src="/mappering_coi/cluster_one.png"
+  src="/putting_mapper_on_a_map/cluster_one.png"
   alt=""
   width={800}
   height={600}
@@ -88,7 +88,7 @@ This cluster, comprising 135 block groups with roughly 226,000 residents, showed
 Consisting of 36 block groups with approximately 84,000 residents, this cluster showed distinctive characteristics regarding English language proficiency and the presence of children. These communities appeared more dispersed throughout the county, raising questions about whether geographic dispersion should preclude consideration as a community of interest.
 
 <Image 
-  src="/mappering_coi/cluster_two.png"
+  src="/putting_mapper_on_a_map/cluster_two.png"
   alt=""
   width={800}
   height={600}
@@ -100,7 +100,7 @@ Consisting of 36 block groups with approximately 84,000 residents, this cluster 
 This smaller cluster of 21 block groups (roughly 55,000 residents) showed high rates of homeownership, white-collar employment, and the presence of children. While primarily located in suburban areas, the cluster appeared in distinct geographic groupings, challenging traditional notions of community contiguity.
 
 <Image 
-  src="/mappering_coi/cluster_three.png"
+  src="/putting_mapper_on_a_map/cluster_three.png"
   alt=""
   width={800}
   height={600}
@@ -136,6 +136,6 @@ While our initial results show promise, several avenues for future research emer
 
 ## Closing Thoughts
 
-There are imaginary lines that shape our democratic experience - lines that determine who represents us, what laws govern us, and which communities we officially belong to. But communities, in their truest sense, rarely conform to these neat geometric boundaries. They flow across street lines, weave through neighborhoods, and sometimes stretch across entire cities. Our work with Mapper reveals both the promise and challenge of trying to capture these organic social patterns within the rigid framework of electoral districts.
+There are imaginary lines that shape our democratic experience—lines that determine who represents us, what laws govern us, and which communities we officially belong to. But communities, in their truest sense, rarely conform to these neat geometric boundaries. They flow across street lines, weave through neighborhoods, and sometimes stretch across entire cities. Our work with Mapper reveals both the promise and challenge of trying to capture these organic social patterns within the rigid framework of electoral districts.
 
 As we move forward in the endless cycle of redistricting, perhaps the most valuable contribution of this work is not in providing definitive answers but in expanding our conception of what communities can be. By revealing complex patterns of connection and overlap, we encourage a more nuanced approach to preserving communities of interest—one that recognizes the fundamental tension between the clean lines we draw on maps and the messy reality of human social bonds they attempt to contain.

@@ -47,14 +47,14 @@ function CustomLink(props) {
 function RoundedImage({ caption, ...props }) {
   return (
     <figure className="my-8 mx-auto max-w-xl">
-      <div className="overflow-hidden border border-gray-200 dark:border-gray-800 bg-gray-50 dark:bg-gray-900 p-2">
+      <div className="overflow-hidden border border-gray-200 dark:border-gray-800 bg-neutral-100 dark:bg-neutral-800 p-2">
         <Image 
           src={''} alt={''} className="w-full h-auto object-cover"
           {...props}        
         />
       </div>
       {caption && (
-        <figcaption className="mt-2 text-sm text-center text-gray-600 dark:text-gray-400">
+        <figcaption className="mt-2 text-sm text-center text-neutral-600 dark:text-neutral-400">
           {caption}
         </figcaption>
       )}
@@ -65,7 +65,7 @@ function RoundedImage({ caption, ...props }) {
 function RoundedVideo({ caption, src, ...props }) {
   return (
     <figure className="my-8 mx-auto max-w-xl">
-      <div className="overflow-hidden border border-gray-200 dark:border-gray-800 bg-gray-50 dark:bg-gray-900 p-2">
+      <div className="overflow-hidden border border-gray-200 dark:border-gray-800 bg-neutral-100 dark:bg-neutral-800 p-2">
         <video
           className="w-full h-auto"
           controls
@@ -77,7 +77,7 @@ function RoundedVideo({ caption, src, ...props }) {
         </video>
       </div>
       {caption && (
-        <figcaption className="mt-2 text-sm text-center text-gray-600 dark:text-gray-400">
+        <figcaption className="mt-2 text-sm text-center text-neutral-600 dark:text-neutral-400">
           {caption}
         </figcaption>
       )}
@@ -88,7 +88,7 @@ function RoundedVideo({ caption, src, ...props }) {
 function RoundedGif({ caption, src, ...props }) {
   return (
     <figure className="my-8 mx-auto max-w-xl">
-      <div className="overflow-hidden border border-gray-200 dark:border-gray-800 bg-gray-50 dark:bg-gray-900 p-2">
+      <div className="overflow-hidden border border-gray-200 dark:border-gray-800 bg-neutral-100 dark:bg-neutral-800 p-2">
         <img
           src={src}
           className="w-full h-auto"
@@ -96,7 +96,7 @@ function RoundedGif({ caption, src, ...props }) {
         />
       </div>
       {caption && (
-        <figcaption className="mt-2 text-sm text-center text-gray-600 dark:text-gray-400">
+        <figcaption className="mt-2 text-sm text-center text-neutral-600 dark:text-neutral-400">
           {caption}
         </figcaption>
       )}

@@ -4,9 +4,7 @@ publishedAt: '2023-05-15'
 summary: 'Summary about the CoupCast project.'
 ---
 
-CoupCast is an innovative early warning system I maintained with Jonathan Powell and Clayton Besaw that uses machine learning to forecast the risk of coups worldwide. The project transforms our understanding of political risk assessment by leveraging advanced random forest models to analyze historical patterns and identify key risk factors contributing to political instability.
-
-At its core, CoupCast functions as a political weather forecast. Just as meteorologists combine historical weather patterns with current conditions to predict tomorrow's weather, CoupCast combines decades of political data with current situations to forecast potential instability. The system generates monthly estimates of coup risk for every country worldwide, analyzing long-term structural conditions and immediate triggers that might spark a coup.
+CoupCast is an innovative early warning system I maintained with Jonathan Powell and Clayton Besaw that uses machine learning to forecast the risk of coups worldwide. The project transforms our understanding of political risk assessment by leveraging advanced random forest models to analyze historical patterns and identify key risk factors contributing to political instability. At its core, CoupCast functions as a political weather forecast. Just as meteorologists combine historical weather patterns with current conditions to predict tomorrow's weather, CoupCast combines decades of political data with current situations to forecast potential instability. The system generates monthly estimates of coup risk for every country worldwide, analyzing long-term structural conditions and immediate triggers that might spark a coup.
 
 ## The REIGN Dataset
 
@@ -58,7 +56,7 @@ The complementary log-log function is critical to the model's success. Unlike tr
   alt=""
   width={800}
   height={600}
-  caption="The dashed line shows the logit function and the solid line is the the complementary log-log function—note that its asymmetry allows it to give very low values over a larger range."
+  caption="The dashed line shows the logit function and the solid line is the complementary log-log function—note that its asymmetry allows it to give very low values over a larger range."
 />
 
 CoupCast employs sophisticated data processing techniques to handle multiple types of predictor variables. The system uses linear and non-linear transformations for continuous variables like economic indicators to capture complex relationships. GDP data, for instance, undergoes logarithmic transformation to account for diminishing marginal effects, while population data is modeled with linear and squared terms to capture curvilinear relationships.
@@ -69,11 +67,11 @@ The system models regional coup contagion through a population-weighted approach
 
 CoupCast has demonstrated remarkable predictive power in identifying high-risk situations for coup attempts. Between 1975 and 2016, one-third of all coups occurred in countries with the top 5% forecasted coup risk, and half occurred in countries ranked in the top 10% of risk predictions. Perhaps most tellingly, only about one in fifteen coups happened in countries where CoupCast had forecasted below-average coup risk. This shows the model's ability to identify high-risk situations while minimizing false positives.
 
-When examining the highest-risk scenarios, the model's predictive capabilities become even more impressive. For leader-months that fall above the 99th percentile of risk, CoupCast calculated approximately a 3% chance of a coup occurring within that month - making these situations about 11 times more likely to experience a coup than the average case. In the most extreme risk category (above the 99.9th percentile), the monthly coup probability rose to nearly 9%, representing a 32.8-fold increase in coup likelihood compared to typical conditions. However, it's important to note that even in these highest-risk scenarios, the model remains probabilistic rather than deterministic—even when conditions are most favorable for a coup, the vast majority of high-risk months still pass without an attempt.
+When examining the highest-risk scenarios, the model's predictive capabilities become even more impressive. For leader-months that fall above the 99th percentile of risk, CoupCast calculated approximately a 3% chance of a coup occurring within that month, making these situations about 11 times more likely to experience a coup than the average case. In the most extreme risk category (above the 99.9th percentile), the monthly coup probability rose to nearly 9%, representing a 32.8-fold increase in coup likelihood compared to typical conditions. However, it's important to note that even in these highest-risk scenarios, the model remains probabilistic rather than deterministic even when conditions are most favorable for a coup, the vast majority of high-risk months still pass without an attempt.
 
 ## CoupCast's Recent Predictions in Mali
 
-The predictive power of CoupCast was particularly evident in our analysis of Mali during 2021-2022. The system identified Mali as having the second-highest coup risk globally, behind only Sudan. This assessment wasn't merely theoretical, but based on a complex web of interconnected factors that the system identified and analyzed.
+The predictive power of CoupCast was particularly evident in our analysis of Mali during 2021 to 2022. The system identified Mali as having the second-highest coup risk globally, behind only Sudan. This assessment wasn't merely theoretical, but based on a complex web of interconnected factors that the system identified and analyzed.
 
 <Image 
   src="/coupcast/mali_coup_data.png"
