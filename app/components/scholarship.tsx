@@ -1,4 +1,5 @@
 import React from 'react';
+import { ArrowRight } from 'lucide-react';
 
 interface Link {
   text: string;
@@ -135,11 +136,12 @@ export default function Scholarship() {
                       <a
                         key={index}
                         href={link.url}
-                        className="inline-flex items-center text-xs px-2 py-0.5 rounded-full bg-neutral-100 dark:bg-neutral-800 text-neutral-600 dark:text-neutral-400 [@media(hover:hover)]:hover:bg-neutral-200 [@media(hover:hover)]:dark:hover:bg-neutral-700 transition-all"
+                        className="inline-flex items-center text-sm text-neutral-600 dark:text-neutral-400 [@media(hover:hover)]:hover:text-neutral-900 [@media(hover:hover)]:dark:hover:text-neutral-100 [@media(hover:none)]:transition-none transition-colors"
                         target="_blank"
                         rel="noopener noreferrer"
                       >
                         <span>{link.text}</span>
+                        <ArrowRight className="ml-1 h-4 w-4" />
                       </a>
                     ))}
                   </div>
