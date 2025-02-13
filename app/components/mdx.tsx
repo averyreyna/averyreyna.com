@@ -3,6 +3,54 @@ import Image from 'next/image'
 import { MDXRemote } from 'next-mdx-remote/rsc'
 import { highlight } from 'sugar-high'
 import React from 'react'
+import { ArrowRight } from 'lucide-react'
+
+function Callout({ link, text }) {
+  return (
+    <div className="py-1">
+      <a 
+        href={link} 
+        className="text-neutral-800 dark:text-neutral-200 hover:underline phone:underline inline-flex items-center gap-1"
+      >
+        {text} <ArrowRight className="w-4 h-4" />
+      </a>
+    </div>
+  )
+}
+
+function Hero({ children }) {
+  return (
+    <div className="flex phone:flex-col space-x-8 phone:space-x-0 phone:space-y-4">
+      <div className="flex flex-col p-0 pt-6 w-[20%] phone:w-full phone:pt-2 text-neutral-800 dark:text-neutral-200">
+        {children[0]}
+      </div>
+      <div className="p-0 w-[80%] phone:w-full phone:pl-0 prose dark:prose-invert">
+        {children.slice(1).map((child, index) => (
+          <div key={index}>{child}</div>
+        ))}
+      </div>
+    </div>
+  )
+}
+
+function TwoCol({ children }) {
+  return (
+    <div className="flex relative space-x-8 phone:flex-col phone:space-x-0 phone:space-y-2">
+      <div className="flex flex-col pt-0 w-[20%] mt-0 phone:w-full phone:mt-2 text-neutral-800 dark:text-neutral-200">
+        {children[0]}
+      </div>
+      <div className="p-0 w-[80%] phone:w-full phone:pl-4 prose dark:prose-invert">
+        {children.slice(1).map((child, index) => (
+          <div key={index}>{child}</div>
+        ))}
+      </div>
+    </div>
+  )
+}
+
+function Line() {
+  return <hr className="my-8 border-neutral-200 dark:border-neutral-800" />
+}
 
 function Table({ data }) {
   let headers = data.headers.map((header, index) => (
@@ -155,13 +203,19 @@ let components = {
   a: CustomLink,
   code: Code,
   Table,
+  Callout,
+  Hero,
+  TwoCol,
+  Line
 }
 
 export function CustomMDX(props) {
   return (
-    <MDXRemote
-      {...props}
-      components={{ ...components, ...(props.components || {}) }}
-    />
+    <div className="max-w-5xl mx-auto px-4">
+      <MDXRemote
+        {...props}
+        components={{ ...components, ...(props.components || {}) }}
+      />
+    </div>
   )
 }
