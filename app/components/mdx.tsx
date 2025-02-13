@@ -20,11 +20,11 @@ function Callout({ link, text }) {
 
 function Hero({ children }) {
   return (
-    <div className="flex phone:flex-col space-x-8 phone:space-x-0 phone:space-y-4">
-      <div className="flex flex-col p-0 pt-6 w-[20%] phone:w-full phone:pt-2 text-neutral-800 dark:text-neutral-200">
+    <div className="flex phone:flex-col space-x-8 phone:space-x-0 phone:space-y-4 w-full">
+      <div className="flex flex-col p-0 pt-6 w-[15%] phone:w-full phone:pt-2 text-neutral-800 dark:text-neutral-200">
         {children[0]}
       </div>
-      <div className="p-0 w-[80%] phone:w-full phone:pl-0 prose dark:prose-invert">
+      <div className="p-0 w-[85%] phone:w-full phone:pl-0 prose dark:prose-invert">
         {children.slice(1).map((child, index) => (
           <div key={index}>{child}</div>
         ))}
@@ -35,11 +35,11 @@ function Hero({ children }) {
 
 function TwoCol({ children }) {
   return (
-    <div className="flex relative space-x-8 phone:flex-col phone:space-x-0 phone:space-y-2">
-      <div className="flex flex-col pt-0 w-[20%] mt-0 phone:w-full phone:mt-2 text-neutral-800 dark:text-neutral-200">
+    <div className="flex relative space-x-8 phone:flex-col phone:space-x-0 phone:space-y-2 w-full">
+      <div className="flex flex-col pt-0 w-[15%] mt-0 phone:w-full phone:mt-2 text-neutral-800 dark:text-neutral-200">
         {children[0]}
       </div>
-      <div className="p-0 w-[80%] phone:w-full phone:pl-4 prose dark:prose-invert">
+      <div className="p-0 w-[85%] phone:w-full phone:pl-0 prose dark:prose-invert">
         {children.slice(1).map((child, index) => (
           <div key={index}>{child}</div>
         ))}
@@ -94,7 +94,7 @@ function CustomLink(props) {
 
 function RoundedImage({ caption, ...props }) {
   return (
-    <figure className="my-8 mx-auto max-w-xl">
+    <figure className="my-8 mx-auto max-w-lg">
       <div className="overflow-hidden border border-gray-200 dark:border-gray-800 bg-gray-50 dark:bg-gray-900 p-2">
         <Image 
           src={''} alt={''} className="w-full h-auto object-cover"
@@ -112,7 +112,7 @@ function RoundedImage({ caption, ...props }) {
 
 function RoundedVideo({ caption, src, ...props }) {
   return (
-    <figure className="my-8 mx-auto max-w-xl">
+    <figure className="my-8 mx-auto max-w-lg">
       <div className="overflow-hidden border border-gray-200 dark:border-gray-800 bg-gray-50 dark:bg-gray-900 p-2">
         <video
           className="w-full h-auto"
@@ -135,7 +135,7 @@ function RoundedVideo({ caption, src, ...props }) {
 
 function RoundedGif({ caption, src, ...props }) {
   return (
-    <figure className="my-8 mx-auto max-w-xl">
+    <figure className="my-8 mx-auto max-w-lg">
       <div className="overflow-hidden border border-gray-200 dark:border-gray-800 bg-gray-50 dark:bg-gray-900 p-2">
         <img
           src={src}
@@ -211,7 +211,7 @@ let components = {
 
 export function CustomMDX(props) {
   return (
-    <div className="max-w-5xl mx-auto px-4">
+    <div className="w-full">
       <MDXRemote
         {...props}
         components={{ ...components, ...(props.components || {}) }}

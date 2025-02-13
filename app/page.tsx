@@ -129,10 +129,10 @@ export default function Page() {
         You can see my inspiration on{' '}
         <a href="https://www.are.na/avery-reyna/channels" className="underline transition-all decoration-neutral-400 dark:decoration-neutral-600 underline-offset-2">
           Are.na
-        </a>, contact me through{' '}
+        </a>, reach me through{' '}
         <a href="mailto:avery.reyna16@gmail.com" target="_blank" className="underline transition-all decoration-neutral-400 dark:decoration-neutral-600 underline-offset-2">
           email
-        </a>, peruse my code on{' '}
+        </a>, find my code on{' '}
         <a href="https://github.com/averyreyna" target="_blank" className="underline transition-all decoration-neutral-400 dark:decoration-neutral-600 underline-offset-2">
           GitHub
         </a>, and see my experience on{' '}
