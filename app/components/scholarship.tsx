@@ -131,7 +131,7 @@ export default function Scholarship() {
                   <p className="text-neutral-600 dark:text-neutral-400 text-sm">
                     {item.authors.join(', ')}
                   </p>
-                  <div className="flex gap-2 mt-1">
+                  <div className="flex gap-2 mt-0.5">
                     {item.links.map((link, index) => (
                       <a
                         key={index}

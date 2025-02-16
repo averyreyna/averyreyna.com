@@ -7,12 +7,15 @@ import { ArrowRight } from 'lucide-react'
 
 function Callout({ link, text }) {
   return (
-    <div className="py-1">
+    <div className="py-1 not-prose">
       <a 
         href={link} 
-        className="text-neutral-800 dark:text-neutral-200 hover:underline phone:underline inline-flex items-center gap-1"
+        className="inline-flex items-center text-md text-neutral-600 dark:text-neutral-400 [@media(hover:hover)]:hover:text-neutral-900 [@media(hover:hover)]:dark:hover:text-neutral-100 [@media(hover:none)]:transition-none transition-colors"
+        target="_blank"
+        rel="noopener noreferrer"
       >
-        {text} <ArrowRight className="w-4 h-4" />
+        {text}
+        <ArrowRight className="ml-1 h-4 w-4" />
       </a>
     </div>
   )
