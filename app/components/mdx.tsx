@@ -3,32 +3,14 @@ import Image from 'next/image'
 import { MDXRemote } from 'next-mdx-remote/rsc'
 import { highlight } from 'sugar-high'
 import React from 'react'
-import { ArrowRight } from 'lucide-react'
-
-function Callout({ link, text }) {
-  return (
-    <div className="py-1 not-prose">
-      <a 
-        href={link} 
-        className="inline-flex items-center text-md text-neutral-600 dark:text-neutral-400 [@media(hover:hover)]:hover:text-neutral-900 [@media(hover:hover)]:dark:hover:text-neutral-100 [@media(hover:none)]:transition-none transition-colors"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        {text}
-        <ArrowRight className="ml-1 h-4 w-4" />
-      </a>
-    </div>
-  )
-}
 
 function Hero({ children }) {
+  const childrenArray = React.Children.toArray(children);
+  
   return (
-    <div className="flex phone:flex-col space-x-8 phone:space-x-0 phone:space-y-4 w-full">
-      <div className="flex flex-col p-0 pt-6 w-[15%] phone:w-full phone:pt-2 text-neutral-800 dark:text-neutral-200">
-        {children[0]}
-      </div>
-      <div className="p-0 w-[85%] phone:w-full phone:pl-0 prose dark:prose-invert">
-        {children.slice(1).map((child, index) => (
+    <div className="w-full">
+      <div className="prose dark:prose-invert">
+        {childrenArray.map((child, index) => (
           <div key={index}>{child}</div>
         ))}
       </div>
@@ -37,13 +19,15 @@ function Hero({ children }) {
 }
 
 function TwoCol({ children }) {
+  const childrenArray = React.Children.toArray(children);
+  
   return (
     <div className="flex relative space-x-8 phone:flex-col phone:space-x-0 phone:space-y-2 w-full">
       <div className="flex flex-col pt-0 w-[15%] mt-0 phone:w-full phone:mt-2 text-neutral-800 dark:text-neutral-200">
-        {children[0]}
+        {childrenArray[0]}
       </div>
       <div className="p-0 w-[85%] phone:w-full phone:pl-0 prose dark:prose-invert">
-        {children.slice(1).map((child, index) => (
+        {childrenArray.slice(1).map((child, index) => (
           <div key={index}>{child}</div>
         ))}
       </div>
@@ -206,7 +190,6 @@ let components = {
   a: CustomLink,
   code: Code,
   Table,
-  Callout,
   Hero,
   TwoCol,
   Line

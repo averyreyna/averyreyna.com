@@ -118,17 +118,17 @@ export default function Scholarship() {
               className="flex flex-col space-y-1 mb-4"
             >
               <div className="w-full flex flex-col md:flex-row space-x-0 md:space-x-2">
-                <p className="text-neutral-600 dark:text-neutral-400 w-full md:w-[100px] tabular-nums">
+                <p className="text-neutral-500 dark:text-neutral-400 w-full md:w-[100px] tabular-nums">
                   {showYear ? item.year : ''}
                 </p>
                 <div className="flex-1">
-                  <p className="text-neutral-900 dark:text-neutral-100 tracking-tight">
+                  <p className="text-neutral-800 dark:text-neutral-100 tracking-tight">
                     {item.title}
                   </p>
                   <p className="text-neutral-600 dark:text-neutral-400 text-sm">
                     {item.venue}
                   </p>
-                  <p className="text-neutral-600 dark:text-neutral-400 text-sm">
+                  <p className="text-neutral-500 dark:text-neutral-500 text-sm">
                     {item.authors.join(', ')}
                   </p>
                   <div className="flex gap-2 mt-0.5">
@@ -136,7 +136,7 @@ export default function Scholarship() {
                       <a
                         key={index}
                         href={link.url}
-                        className="inline-flex items-center text-sm text-neutral-600 dark:text-neutral-400 [@media(hover:hover)]:hover:text-neutral-900 [@media(hover:hover)]:dark:hover:text-neutral-100 [@media(hover:none)]:transition-none transition-colors"
+                        className="inline-flex items-center text-sm text-neutral-800 dark:text-neutral-300 [@media(hover:hover)]:hover:text-neutral-950 [@media(hover:hover)]:dark:hover:text-neutral-100 [@media(hover:none)]:transition-none transition-colors font-medium"
                         target="_blank"
                         rel="noopener noreferrer"
                       >
