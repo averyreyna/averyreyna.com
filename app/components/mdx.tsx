@@ -47,14 +47,15 @@ function CustomLink(props) {
 function RoundedImage({ caption, ...props }) {
   return (
     <figure className="my-8 mx-auto max-w-xl">
-      <div className="overflow-hidden border border-gray-200 dark:border-gray-800 bg-neutral-100 dark:bg-neutral-800 p-2">
+      <div className="rounded-lg overflow-hidden">
         <Image 
-          src={''} alt={''} className="w-full h-auto object-cover"
-          {...props}        
+          alt={props.alt || ''}
+          className="w-full h-auto object-cover"
+          {...props}
         />
       </div>
       {caption && (
-        <figcaption className="mt-2 text-sm text-center text-neutral-600 dark:text-neutral-400">
+        <figcaption className="mt-2 text-sm text-center text-neutral-600 dark:text-neutral-400 italic">
           {caption}
         </figcaption>
       )}
@@ -65,7 +66,7 @@ function RoundedImage({ caption, ...props }) {
 function RoundedVideo({ caption, src, ...props }) {
   return (
     <figure className="my-8 mx-auto max-w-xl">
-      <div className="overflow-hidden border border-gray-200 dark:border-gray-800 bg-neutral-100 dark:bg-neutral-800 p-2">
+      <div className="rounded-lg overflow-hidden">
         <video
           className="w-full h-auto"
           controls
@@ -77,7 +78,7 @@ function RoundedVideo({ caption, src, ...props }) {
         </video>
       </div>
       {caption && (
-        <figcaption className="mt-2 text-sm text-center text-neutral-600 dark:text-neutral-400">
+        <figcaption className="mt-2 text-sm text-center text-neutral-600 dark:text-neutral-400 italic">
           {caption}
         </figcaption>
       )}
@@ -88,15 +89,16 @@ function RoundedVideo({ caption, src, ...props }) {
 function RoundedGif({ caption, src, ...props }) {
   return (
     <figure className="my-8 mx-auto max-w-xl">
-      <div className="overflow-hidden border border-gray-200 dark:border-gray-800 bg-neutral-100 dark:bg-neutral-800 p-2">
+      <div className="rounded-lg overflow-hidden">
         <img
           src={src}
           className="w-full h-auto"
+          alt={props.alt || ''}
           {...props}
         />
       </div>
       {caption && (
-        <figcaption className="mt-2 text-sm text-center text-neutral-600 dark:text-neutral-400">
+        <figcaption className="mt-2 text-sm text-center text-neutral-600 dark:text-neutral-400 italic">
           {caption}
         </figcaption>
       )}
