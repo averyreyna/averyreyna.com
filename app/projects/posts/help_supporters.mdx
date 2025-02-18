@@ -6,38 +6,72 @@ summary: 'Summary about the Help Supporters project.'
 
 Help Supporters is the second project I worked on with Brian Smith at Columbia University. For this project, we explored how technology can bridge the social gap between blind and low-vision (BLV) people and sighted strangers who want to help them. Consider how often you see a blind person getting help from a stranger in public—it's surprisingly rare. Yet platforms like BeMyEyes have 13 times more sighted volunteers than blind users. This reveals a fascinating paradox: while many sighted people are eager to help, face-to-face assistance rarely happens due to complex social barriers affecting both parties. Through extensive mixed-ability research-through-design methodology, we developed and evaluated four distinct prototypes that address different aspects of help interactions, systematically investigating the entire help process.
 
-## Research Context
+### RESEARCH CONTEXT
 
-### Background
-
+## Background
 Research has consistently shown that BLV people engage with their surroundings using unique practices that involve non-visual senses, mobility skills, and environmental cues. A prime example is navigating through spaces like airports, where BLV individuals might use magnifiers to read signs, identify potential helpers through distinctive features like uniforms, and build mental maps through gradual exploration. While these non-visual navigation methods are equally valid and effectual as visual methods, the challenge lies in bridging the communication gap between BLV individuals and potential sighted helpers.
 
 The evolution of assistive technology reflects a significant shift from a medical model of disability to a more inclusive social framework. Modern theoretical approaches, particularly the community-based accommodation framework and interdependence framework, emphasize that assistive technology should support not only individuals with disabilities but also those without disabilities who interact with them. This reflects a broader understanding that accessibility is achieved through partnership between BLV individuals, technology, surrounding people, and the physical environment.
 
 While remote assistance platforms demonstrate the willingness of sighted volunteers to help, they lack the benefits of physical co-presence that face-to-face assistance provides. Current research suggests that technology can play a crucial role in facilitating these in-person interactions while respecting the autonomy and preferences of both parties.
 
-### Questions
-
+## Questions
 1. Should help supporters encourage BLV people to make face-to-face requests or app-based requests for help from nearby strangers?
 2. What information should help supporters give BLV and sighted people about each other for connection?
 3. What types of information should help supporters provide during help?
 4. Where should help supporters situate the information during help?
 
-## Methodology
+### METHODOLOGY
 
-### Research Design
-
+## Research Design
 Our approach employs a mixed-ability research-through-design methodology, recognizing that successful assistance comprises two critical phases: the connection phase, where help is initially sought and offered, and the collaboration phase, where aid is actively provided. This understanding guided our development of four distinct prototypes, each addressing different aspects of these phases.
 
 Over several months, we designed the prototypes through ideation and iteration. The process began with two authors' idea of using fun-friendly Bitmoji public messages to bridge social differences between sighted and BLV people. Through extensive brainstorming and internal co-design sessions among four mixed-ability co-authors (three sighted and one low-vision author) and another low-vision lab member, we identified six key design attributes that could be implemented in different ways.
 
-### Implementation
-
+## Implementation
 For the connection phase, we developed two technically distinct approaches. The Person-Finder Glasses is implemented using Unity on Microsoft HoloLens (1st gen), leveraging Microsoft's Holographic Face Tracker API for real-time face detection and processing. The system implements a spatial audio framework for directional guidance, with carefully calibrated feedback algorithms that account for natural walking patterns and maintain appropriate social distances through continuous monitoring. When wearing the Person-Finder Glasses, BLV users receive a continuous auditory cue when the headset detects a nearby stranger in the direction they are facing. The Volunteer Platform is deployed as a React.js web application with mobile-first responsive design principles. Its core functionality revolves around a real-time location-based matching engine that connects users based on their stored profiles and preferences. The platform features an accessibility-focused UI and implements secure communication channels between matched users.
+
+<Image 
+  src="/help_supporters/person_finder_glasses.png"
+  alt=""
+  width={800}
+  height={600}
+  caption="The Person-Finder Glasses helping a BLV user locate and greet people in a public space, shown from side view (left) with auditory cues and overhead plan view (right) illustrating person detection."
+/>
 
 For the collaboration phase, our implementations focused on real-time feedback systems. Running on a custom HTML and JavaScript dashboard, the Pictorial Display implementation centers on a wearable smartphone interface that integrates Bitmoji for dynamic visual feedback. It includes a real-time message selection algorithm and remote control capabilities for study facilitators, with display parameters optimized for public visibility. Designed as a React.js mobile application, the Vague Directions Flagger processes speech input in real-time and employs natural language processing to identify vague directional terms, matching them against a comprehensive phrase database. The system delivers private feedback through a context-aware suggestion engine. We used Ngrok to generate unique, temporary URLs for each sighted participant and implemented manual speech-to-text transcription during the study to ensure reliable language processing.
 
-### Data Analysis
-
+### DATA ANALYSIS
 Our evaluation involved 20 participants (10 BLV, 10 sighted) in a carefully designed mixed-ability study. After transcribing the post-study interviews, two researchers independently sectioned the transcripts into quotes for a bottom-up, open-coding approach to data analysis. We also incorporated observation notes taken during the study. The researchers iterated on the codes through multiple rounds of meetings, discussed their similarities and differences, and leveraged them in an affinity diagramming process. Code saturation was reached when neither researcher could identify new codes or arrive at new interpretations of the existing codes.
 
+## Findings
+
+Our research revealed that app-based platforms were more effective at facilitating connections than direct face-to-face approaches. The Volunteer Platform significantly reduced social pressure for both BLV and sighted participants. This approach gave BLV users more confidence in seeking help while providing sighted helpers a comfortable way to accept or decline assistance requests. The platform's structure created a sense of safety and community that was absent in direct face-to-face interactions.
+
+<Gif src="/help_supporters/help_supporters_interactions.gif" alt="" caption="Help Supporters prototypes in action: Volunteer Platform interface, Pictorial Display for guidance, and Vague Directions Flagger for navigation instructions." />
+
+Participants emphasized the importance of information sharing before initial contact. BLV users particularly valued knowing potential helpers' experience levels with assisting visually impaired individuals. Safety considerations emerged as a critical factor, with some participants expressing strong preferences for specific helper demographics. Both parties stressed the importance of understanding each other's time availability and location to set appropriate expectations.
+
+During interactions, we observed that real-time feedback significantly improved communication quality. Sighted helpers actively sought guidance on their assistance techniques but preferred receiving correction privately rather than through public displays. The presence of visual aids, particularly the Bitmoji illustrations, helped create a more relaxed atmosphere while effectively conveying important guidance. We noticed substantial improvements in assistance quality when helpers received information that enhanced their understanding of BLV experiences.
+
+The research highlighted several crucial design considerations. First, maintaining the right balance between automated assistance and user autonomy proved essential. Second, the positioning of information displays needed careful consideration to support natural eye contact while allowing environmental awareness. Third, privacy emerged as a critical factor, particularly in how feedback and corrections were delivered to helpers. These insights suggest that future assistive technologies should focus on creating structured environments for interaction while maintaining user dignity and agency.
+
+<Image 
+  src="/help_supporters/interdependence_framwork.png"
+  alt=""
+  width={800}
+  height={600}
+  caption="A diagram showing how assistive technology enables interaction between BLV and sighted individuals through three phases: interdependence, connection, and collaboration."
+/>
+
+### IMPACT AND FUTURE WORK
+
+## Broader Implications
+The findings from this research have significant implications for the design of assistive technologies that aim to facilitate social interaction. The success of the platform-based approach suggests that technological interventions in social assistance should focus on creating structured environments for interaction while maintaining user autonomy and dignity. 
+
+This research also demonstrates the importance of considering technical and social aspects in assistive technology design. Our study revealed a crucial balance between providing helpful guidance and preserving BLV individuals' agency. While the Pictorial Display and Vague Directions Flagger supported sighted helpers in giving practical help, they also risked diminishing BLV users' voices. Participants emphasized the importance of maintaining organic communication alongside technological support, suggesting future designs should allow BLV users more control over when and how help supporters intervene.
+
+## Future Research Directions
+Our research would benefit from a longitudinal study exploring how these tools function in diverse real-world environments. While our controlled research provided valuable insights, understanding how these technologies integrate into daily life and how they influence the formation of mixed-ability help-based communities requires longer-term observation.
+
+Future work should also explore how to better balance technological assistance with BLV user autonomy by developing mechanisms that let BLV users control when help supporters activate. Additionally, investigating how these technologies might support the development of lasting connections between BLV and sighted individuals could reveal opportunities for building more inclusive communities.
