@@ -41,20 +41,36 @@ For the connection phase, we developed two technically distinct approaches. The 
 
 For the collaboration phase, our implementations focused on real-time feedback systems. Running on a custom HTML and JavaScript dashboard, the Pictorial Display implementation centers on a wearable smartphone interface that integrates Bitmoji for dynamic visual feedback. It includes a real-time message selection algorithm and remote control capabilities for study facilitators, with display parameters optimized for public visibility. Designed as a React.js mobile application, the Vague Directions Flagger processes speech input in real-time and employs natural language processing to identify vague directional terms, matching them against a comprehensive phrase database. The system delivers private feedback through a context-aware suggestion engine. We used Ngrok to generate unique, temporary URLs for each sighted participant and implemented manual speech-to-text transcription during the study to ensure reliable language processing.
 
-### DATA ANALYSIS
+<Image 
+  src="/help_supporters/vauge_directions_flagger.png"
+  alt=""
+  width={800}
+  height={600}
+  caption="The Vague Direction Flagger system in use where a sighted user's app flags imprecise directions while assisting a BLV user (left) and the app interface showing flagged vague terms and completion notice after corrections (right)."
+/>
+
+### DISCUSSION
+
+## Data Analysis
 Our evaluation involved 20 participants (10 BLV, 10 sighted) in a carefully designed mixed-ability study. After transcribing the post-study interviews, two researchers independently sectioned the transcripts into quotes for a bottom-up, open-coding approach to data analysis. We also incorporated observation notes taken during the study. The researchers iterated on the codes through multiple rounds of meetings, discussed their similarities and differences, and leveraged them in an affinity diagramming process. Code saturation was reached when neither researcher could identify new codes or arrive at new interpretations of the existing codes.
 
 ## Findings
+1. **Platform Effectiveness**: Our app-based platforms proved more effective than face-to-face approaches, with the Volunteer Platform reducing social pressure for both BLV and sighted participants. This approach boosted BLV users' confidence in seeking help while giving sighted helpers a comfortable way to manage assistance requests, creating a sense of safety and community absent in direct interactions.
 
-Our research revealed that app-based platforms were more effective at facilitating connections than direct face-to-face approaches. The Volunteer Platform significantly reduced social pressure for both BLV and sighted participants. This approach gave BLV users more confidence in seeking help while providing sighted helpers a comfortable way to accept or decline assistance requests. The platform's structure created a sense of safety and community that was absent in direct face-to-face interactions.
+2. **Pre-interaction Information Exchange**: Participants highlighted the value of sharing information before initial contact. BLV users particularly appreciated knowing helpers' experience levels with assisting visually impaired individuals. Safety considerations were crucial, with some participants having strong preferences for specific helper demographics. Both parties emphasized understanding time availability and location to set proper expectations.
 
 <Gif src="/help_supporters/help_supporters_interactions.gif" alt="" caption="Help Supporters prototypes in action: Volunteer Platform interface, Pictorial Display for guidance, and Vague Directions Flagger for navigation instructions." />
 
-Participants emphasized the importance of information sharing before initial contact. BLV users particularly valued knowing potential helpers' experience levels with assisting visually impaired individuals. Safety considerations emerged as a critical factor, with some participants expressing strong preferences for specific helper demographics. Both parties stressed the importance of understanding each other's time availability and location to set appropriate expectations.
+3. **Communication and Feedback Dynamics**: Real-time feedback substantially improved communication quality. Sighted helpers sought guidance on assistance techniques but preferred private correction over public displays. Visual aids, especially Bitmoji illustrations, created a more relaxed atmosphere while effectively conveying guidance. Assistance quality improved substantially when helpers received information enhancing their understanding of BLV experiences.
 
-During interactions, we observed that real-time feedback significantly improved communication quality. Sighted helpers actively sought guidance on their assistance techniques but preferred receiving correction privately rather than through public displays. The presence of visual aids, particularly the Bitmoji illustrations, helped create a more relaxed atmosphere while effectively conveying important guidance. We noticed substantial improvements in assistance quality when helpers received information that enhanced their understanding of BLV experiences.
+4. **Key Design Considerations**: This research uncovered essential design principles, including balancing automated assistance with user autonomy, strategically placing information displays to encourage natural eye contact while allowing for environmental awareness, and addressing privacy concerns when delivering feedback. These findings indicate that future assistive technologies should focus on creating structured interaction environments that uphold user dignity and agency.
 
-The research highlighted several crucial design considerations. First, maintaining the right balance between automated assistance and user autonomy proved essential. Second, the positioning of information displays needed careful consideration to support natural eye contact while allowing environmental awareness. Third, privacy emerged as a critical factor, particularly in how feedback and corrections were delivered to helpers. These insights suggest that future assistive technologies should focus on creating structured environments for interaction while maintaining user dignity and agency.
+### IMPACT AND FUTURE WORK
+
+## Broader Implications
+The findings from this research have significant implications for the design of assistive technologies that aim to facilitate social interaction. The success of the platform-based approach suggests that technological interventions in social assistance should focus on creating structured environments for interaction while maintaining user autonomy and dignity. 
+
+This research also demonstrates the importance of considering technical and social aspects in assistive technology design. Our study revealed a crucial balance between providing helpful guidance and preserving BLV individuals' agency. While the Pictorial Display and Vague Directions Flagger supported sighted helpers in giving help, they also risked diminishing BLV users' voices. Participants emphasized the importance of maintaining organic communication alongside technological support, suggesting future designs should allow BLV users more control over when and how help supporters intervene.
 
 <Image 
   src="/help_supporters/interdependence_framwork.png"
@@ -63,13 +79,6 @@ The research highlighted several crucial design considerations. First, maintaini
   height={600}
   caption="A diagram showing how assistive technology enables interaction between BLV and sighted individuals through three phases: interdependence, connection, and collaboration."
 />
-
-### IMPACT AND FUTURE WORK
-
-## Broader Implications
-The findings from this research have significant implications for the design of assistive technologies that aim to facilitate social interaction. The success of the platform-based approach suggests that technological interventions in social assistance should focus on creating structured environments for interaction while maintaining user autonomy and dignity. 
-
-This research also demonstrates the importance of considering technical and social aspects in assistive technology design. Our study revealed a crucial balance between providing helpful guidance and preserving BLV individuals' agency. While the Pictorial Display and Vague Directions Flagger supported sighted helpers in giving practical help, they also risked diminishing BLV users' voices. Participants emphasized the importance of maintaining organic communication alongside technological support, suggesting future designs should allow BLV users more control over when and how help supporters intervene.
 
 ## Future Research Directions
 Our research would benefit from a longitudinal study exploring how these tools function in diverse real-world environments. While our controlled research provided valuable insights, understanding how these technologies integrate into daily life and how they influence the formation of mixed-ability help-based communities requires longer-term observation.
