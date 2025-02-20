@@ -6,62 +6,56 @@ summary: 'Summary about the SpaceNav project.'
 
 SpaceNav is one of two projects I developed with Brian Smith at Columbia University, investigating how spatial interactions could be integrated within screen readers to improve the experience for blind and low-vision (BLV) users. This work was published in ASSETS '23 and revealed what rich, seamless mechanisms can be plugged into existing assistive technology paradigms. We explored how we can make desktop screen readers more spatially aware without requiring additional hardware. While mobile screen readers have evolved to offer rich spatial interactions through touchscreens, desktop screen readers have remained relatively unchanged in presenting spatial information.
 
-## What's the Challenge?
-
-For many BLV users, desktop screen readers are still the primary tool for navigating the web. While mobile screen readers like iOS's VoiceOver have evolved to allow users to explore content spatially through touchscreens, desktop screen readers remain limited in presenting spatial information. They present content in a strictly linear fashion, making it difficult to understand the spatial layout of websites. This creates a disconnect between how sighted users experience web content and how it's presented through screen readers.
-
-The challenge is particularly evident in how desktop screen readers handle directional navigation. For instance, macOS's VoiceOver uses only left and right arrow keys in Reading mode, while NVDA uses only up and down arrows for line-by-line navigation. This inconsistency makes it hard for users to build a mental model of spatial relationships between elements, as there's no standard for directional navigation.
-
-## Spatial Foundations
-
-The contrast between desktop and mobile screen reader experiences highlights a significant gap in spatial awareness capabilities. While mobile screen readers have evolved to leverage touchscreens, allowing users to explore spatial layouts by touching different parts of the screen, desktop screen readers remain constrained to linear presentation methods. This limitation is particularly evident in how different desktop screen readers handle directional navigation - some use only left and right arrow keys for reading. In contrast, others restrict navigation to up and down arrows for line-by-line movement. This inconsistency makes it challenging for users to develop an understanding of spatial relationships between elements on a page.
-
-Accessibility research has consistently demonstrated the importance of providing spatial and immersive ways for BLV users to understand visual content. Previous approaches have explored various solutions, including tactile sheets, 3D printed objects, and refreshable displays to help users explore educational content, artwork, and graphics. For web content specifically, while some solutions have investigated hardware-based approaches or alternative methods like concurrent spatial sounds and cursor position audio cues, most efforts have required additional hardware setups. This has left a gap in solutions that could enhance spatial understanding within existing desktop screen reader workflows without needing extra equipment. SpaceNav addresses this gap by reimagining how screen readers can convey spatial information through innovative input and output configurations.
-
-## The SpaceNav System
-
-SpaceNav reimagines how screen readers can convey spatial information through two key configurations. The first is SpaceNav-Input, which gives users a spatial compass for navigation. Users can navigate content directionally using arrow keys instead of being limited to Tab and Shift+Tab navigation while maintaining traditional navigation methods when preferred. This allows users to move through content in a way that matches their mental model of the page layout.
+### RESEARCH CONTEXT
+## Background
+Personal computer screen readers and mobile screen readers offer fundamentally different experiences for users due to their hardware differences. Mobile devices feature touchscreens that allow users to explore content spatially - for instance, iOS's VoiceOver enables users to touch different parts of the screen to hear where interface elements are located. In stark contrast, desktop screen readers present information in a strictly linear fashion that makes it difficult to understand spatial layouts. The disparity extends to basic navigation methods. Desktop screen readers handle arrow keys inconsistently - macOS's VoiceOver uses only left and right arrow keys in Reading mode, while NVDA on Windows uses only up and down arrows for line-by-line navigation. This lack of standardization makes it challenging for users to build mental models of spatial relationships between elements.
 
 <Gif src="/spacenav/spatial_interactions_example.gif" alt="" caption="A visual representation of how spatial interactions are implemented on the first version of our news site, with the user navigating and highlighting HTML elements on the page." />
 
-The second configuration, SpaceNav-Output, adds an extra layer of spatial awareness through audio. Screen reader speech comes from the actual 2D position of elements on the page, with higher-pitched audio indicating elements higher on the page. Using stereo headphones, users experience a natural sense of left-right positioning, and unique audio cues alert them when elements move during scrolling.
+While prior research has explored various solutions including tactile sheets, 3D printed objects, and refreshable displays, most efforts required additional hardware setups. This left a significant gap in solutions that could enhance spatial understanding within existing desktop screen reader workflows without requiring extra equipment.
 
-## Technical Implementation
+## Questions
+1. How do we determine the benefits, drawbacks, and future potential for spatial interactions integrated into desktop screen readers, without adding hardware or creating new paradigms?
+2. How can we understand user attitudes toward spatial input and output, particularly in the context of applications that mimic real-world websites?
 
-The system uses the Web Audio API for spatial audio effects and HTML, CSS, and TypeScript for the web interface. For SpaceNav-Output, we developed custom audio processing that calculates the midpoint position of each element and divides it by the screen's width/height for x/y positioning, respectively. We added changes in pitch as a redundant cue for representing the vertical position, with higher-pitched speech indicating elements higher on the page. This provides users with multiple ways to understand an element's position. All of this is achieved without requiring additional hardware beyond standard stereo headphones, making the system accessible to anyone with a standard computer setup. This was a deliberate design choice to ensure the technology could be widely adopted without creating additional barriers to access.
-
-## User Study
-
-To evaluate SpaceNav, we designed a comprehensive study that put users in content consumption and creation scenarios. Each participant experienced both configurations of our system while navigating through two different layouts of a custom news website. They then used SpaceNav to create their own "About Me" page, which gave us insights into how spatial awareness affects content creation tasks.
-
-The study involved nine BLV participants, aged 22 to 65, who were either regular screen reader users or highly familiar with them. Throughout the sessions, participants were encouraged to think aloud, sharing their reactions to the system and their interpretations of spatial relationships between elements. The remote study sessions, conducted over Zoom, typically lasted two hours, giving participants ample time to explore the system thoroughly and provide detailed feedback.
+### METHODOLOGY
+## Research Design
+The research employed a mixed-methods approach centered around SpaceNav, a custom screen reader system with two key configurations. SpaceNav-Input repurposes the four arrow keys for directional navigation while retaining traditional Tab and Shift+Tab navigation. SpaceNav-Output extends this by incorporating spatialized audio output, rendering all screen reader speech from a point sound source located at the element's 2D position on screen. In terms of design decisions, they were driven by the goal of keeping users familiar with screen reader paradigms while introducing spatial awareness without requiring additional hardware. This meant carefully considering how to integrate new features without disrupting existing workflows that users rely on.
 
 <Image 
-  src="/spacenav/about_me_pages.png"
-  alt=""
-  width={800}
-  height={600}
-  caption="Two 'About Me' pages that a user study participant built using SpaceNav-Input (the left image) and SpaceNav-Output (the right image)."
+src="/spacenav/about_me_pages.png"
+alt=""
+width={800}
+height={600}
+caption="Two 'About Me' pages that a user study participant built using SpaceNav-Input (the left image) and SpaceNav-Output (the right image)."
 />
 
-## Research Insights
+## Implementation
+The technical implementation leveraged the Web Audio API for spatial audio effects, with HTML, CSS, and TypeScript forming the foundation of the web interface. The system uses custom audio processing to calculate element positions, with modified pitch indicating vertical positioning—higher-pitched audio signaling elements higher on the page.
 
-Our study revealed fascinating patterns in how participants interacted with spatial information. All nine participants preferred using the arrow keys as their input mechanism instead of Tab and Shift+Tab in both SpaceNav configurations. Many users experienced reduced cognitive load and gained a better understanding of website layouts. They particularly valued how the system improved communication with sighted users about page organization. SpaceNav-Output proved especially valuable for both content consumption and production scenarios. One participant noted how they really liked the spatial audio, which helped build a mental picture of where things actually are located. Participants also expressed increased independence from feeling more immersed in and aware of page layouts. The system helped them orient themselves without relying on memory, counting, or understanding coordinates.
+Two test applications were developed: a news website for content consumption and an "About Me" page creator for content production. The implementation calculated positions using element midpoints divided by screen dimensions, employed stereo audio for left-right positioning, and maintained compatibility with existing screen reader paradigms. This approach allowed for seamless integration of both directional and traditional navigation methods.
 
-However, we also encountered various challenges. Interestingly, many longtime screen reader users had already developed sophisticated mental models for navigation, making the spatial audio features feel superfluous to them. This pattern exposed a notable difference in preferences between lifelong screen reader users and those who adopted the technology later in life. Integration posed another hurdle, as participants expressed concern about how the new controls would mesh with existing screen reader commands. Additionally, some users worried that directional navigation might compromise their ability to understand content through categorical groupings. These findings underscored a crucial principle in assistive technology design: the delicate balance between introducing innovative features while preserving familiar interaction patterns.
+### DISCUSSION
+## Data Analysis
+The research team employed thematic coding and a grounded theory approach to analyze the qualitative data gathered from user sessions. This included careful examination of user feedback, think-aloud protocols, and comparative analysis of user performance with different configurations. The analysis particularly focused on how participants adapted to the spatial features and integrated them into their existing mental models of web navigation. The study faced several limitations, including the remote format necessitated by participant location and the constraint of working only with custom web applications. Additionally, the current implementation didn't support scrolling or complex layouts, which would be necessary for real-world application.
 
-## Applications Beyond Web Browsing
+## Findings
+1. **Navigation Preferences**: All participants preferred arrow key navigation over traditional methods, suggesting that directional control aligned better with users' spatial understanding of web layouts.
+2. **Experience-Based Differences**: A notable pattern emerged between lifelong screen reader users and later adopters. Lifelong users had developed sophisticated mental models that sometimes made spatial audio features feel superfluous, while later adopters found them particularly helpful.
+3. **Communication Enhancement**: The spatial interface significantly improved communication between BLV and sighted users, especially when discussing page layouts and element positioning.
+4. **Cognitive Load Impact**: Most participants reported reduced cognitive load with SpaceNav-Output, though some experienced users found the additional audio information overwhelming.
 
-The potential applications of SpaceNav extend far beyond basic web browsing. In education, it could help explain complex computer science concepts like binary trees by providing spatial context. For gaming, it offers new possibilities for creating more immersive experiences for BLV players. The system could also transform how presentations are delivered to mixed audiences of sighted and BLV users, creating a more inclusive knowledge-sharing environment. In workplace settings, SpaceNav's spatial awareness features could improve collaboration by providing a shared understanding of visual layouts between sighted and BLV team members.
+### IMPACT AND FUTURE WORK
+## Broader Implications
+This research demonstrates the potential for integrating spatial awareness into existing screen reader paradigms without requiring additional hardware. The findings suggest that the gap between mobile and desktop screen reader experiences can be bridged through thoughtful integration of spatial features, potentially transforming how BLV users interact with web content on desktop platforms.
 
 <Image 
-  src="/spacenav/chrome_extension.png"
-  alt=""
-  width={800}
-  height={600}
-  caption="How we envision the SpaceNav-Chrome system working on standard websites such as CNN, incorporating spatial interactions onto more complicated user interfaces."
+src="/spacenav/chrome_extension.png"
+alt=""
+width={800}
+height={600}
+caption="How we envision the SpaceNav-Chrome system working on standard websites such as CNN, incorporating spatial interactions onto more complicated user interfaces."
 />
 
-## Future Directions
-
-Upon my departure, the team was developing SpaceNav-Chrome, a browser extension that will bring spatial audio screen reading to any website. This next step will work with popular sites like Google, CNN, and Reddit, incorporating intelligent scrolling detection with audio feedback while maintaining compatibility with existing screen reader functions. The extension aims to address some of the limitations identified in our study, such as handling multi-page websites that involve scrolling and supporting more non-grid layouts.
+## Future Research Directions
+The research team is currently developing SpaceNav-Chrome, a browser extension that will bring spatial audio screen reading to any website. This next phase will address key limitations identified in the study, including support for scrolling detection with audio feedback and handling of more complex, non-grid layouts. Future work will also explore the intriguing difference in spatial interaction preferences between lifelong screen reader users and later adopters, potentially leading to more personalized accessibility solutions. The team also sees potential for expanding the technology into educational tools and gaming interfaces, creating more immersive and inclusive digital experiences.
