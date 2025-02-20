@@ -1,5 +1,4 @@
 import React from 'react';
-import { ArrowRight } from 'lucide-react';
 
 interface Link {
   text: string;
@@ -118,30 +117,29 @@ export default function Scholarship() {
               className="flex flex-col space-y-1 mb-4"
             >
               <div className="w-full flex flex-col md:flex-row space-x-0 md:space-x-2">
-                <p className="text-neutral-400 dark:text-neutral-500 w-full md:w-[100px] tabular-nums">
+                <p className="text-neutral-600 dark:text-neutral-400 w-[100px] tabular-nums">
                   {showYear ? item.year : ''}
                 </p>
                 <div className="flex-1">
-                  <p className="text-neutral-900 dark:text-neutral-50 tracking-tight">
+                  <p className="text-zinc-950 dark:text-zinc-50 tracking-tight">
                     {item.title}
                   </p>
-                  <p className="text-neutral-700 dark:text-neutral-300 text-sm">
+                  <p className="text-zinc-700 dark:text-zinc-300 text-sm">
                     {item.venue}
                   </p>
-                  <p className="text-neutral-500 dark:text-neutral-400 text-sm">
+                  <p className="text-zinc-500 dark:text-zinc-400 text-sm">
                     {item.authors.join(', ')}
                   </p>
-                  <div className="flex gap-2 mt-0.5">
+                  <div className="flex gap-3">
                     {item.links.map((link, index) => (
                       <a
                         key={index}
                         href={link.url}
-                        className="inline-flex items-center text-sm text-neutral-700 dark:text-neutral-300 hover:text-black dark:hover:text-white transition-colors"
+                        className="text-zinc-400 md:hover:text-zinc-800 dark:md:hover:text-zinc-50 transition-all text-sm"
                         target="_blank"
                         rel="noopener noreferrer"
                       >
-                        <span>{link.text}</span>
-                        <ArrowRight className="ml-1 h-4 w-4" />
+                        {link.text}
                       </a>
                     ))}
                   </div>

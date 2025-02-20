@@ -18,7 +18,7 @@ export default function Page() {
         </a> monitoring data quality across the enterprise. Outside of work, I am either designing games in{' '}
         <a href="https://godotengine.org/" target="_blank" className="underline transition-all decoration-neutral-400 dark:decoration-neutral-600 underline-offset-2">
           Godot
-        </a> or maintaining civic technology{' '}
+        </a> or maintaining{' '}
         <a href="https://www.civictechdc.org/" target="_blank" className="underline transition-all decoration-neutral-400 dark:decoration-neutral-600 underline-offset-2">
           open source
         </a> projects.
