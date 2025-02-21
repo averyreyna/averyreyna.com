@@ -8,11 +8,7 @@ SpaceNav is one of two projects I worked on with Brian Smith at Columbia Univers
 
 ### RESEARCH CONTEXT
 ## Background
-Personal computer screen readers and mobile screen readers offer fundamentally different experiences for users due to their hardware differences. Mobile devices feature touchscreens that allow users to explore content spatially–for instance, iOS's VoiceOver enables users to touch different parts of the screen to hear where interface elements are located. In stark contrast, desktop screen readers present information in a strictly linear fashion that makes it difficult to understand spatial layouts. The disparity extends to basic navigation methods. Desktop screen readers handle arrow keys inconsistently - macOS's VoiceOver uses only left and right arrow keys in Reading mode, while NVDA on Windows uses only up and down arrows for line-by-line navigation. This lack of standardization makes it challenging for users to build mental models of spatial relationships between elements.
-
-<Gif src="/spacenav/spatial_interactions_example.gif" alt="" caption="A visual representation of how spatial interactions are implemented on the first version of our news site, with the user navigating and highlighting HTML elements on the page." />
-
-While prior research has explored various solutions including tactile sheets, 3D printed objects, and refreshable displays, most efforts required additional hardware setups. This left a significant gap in solutions that could enhance spatial understanding within existing desktop screen reader workflows without requiring extra equipment.
+Personal computer screen readers and mobile screen readers offer fundamentally different experiences for users due to their hardware differences. Mobile devices feature touchscreens that allow users to explore content spatially–for instance, iOS's VoiceOver enables users to touch different parts of the screen to hear where interface elements are located. In stark contrast, desktop screen readers present information in a strictly linear fashion that makes it difficult to understand spatial layouts. The disparity extends to basic navigation methods. Desktop screen readers handle arrow keys inconsistently, macOS's VoiceOver uses only left and right arrow keys in Reading mode, while NVDA on Windows uses only up and down arrows for line-by-line navigation. This lack of standardization makes it challenging for users to build mental models of spatial relationships between elements. While prior research has explored various solutions including tactile sheets, 3D printed objects, and refreshable displays, most efforts required additional hardware setups. This left a significant gap in solutions that could enhance spatial understanding within existing desktop screen reader workflows without requiring extra equipment.
 
 ## Questions
 1. How do we determine the benefits, drawbacks, and future potential for spatial interactions integrated into desktop screen readers, without adding hardware or creating new paradigms?
@@ -34,6 +30,8 @@ caption="Two 'About Me' pages that a user study participant built using SpaceNav
 The technical implementation leveraged the Web Audio API for spatial audio effects, with HTML, CSS, and TypeScript forming the foundation of the web interface. The system uses custom audio processing to calculate element positions, with modified pitch indicating vertical positioning—higher-pitched audio signaling elements higher on the page.
 
 Two test applications were developed: a news website for content consumption and an "About Me" page creator for content production. The implementation calculated positions using element midpoints divided by screen dimensions, employed stereo audio for left-right positioning, and maintained compatibility with existing screen reader paradigms. This approach allowed for seamless integration of both directional and traditional navigation methods.
+
+<Gif src="/spacenav/spatial_interactions_example.gif" alt="" caption="A visual representation of how spatial interactions are implemented on the first version of our news site, with the user navigating and highlighting HTML elements on the page." />
 
 ### DISCUSSION
 ## Data Analysis
