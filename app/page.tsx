@@ -15,13 +15,13 @@ export default function Page() {
         I'm a Software Engineer at{' '}
         <a href="https://www.capitalone.com/" target="_blank" className="underline transition-all decoration-neutral-400 dark:decoration-neutral-600 underline-offset-2">
           Capital One
-        </a> monitoring data quality across the enterprise. Outside of work, I am either designing games in{' '}
+        </a> monitoring data quality across the enterprise. Outside of work, I am designing games in{' '}
         <a href="https://godotengine.org/" target="_blank" className="underline transition-all decoration-neutral-400 dark:decoration-neutral-600 underline-offset-2">
           Godot
-        </a> or maintaining{' '}
-        <a href="https://www.civictechdc.org/" target="_blank" className="underline transition-all decoration-neutral-400 dark:decoration-neutral-600 underline-offset-2">
-          open source
-        </a> projects.
+        </a>, making music with{' '}
+        <a href="https://strudel.cc/workshop/getting-started/" target="_blank" className="underline transition-all decoration-neutral-400 dark:decoration-neutral-600 underline-offset-2">
+          Strudel
+        </a>, and independently researching human-AI collaboration.
       </div>
 
       <h2 className="mb-4 text-2xl font-semibold tracking-tighter">
@@ -75,7 +75,7 @@ export default function Page() {
           className="underline transition-all decoration-neutral-400 dark:decoration-neutral-600 underline-offset-2"
         >
           Social Power and Inequality
-        </a>. When I wasn't on campus, I spent my summers working with{' '}
+        </a>. During my summers, I spent my time working with{' '}
         <a 
           href="https://www.engineering.columbia.edu/faculty-staff/directory/brian-smith" 
           target="_blank" 
