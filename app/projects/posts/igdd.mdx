@@ -1,0 +1,59 @@
+---
+title: 'Instagram Data Donation'
+publishedAt: '2022-08-08'
+summary: 'Summary about the IGDD project.'
+---
+
+The Instagram Data Donation (IGDD) project addresses critical gaps in online risk detection by developing a novel system that enables youth to securely donate their private social media data for research. By working with Pamela Wisniewski and various PhD students at Boston University and Georgia Tech, this human-centered approach captures authentic risk experiences directly from young users' perspectives, significantly improving upon traditional content moderation methods that rely on external annotators and public data.
+
+## Research Context
+The detection of online risks youth face presents significant challenges, particularly in private conversations where traditional content moderation approaches have limited access and effectiveness. Our systematic review of cyberbullying detection algorithms revealed a concerning disconnect between computational approaches and human experiences: while 82.1% of studies incorporated some form of aggression detection, only 44.6% accounted for the repetitive nature of harassment, and just 37.5% considered power imbalances between involved parties. Most existing systems rely heavily on performance metrics without adequately incorporating the nuanced, subjective nature of online risks as experienced by youth.
+
+Current research methods show additional limitations that hinder effective risk detection. Over 78% of studies use external annotators or crowd workers to label training data, with only 12.5% involving domain experts and even fewer incorporating feedback from youth. This approach to developing ground truth often fails to capture the subjective nature of online risks. It lacks consideration for how detection systems function in real-world scenarios, with 80.4% of studies not speculating about or evaluating practical applications. This gap between technical development and lived experiences underscores the need for research approaches that center youth perspectives while maintaining privacy and ethical standards.
+
+## Methodology and Design
+We developed the Instagram Data Donation (IGDD) system, a secure web-based platform that allows participants aged 13-21 to download and share their Instagram data, including private direct messages. The system enables participants to flag conversations that made them uncomfortable or unsafe across multiple dimensions, including nudity and pornographic content, sexual solicitations, harassment, hate speech, violence, promotion of illegal activities, and self-injury content. This self-annotation approach captures nuanced aspects of risk based on participants' lived experiences rather than external interpretations.
+
+The IGDD system was built using a comprehensive technical stack to ensure data security and user privacy, including AWS RDS for secure database storage, EC2 for system components, S3 for encrypted data storage, Lambda for automated processing, and SES for communication. All data transitions were encrypted using SSL, with database encryption at rest and in transit, secure user authentication, and regular security audits. To ensure data quality and participant authenticity, we implemented extensive verification processes, including quality checks of uploaded data, participant eligibility verification, and multiple data validation stages. The study carefully balanced research needs with ethical considerations and participant well-being through comprehensive risk categorization frameworks and strict verification procedures.
+
+<Image 
+src="/igdd/igdd_system.png"
+alt=""
+width={800}
+height={600}
+caption="IGDD system architecture showing the flow from user data submission through AWS cloud processing and storage to the conversation flagging interface."
+/>
+
+## Research Questions
+- How do youth experience and perceive online risks in private social media conversations?
+- What limitations exist in current computational approaches to online risk detection?
+- How can youth perspectives be effectively incorporated into the development of risk detection systems?
+- What methodological approaches enable privacy-preserving research while maintaining youth agency?
+
+## Key Findings
+Through our IGDD system, we gained unprecedented insights into how youth experience and manage online risks in private conversations. From our sample of 100 diverse participants, 13.13% of conversations (1,452 out of 11,062) were flagged as unsafe, revealing a substantial prevalence of risky interactions invisible to traditional content moderation approaches. Our analysis uncovered several novel behavioral patterns: participants actively disengaged from conversations they perceived as dangerous, demonstrating sophisticated risk management strategies rarely acknowledged in protection-focused research. We observed distinct risk pattern differences between public and private content, with particular risk types appearing almost exclusively in private messages.
+
+Participants' use of platform features revealed unexpected coping strategies, such as taking screenshots of concerning messages to document incidents and seek peer support. This practice highlights youth agencies' ability to navigate online risks through social networks rather than formal reporting mechanisms. Our investigation of text processing methods demonstrated that TextRank and LexRank algorithms could effectively extract sentences containing risk indicators while preserving crucial contextual information that simple keyword approaches would miss. These algorithms showed robust performance as the number of analyzed sentences increased, with significant performance jumps at 4 and 8 sentences, suggesting optimal parameters for future automated risk detection systems that balance efficiency with accuracy.
+
+<Image 
+src="/igdd/igdd_ui.png"
+alt=""
+width={800}
+height={600}
+caption="IGDD interface showing the conversation selection panel (left), risk level and type categorization options (center), and additional contextual information collection (right) for participant risk flagging."
+/>
+
+## Design Implications
+Our research highlights the necessity of human-centered approaches to online risk detection that incorporate youth perspectives directly into system design. Rather than treating young users as passive subjects to be protected, detection systems should recognize their agency and active role in managing online risks. This paradigm shift requires moving beyond performance metrics to consider how detection systems function in real-world contexts and how they might support or hinder youth coping strategies, such as screenshots for documenting and seeking peer support.
+
+The effectiveness of text summarization algorithms in preserving contextual risk indicators suggests promising directions for developing more scalable and nuanced detection approaches. These methods can reduce the volume of text requiring review while maintaining sensitivity to subtle risk signals that simple keyword filtering might miss. Future systems should balance automated detection with human judgment, especially considering the subjective nature of risk perception. Our findings suggest that risk detection systems should be designed with flexible thresholds that can be adjusted based on user preferences and contextual factors rather than imposing universal standards that may not reflect individual experiences or cultural differences in risk perception.
+
+<Gif src="/igdd/igdd_survey.gif" alt="" caption="A user going through the IGDD onboarding survey, giving us more information regarding the Instagram data they will be sending in and context that will be useful for our analysis." />
+
+## Limitations and Furture Work
+While our study successfully incorporated youth perspectives through direct data donation, several limitations warrant consideration. Though diverse, our sample size of 100 participants may not represent the full spectrum of youth online experiences. The focus on Instagram also limits generalizability to other platforms with different affordances and user demographics. Additionally, the retrospective nature of data collection may not capture real-time decision-making processes that influence how youth respond to risks as they emerge.
+
+Future research should focus on developing real-time risk detection methods that preserve privacy and user agency while supporting timely interventions. Exploring how risk behaviors and detection needs vary across different social platforms and cultural contexts would enhance the adaptability of detection systems to diverse user needs. Designing intervention strategies that support rather than supplant youth coping mechanisms represents another crucial direction, requiring careful consideration of how automated systems interact with existing social support networks. Longitudinal studies would also help understand how risk patterns evolve over time and across developmental stages, informing more age-appropriate detection and intervention approaches.
+
+## Broader Impact
+This research challenges conventional approaches to online safety by positioning youth as active agents rather than passive subjects requiring protection. Our methodological innovations provide a template for ethical, privacy-preserving research on sensitive digital interactions while bridging critical gaps between privacy protection and comprehensive risk understanding. By grounding technical solutions in young people's lived experiences, this work contributes to a more nuanced understanding of the interplay between technological systems and social dynamics in online spaces, ultimately addressing the fundamental tension between protection and agency that characterizes youth online safety research and practice.
