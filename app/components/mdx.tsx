@@ -1,3 +1,5 @@
+'use client'
+
 import Link from 'next/link'
 import Image from 'next/image'
 import { MDXRemote } from 'next-mdx-remote/rsc'
@@ -161,10 +163,13 @@ let components = {
 }
 
 export function CustomMDX(props) {
-  return (
-    <MDXRemote
-      {...props}
-      components={{ ...components, ...(props.components || {}) }}
-    />
-  )
+  const [mdxContent, setMdxContent] = React.useState<React.ReactElement | null>(null);
+
+  React.useEffect(() => {
+    MDXRemote({ ...props, components: { ...components, ...(props.components || {}) } })
+      .then(setMdxContent)
+      .catch(console.error);
+  }, [props]);
+
+  return mdxContent;
 }
