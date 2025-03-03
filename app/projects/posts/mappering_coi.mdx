@@ -15,21 +15,21 @@ Previous approaches to this challenge have utilized various methods with limited
 We focused our analysis on Mecklenburg County, North Carolina, a region with significant demographic complexity and a rich history of redistricting challenges. The analysis drew from American Community Survey data at the census block group level, focusing on 11 key socioeconomic variables, including educational attainment, employment, SNAP enrollment, language proficiency, income levels, housing tenure, racial composition, and rural/urban classification.
 
 <Image 
-src="/mappering_coi/intervals.png"
-alt=""
-width={800}
-height={600}
-caption="A visualization of the Mapper pipeline, showing the original data distribution (left), selection of a single cover element (middle), and the complete system of overlapping covers that form the basis for clustering (right)."
+    src="/mappering_coi/intervals.png"
+    alt=""
+    width={800}
+    height={600}
+    caption="A visualization of the Mapper pipeline, showing the original data distribution (left), selection of a single cover element (middle), and the complete system of overlapping covers that form the basis for clustering (right)."
 />
 
 Implementing Mapper required careful consideration of several parameters that significantly affected the results. We employed truncated singular value decomposition (TSVD) to reduce data dimensionality while preserving key relationships and tested various parameter combinations to assess stability. Our methodology included 50% overlap between cover elements, experimentation with different numbers of intervals (3-9) in the cover, and single linkage clustering for node formation. We conducted a rigorous stability analysis to determine how much the results changed with slight parameter adjustments. This revealed that nodes remained relatively consistent across small changes in overlap parameters, mainly when using TSVD with two components. We also standardized our data to prevent variables with more significant variances from dominating the analysis, which shifted emphasis toward variables like educational attainment and SNAP enrollment.
 
 <Image 
-src="/mappering_coi/mapper_output.png"
-alt=""
-width={800}
-height={600}
-caption="The Mapper graph visualizing three key clusters of demographic patterns in Mecklenburg County, with node size showing number of block groups and color indicating socioeconomic status."
+    src="/mappering_coi/mapper_output.png"
+    alt=""
+    width={800}
+    height={600}
+    caption="The Mapper graph visualizing three key clusters of demographic patterns in Mecklenburg County, with node size showing number of block groups and color indicating socioeconomic status."
 />
 
 ## Research Questions
@@ -42,32 +42,32 @@ caption="The Mapper graph visualizing three key clusters of demographic patterns
 Our analysis revealed three distinct community clusters that consistently appeared across multiple parameter settings, suggesting we had identified genuinely distinct communities rather than artifacts of our methodology. The first cluster comprised 135 block groups with roughly 226,000 residents, with higher proportions of SNAP enrollment, lower income levels, and lower educational attainment than county averages. Although relatively contiguous geographically, this community was split across multiple districts in the 2011 and 2019 districting plans, potentially fragmenting their political representation.
 
 <Image 
-src="/mappering_coi/cluster_one.png"
-alt=""
-width={800}
-height={600}
-caption="Geographic distribution of Cluster 1 block groups overlaid on three iterations of district maps with the 2011 enacted plan, 2018 court-ordered plan, and 2019 enacted plan."
+    src="/mappering_coi/cluster_one.png"
+    alt=""
+    width={800}
+    height={600}
+    caption="Geographic distribution of Cluster 1 block groups overlaid on three iterations of district maps with the 2011 enacted plan, 2018 court-ordered plan, and 2019 enacted plan."
 />
 
 The second cluster consisted of 36 block groups with approximately 84,000 residents, showing distinctive characteristics regarding English language proficiency and the presence of children. These communities appeared more dispersed throughout the county, raising essential questions about whether geographic dispersion should preclude consideration as a community of interest. The third cluster included 21 block groups (roughly 55,000 residents) characterized by high homeownership rates, white-collar employment, and the presence of children. While primarily located in suburban areas, this cluster appeared in distinct geographic groupings that challenged traditional notions of community contiguity.
 
 
 <Image 
-src="/mappering_coi/cluster_two.png"
-alt=""
-width={800}
-height={600}
-caption="Geographic distribution of Cluster 2 block groups overlaid on three iterations of district maps with the 2011 enacted plan, 2018 court-ordered plan, and 2019 enacted plan."
+    src="/mappering_coi/cluster_two.png"
+    alt=""
+    width={800}
+    height={600}
+    caption="Geographic distribution of Cluster 2 block groups overlaid on three iterations of district maps with the 2011 enacted plan, 2018 court-ordered plan, and 2019 enacted plan."
 />
 
 Our investigation revealed that Singular Value Decomposition was crucial to Mapper's effectiveness, with the combination of dimensional reduction and hierarchical clustering providing insights into sub-communities that might be missed by either approach alone. When comparing Mapper's results with traditional hierarchical clustering, we found that Mapper successfully detected meaningful groupings that shared common characteristics despite spatial separation—a notable advantage stemming from its ability to allow overlapping communities and capture gradual transitions between different groups.
 
 <Image 
-src="/mappering_coi/cluster_three.png"
-alt=""
-width={800}
-height={600}
-caption="Geographic distribution of Cluster 3 block groups overlaid on three iterations of district maps with the 2011 enacted plan, 2018 court-ordered plan, and 2019 enacted plan."
+    src="/mappering_coi/cluster_three.png"
+    alt=""
+    width={800}
+    height={600}
+    caption="Geographic distribution of Cluster 3 block groups overlaid on three iterations of district maps with the 2011 enacted plan, 2018 court-ordered plan, and 2019 enacted plan."
 />
 
 ## Design Implications

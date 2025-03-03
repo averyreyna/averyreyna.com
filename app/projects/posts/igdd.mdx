@@ -17,11 +17,11 @@ We developed the Instagram Data Donation (IGDD) system, a secure web-based platf
 The IGDD system was built using a comprehensive technical stack to ensure data security and user privacy, including AWS RDS for secure database storage, EC2 for system components, S3 for encrypted data storage, Lambda for automated processing, and SES for communication. All data transitions were encrypted using SSL, with database encryption at rest and in transit, secure user authentication, and regular security audits. To ensure data quality and participant authenticity, we implemented extensive verification processes, including quality checks of uploaded data, participant eligibility verification, and multiple data validation stages. The study carefully balanced research needs with ethical considerations and participant well-being through comprehensive risk categorization frameworks and strict verification procedures.
 
 <Image 
-src="/igdd/igdd_system.png"
-alt=""
-width={800}
-height={600}
-caption="IGDD system architecture showing the flow from user data submission through AWS cloud processing and storage to the conversation flagging interface."
+    src="/igdd/igdd_system.png"
+    alt=""
+    width={800}
+    height={600}
+    caption="IGDD system architecture showing the flow from user data submission through AWS cloud processing and storage to the conversation flagging interface."
 />
 
 ## Research Questions
@@ -36,11 +36,11 @@ Through our IGDD system, we gained unprecedented insights into how youth experie
 Participants' use of platform features revealed unexpected coping strategies, such as taking screenshots of concerning messages to document incidents and seek peer support. This practice highlights youth agencies' ability to navigate online risks through social networks rather than formal reporting mechanisms. Our investigation of text processing methods demonstrated that TextRank and LexRank algorithms could effectively extract sentences containing risk indicators while preserving crucial contextual information that simple keyword approaches would miss. These algorithms showed robust performance as the number of analyzed sentences increased, with significant performance jumps at 4 and 8 sentences, suggesting optimal parameters for future automated risk detection systems that balance efficiency with accuracy.
 
 <Image 
-src="/igdd/igdd_ui.png"
-alt=""
-width={800}
-height={600}
-caption="IGDD interface showing the conversation selection panel (left), risk level and type categorization options (center), and additional contextual information collection (right) for participant risk flagging."
+    src="/igdd/igdd_ui.png"
+    alt=""
+    width={800}
+    height={600}
+    caption="IGDD interface showing the conversation selection panel (left), risk level and type categorization options (center), and additional contextual information collection (right) for participant risk flagging."
 />
 
 ## Design Implications

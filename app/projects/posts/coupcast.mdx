@@ -15,21 +15,21 @@ The REIGN (Rulers, Elections, and Irregular Governance) dataset addresses these 
 Our project employs a sophisticated random forest model combined with a complementary log-log function to handle the extreme rarity of coup events. Unlike traditional logit models, which are symmetric around the midpoint, the complementary log-log function provides an asymmetric curve that better assigns very low probabilities to a broader range of observations while maintaining sensitivity to high-risk scenarios. This approach is critical for modeling events that occur in less than 1% of country-months in our dataset.
 
 <Image 
-src="/coupcast/log-log.png"
-alt=""
-width={800}
-height={600}
-caption="The dashed line shows the logit function and the solid line is the complementary log-log function—note that its asymmetry allows it to give very low values over a larger range."
+    src="/coupcast/log-log.png"
+    alt=""
+    width={800}
+    height={600}
+    caption="The dashed line shows the logit function and the solid line is the complementary log-log function—note that its asymmetry allows it to give very low values over a larger range."
 />
 
 The implementation process begins with comprehensive data collection through the REIGN dataset, which employs systematic classification of political events using a detailed decision tree. Our model development integrates rolling estimation strategies to ensure truly out-of-sample predictions, population-weighted approaches to model regional coup contagion effects, and linear and non-linear transformations for continuous variables to capture complex relationships. The validation framework encompasses historical validation against known coup attempts, cross-regional comparison methodology, and constant model refinement based on prediction accuracy.
 
 <Image 
-src="/coupcast/election_decision_tree.png"
-alt=""
-width={800}
-height={600}
-caption="The decision tree used by REIGN to classify different types of political events related to leadership selection and executive authority."
+    src="/coupcast/election_decision_tree.png"
+    alt=""
+    width={800}
+    height={600}
+    caption="The decision tree used by REIGN to classify different types of political events related to leadership selection and executive authority."
 />
 
 ## Research Questions
@@ -42,21 +42,21 @@ caption="The decision tree used by REIGN to classify different types of politica
 Our research has demonstrated exceptional predictive accuracy, with one-third of all coups occurring in countries within the top 5% of risk predictions. Cases above the 99th percentile of risk show an 11-fold higher coup probability than average, while those above the 99.9th percentile exhibit a remarkable 32.8-fold increase in coup likelihood. These findings validate our complementary log-log approach to rare event modeling and confirm the effectiveness of our random forest implementation in capturing the complex interactions between different risk factors.
 
 <Image 
-src="/coupcast/military_experience.png"
-alt=""
-width={800}
-height={600}
-caption="Civilian leaders face much higher coup risk in military governments, while having a military career background is associated with lower coup risk across both military and civilian governments."
+    src="/coupcast/military_experience.png"
+    alt=""
+    width={800}
+    height={600}
+    caption="Civilian leaders face much higher coup risk in military governments, while having a military career background is associated with lower coup risk across both military and civilian governments."
 />
 
 The research has revealed significant patterns in how military experience affects coup risk across different types of governments, with civilian leaders facing much higher coup risk in military governments, while having a military career background is associated with lower coup risk across both military and civilian regimes. We also validated the importance of electoral timing in coup risk assessment, as demonstrated in our analysis of Mali during from 2021 to 2022, where the country consistently ranked in the highest tier of global risk despite fluctuations in its absolute risk score. This successful prediction of real-world political instability events confirms the practical utility of our approach.
 
 <Image 
-src="/coupcast/mali_coup_data.png"
-alt=""
-width={800}
-height={600}
-caption="Even though there are spikes and lulls in Mali's coup risk, the country always ranked in the highest tier of risk globally, which sat around 0.76% from January to June of 2022."
+    src="/coupcast/mali_coup_data.png"
+    alt=""
+    width={800}
+    height={600}
+    caption="Even though there are spikes and lulls in Mali's coup risk, the country always ranked in the highest tier of risk globally, which sat around 0.76% from January to June of 2022."
 />
 
 ## Design Implications
