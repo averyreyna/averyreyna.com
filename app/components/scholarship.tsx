@@ -124,18 +124,18 @@ export default function Scholarship() {
                   <p className="text-zinc-950 dark:text-zinc-50 tracking-tight">
                     {item.title}
                   </p>
-                  <p className="text-zinc-700 dark:text-zinc-300 text-sm">
-                    {item.venue}
-                  </p>
-                  <p className="text-zinc-500 dark:text-zinc-400 text-sm">
+                  <div className="text-zinc-600 dark:text-zinc-300 text-sm">
+                    <span className="font-medium">{item.venue}</span>
+                  </div>
+                  <div className="text-zinc-600 dark:text-zinc-300 text-sm">
                     {item.authors.join(', ')}
-                  </p>
-                  <div className="flex gap-3">
+                  </div>
+                  <div className="flex flex-wrap gap-3">
                     {item.links.map((link, index) => (
                       <a
                         key={index}
                         href={link.url}
-                        className="text-zinc-400 md:hover:text-zinc-800 dark:md:hover:text-zinc-50 transition-all text-sm"
+                        className="text-zinc-500 hover:text-zinc-800 dark:text-zinc-400 dark:hover:text-zinc-50 transition-all text-sm font-medium"
                         target="_blank"
                         rel="noopener noreferrer"
                       >
