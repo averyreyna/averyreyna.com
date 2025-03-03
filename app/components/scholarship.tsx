@@ -117,29 +117,29 @@ export default function Scholarship() {
               className="flex flex-col space-y-1 mb-4"
             >
               <div className="w-full flex flex-col md:flex-row space-x-0 md:space-x-2">
-                <p className="text-neutral-600 dark:text-neutral-400 w-full md:w-[100px] tabular-nums">
+                <p className="text-neutral-600 dark:text-neutral-400 w-[100px] tabular-nums">
                   {showYear ? item.year : ''}
                 </p>
                 <div className="flex-1">
-                  <p className="text-neutral-900 dark:text-neutral-100 tracking-tight">
+                  <p className="text-zinc-950 dark:text-zinc-50 tracking-tight">
                     {item.title}
                   </p>
-                  <p className="text-neutral-600 dark:text-neutral-400 text-sm">
-                    {item.venue}
-                  </p>
-                  <p className="text-neutral-600 dark:text-neutral-400 text-sm">
+                  <div className="text-zinc-600 dark:text-zinc-300 text-sm">
+                    <span className="font-medium">{item.venue}</span>
+                  </div>
+                  <div className="text-zinc-600 dark:text-zinc-300 text-sm">
                     {item.authors.join(', ')}
-                  </p>
-                  <div className="flex gap-2 mt-1">
+                  </div>
+                  <div className="flex flex-wrap gap-3">
                     {item.links.map((link, index) => (
                       <a
                         key={index}
                         href={link.url}
-                        className="inline-flex items-center text-xs px-2 py-0.5 rounded-full bg-neutral-100 dark:bg-neutral-800 text-neutral-600 dark:text-neutral-400 [@media(hover:hover)]:hover:bg-neutral-200 [@media(hover:hover)]:dark:hover:bg-neutral-700 transition-all"
+                        className="text-zinc-500 hover:text-zinc-800 dark:text-zinc-400 dark:hover:text-zinc-50 transition-all text-sm font-medium"
                         target="_blank"
                         rel="noopener noreferrer"
                       >
-                        <span>{link.text}</span>
+                        {link.text}
                       </a>
                     ))}
                   </div>

@@ -15,13 +15,16 @@ export default function Page() {
         I'm a Software Engineer at{' '}
         <a href="https://www.capitalone.com/" target="_blank" className="underline transition-all decoration-neutral-400 dark:decoration-neutral-600 underline-offset-2">
           Capital One
-        </a> monitoring data quality across the enterprise. Outside of work, I am either designing games in{' '}
+        </a> monitoring data quality across the enterprise. Outside of work, I am creating illustrations in{' '}
+        <a href="https://p5js.org/" target="_blank" className="underline transition-all decoration-neutral-400 dark:decoration-neutral-600 underline-offset-2">
+          p5.js
+        </a>, designing games in{' '}
         <a href="https://godotengine.org/" target="_blank" className="underline transition-all decoration-neutral-400 dark:decoration-neutral-600 underline-offset-2">
           Godot
-        </a> or maintaining civic technology{' '}
-        <a href="https://www.civictechdc.org/" target="_blank" className="underline transition-all decoration-neutral-400 dark:decoration-neutral-600 underline-offset-2">
-          open source
-        </a> projects.
+        </a>, and making music with{' '}
+        <a href="https://strudel.cc/workshop/getting-started/" target="_blank" className="underline transition-all decoration-neutral-400 dark:decoration-neutral-600 underline-offset-2">
+          Strudel
+        </a>.
       </div>
 
       <h2 className="mb-4 text-2xl font-semibold tracking-tighter">
@@ -75,7 +78,7 @@ export default function Page() {
           className="underline transition-all decoration-neutral-400 dark:decoration-neutral-600 underline-offset-2"
         >
           Social Power and Inequality
-        </a>. When I wasn't on campus, I spent my summers working with{' '}
+        </a>. During my summers, I spent my time working with{' '}
         <a 
           href="https://www.engineering.columbia.edu/faculty-staff/directory/brian-smith" 
           target="_blank" 
@@ -135,7 +138,7 @@ export default function Page() {
         </a>, peruse my code on{' '}
         <a href="https://github.com/averyreyna" target="_blank" className="underline transition-all decoration-neutral-400 dark:decoration-neutral-600 underline-offset-2">
           GitHub
-        </a>, and see my experience on{' '}
+        </a>, and see my work experience on{' '}
         <a href="www.linkedin.com/in/avery-reyna" target="_blank" className="underline transition-all decoration-neutral-400 dark:decoration-neutral-600 underline-offset-2">
           LinkedIn
         </a>.
