@@ -44,11 +44,12 @@ function CustomLink(props) {
   return <a target="_blank" rel="noopener noreferrer" {...props} />
 }
 
-function RoundedImage({ caption, ...props }) {
+function RoundedImage({ caption, src, ...props }) {
   return (
     <figure className="my-8 mx-auto max-w-xl">
       <div className="rounded-lg overflow-hidden">
         <Image 
+          src={src} 
           alt={props.alt || ''}
           className="w-full h-auto object-cover"
           {...props}
