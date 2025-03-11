@@ -124,25 +124,6 @@ export default function Page() {
           showcases
         </a> at my undergraduate institution.
       </div>
-
-      <h2 className="mb-4 text-2xl font-semibold tracking-tighter">
-        Contact
-      </h2>
-      <div className="mb-4">
-        You can see my inspiration on{' '}
-        <a href="https://www.are.na/avery-reyna/channels" className="underline transition-all decoration-neutral-400 dark:decoration-neutral-600 underline-offset-2">
-          Are.na
-        </a>, contact me through{' '}
-        <a href="mailto:avery.reyna16@gmail.com" target="_blank" className="underline transition-all decoration-neutral-400 dark:decoration-neutral-600 underline-offset-2">
-          email
-        </a>, peruse my code on{' '}
-        <a href="https://github.com/averyreyna" target="_blank" className="underline transition-all decoration-neutral-400 dark:decoration-neutral-600 underline-offset-2">
-          GitHub
-        </a>, and see my work experience on{' '}
-        <a href="www.linkedin.com/in/avery-reyna" target="_blank" className="underline transition-all decoration-neutral-400 dark:decoration-neutral-600 underline-offset-2">
-          LinkedIn
-        </a>.
-      </div>
     </section>
   )
 }
