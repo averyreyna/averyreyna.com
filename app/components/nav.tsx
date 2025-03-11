@@ -7,12 +7,15 @@ const navItems = {
   '/blog': {
     name: 'Blog',
   },
+  '/cv': {
+    name: 'CV',
+  },
   '/projects': {
     name: 'Projects',
   },
   '/scholarship': {
     name: 'Scholarship',
-  },
+  }
 }
 
 export function Navbar() {
