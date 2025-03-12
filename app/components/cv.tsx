@@ -20,7 +20,6 @@ interface Award {
   name: string;
   organization: string;
   year: number;
-  description?: string;
 }
 
 const education: Education[] = [
@@ -112,32 +111,27 @@ const awards: Award[] = [
   {
     name: "Summer Undergraduate Research Fellowship",
     organization: "UCF Office of Undergraduate Research",
-    year: 2022,
-    description: ""
+    year: 2022
   },
   {
     name: "The Laassel Family Political Science Endowed Scholarship",
     organization: "UCF School of Politics, Security, and International Affairs",
-    year: 2020,
-    description: ""
+    year: 2020
   },
   {
     name: "Leader-in-Residence",
     organization: "Hispanic Association of Colleges and Universities",
-    year: 2020,
-    description: ""
+    year: 2020
   },
   {
     name: "Excellence in Action Award",
     organization: "UCF Office of Diversity Education and Training",
-    year: 2020,
-    description: ""
+    year: 2020
   },
   {
     name: "Burnett Honors Scholar",
     organization: "Burnett Honors College",
-    year: 2019,
-    description: ""
+    year: 2019
   },
 ];
 
@@ -155,7 +149,7 @@ export default function CV() {
         }).map((edu) => (
           <div key={edu.degree} className="mb-4">
             <div className="flex flex-col md:flex-row space-x-0 md:space-x-2">
-              <p className="text-neutral-600 dark:text-neutral-400 w-[100px] tabular-nums">
+              <p className="text-neutral-600 dark:text-neutral-400 w-[100px] tabular-nums whitespace-nowrap md:whitespace-normal">
                 {edu.endDate ? `${edu.startDate} - ${edu.endDate}` : edu.startDate}
               </p>
               <div className="flex-1">
@@ -183,11 +177,11 @@ export default function CV() {
         {experience.map((exp) => (
           <div key={`${exp.title}-${exp.organization}`} className="mb-4">
             <div className="flex flex-col md:flex-row space-x-0 md:space-x-2">
-              <p className="text-neutral-600 dark:text-neutral-400 w-[100px] tabular-nums">
+              <p className="text-neutral-600 dark:text-neutral-400 w-[100px] tabular-nums whitespace-nowrap md:whitespace-normal">
                 {exp.endDate ? `${exp.startDate} - ${exp.endDate}` : exp.startDate}
               </p>
               <div className="flex-1">
-                <p className="text-zinc-950 dark:text-zinc-50 font-medium">
+                <p className="text-zinc-950 dark:text-zinc-50 tracking-tight">
                   {exp.title}
                 </p>
                 <p className="text-zinc-600 dark:text-zinc-300">
@@ -215,21 +209,16 @@ export default function CV() {
             return (
               <div key={`${award.name}-${award.year}`} className="mb-4">
                 <div className="flex flex-col md:flex-row space-x-0 md:space-x-2">
-                  <p className="text-neutral-600 dark:text-neutral-400 w-[100px] tabular-nums">
+                  <p className="text-neutral-600 dark:text-neutral-400 tracking-tight w-[100px] tabular-nums whitespace-nowrap md:whitespace-normal">
                     {showYear ? award.year : ''}
                   </p>
                   <div className="flex-1">
-                    <p className="text-zinc-950 dark:text-zinc-50 font-medium">
+                    <p className="text-zinc-950 dark:text-zinc-50 tracking-tight">
                       {award.name}
                     </p>
-                    <p className="text-zinc-600 dark:text-zinc-300">
+                    <p className="text-zinc-600 dark:text-zinc-300 text-sm">
                       {award.organization}
                     </p>
-                    {award.description && (
-                      <p className="text-sm text-zinc-600 dark:text-zinc-300 mt-1">
-                        {award.description}
-                      </p>
-                    )}
                   </div>
                 </div>
               </div>
