@@ -315,7 +315,7 @@ export default function CV() {
         }).map((edu) => (
           <div key={edu.degree} className="flex flex-col space-y-1 mb-4">
             <div className="w-full flex flex-col md:flex-row space-x-0 md:space-x-2">
-              <p className="text-neutral-600 dark:text-neutral-400 w-[100px] tabular-nums">
+              <p className="text-neutral-600 dark:text-neutral-400 w-[100px] whitespace-nowrap tabular-nums">
                 {edu.endDate ? `${edu.startDate} - ${edu.endDate}` : edu.startDate}
               </p>
               <div className="flex-1">
@@ -341,7 +341,7 @@ export default function CV() {
         {experience.map((exp) => (
           <div key={`${exp.title}-${exp.organization}`} className="flex flex-col space-y-1 mb-4">
             <div className="w-full flex flex-col md:flex-row space-x-0 md:space-x-2">
-              <p className="text-neutral-600 dark:text-neutral-400 w-[100px] tabular-nums">
+              <p className="text-neutral-600 dark:text-neutral-400 w-[100px] whitespace-nowrap tabular-nums">
                 {exp.endDate ? `${exp.startDate} - ${exp.endDate}` : exp.startDate}
               </p>
               <div className="flex-1">
@@ -376,7 +376,7 @@ export default function CV() {
                 className="flex flex-col space-y-1 mb-4"
               >
                 <div className="w-full flex flex-col md:flex-row space-x-0 md:space-x-2">
-                  <p className="text-neutral-600 dark:text-neutral-400 w-[100px] tabular-nums">
+                  <p className="text-neutral-600 dark:text-neutral-400 w-[100px] whitespace-nowrap tabular-nums">
                     {showYear ? paper.year : ''}
                   </p>
                   <div className="flex-1">
@@ -423,7 +423,7 @@ export default function CV() {
                 className="flex flex-col space-y-1 mb-4"
               >
                 <div className="w-full flex flex-col md:flex-row space-x-0 md:space-x-2">
-                  <p className="text-neutral-600 dark:text-neutral-400 w-[100px] tabular-nums">
+                  <p className="text-neutral-600 dark:text-neutral-400 w-[100px] whitespace-nowrap tabular-nums">
                     {showYear ? article.year : ''}
                   </p>
                   <div className="flex-1">
@@ -467,7 +467,7 @@ export default function CV() {
             return (
               <div key={`${award.name}-${award.year}`} className="flex flex-col space-y-1 mb-4">
                 <div className="w-full flex flex-col md:flex-row space-x-0 md:space-x-2">
-                  <p className="text-neutral-600 dark:text-neutral-400 w-[100px] tabular-nums">
+                  <p className="text-neutral-600 dark:text-neutral-400 w-[100px] whitespace-nowrap tabular-nums">
                     {showYear ? award.year : ''}
                   </p>
                   <div className="flex-1">
