@@ -22,7 +22,6 @@ const scholarship: Scholarship[] = [
     year: 2024,
     authors: ['Yuanyang Teng', 'Connor Courtien', 'David Rios', 'Maximillian Tseng', 'Jacqueline Gibson', 'Maryam Aziz', 'Avery Reyna', 'Rajan Vaish', 'Brian A. Smith'],
     links: [
-      { text: 'ACM DL Page', url: 'https://dl.acm.org/doi/10.1145/3613904.3642816' },
       { text: 'Paper', url: 'https://arxiv.org/pdf/2403.08221' }
     ]
   },
@@ -33,7 +32,6 @@ const scholarship: Scholarship[] = [
     year: 2023,
     authors: ['Arnavi Chheda-Kothary', 'David Rios', 'Kynnedy Simone Smith', 'Avery Reyna', 'Cecilia Zhang', 'Brian A. Smith'],
     links: [
-      { text: 'ACM DL Page', url: 'https://dl.acm.org/doi/10.1145/3597638.3614490' },
       { text: 'Paper', url: 'https://dl.acm.org/doi/10.1145/3597638.3614490' },
       { text: 'Project', url: 'https://ceal.cs.columbia.edu/spatialinteractions' }
     ]
