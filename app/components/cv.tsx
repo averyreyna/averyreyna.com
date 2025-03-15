@@ -40,7 +40,7 @@ interface Publication {
   authors: string[];
   links: Link[];
   year: number;
-  type: 'paper' | 'article';
+  type: 'article' | 'paper' | 'poster';
 }
 
 const education: Education[] = [
@@ -235,6 +235,17 @@ const publications: Publication[] = [
     type: 'article'
   },
   {
+    title: 'Applied Machine Learning to Detect Risk of Illegal Leadership Turnover',
+    url: '',
+    venue: 'Summer Undergraduate Research Poster Showcase 2022',
+    year: 2022,
+    authors: ['Avery Reyna', 'Jonathan Powell'],
+    links: [
+      { text: 'Poster', url: 'https://summer-undergraduate-research-poster-showcase-2022.tiiny.site' }
+    ],
+    type: 'poster'
+  },
+  {
     title: 'Anti-Coup Strategies Should Address Civilian Coup Allies',
     url: '',
     venue: 'Just Security',
@@ -268,6 +279,17 @@ const publications: Publication[] = [
     type: 'article'
   },
   {
+    title: 'Comparative Analysis between TextRank and LexRank: Testing Perceived Utility of Text Summarization Models for Data Annotators',
+    url: '',
+    venue: 'Student Research Week 2022',
+    year: 2022,
+    authors: ['Avery Reyna', 'Ashwaq Soubai', 'Pamela Wisniewski'],
+    links: [
+      { text: 'Poster', url: 'https://student-research-week-2022.tiiny.site' }
+    ],
+    type: 'poster'
+  },
+  {
     title: 'Vaccination Efforts in Latin America: What to Know',
     url: '',
     venue: 'Council on Foreign Relations',
@@ -277,6 +299,17 @@ const publications: Publication[] = [
       { text: 'Article', url: 'https://www.cfr.org/in-brief/latin-americas-vaccination-efforts-what-know' }
     ],
     type: 'article'
+  },
+  {
+    title: 'Adolescent Online Safety: Expanding the Knowledge Base and Developing Machine Learning Algorithms',
+    url: '',
+    venue: 'Student Research Week 2021',
+    year: 2021,
+    authors: ['Carlson Sharpless', 'Pallavi Dacre', 'Komila Khamidova', 'Avery Reyna', 'Abdulrahman Al Sumaih', 'Christian Lozano', 'Afsaneh Razi', 'Ashwaq Soubai', 'Pamela Wisniewski'],
+    links: [
+      { text: 'Poster', url: 'https://student-research-week-2021.tiiny.site' }
+    ],
+    type: 'poster'
   }
 ];
 
@@ -284,6 +317,7 @@ export default function CV() {
   const usedYears = new Set<number>();
   const usedYearsPapers = new Set<number>();
   const usedYearsArticles = new Set<number>();
+  const usedYearsPosters = new Set<number>();
 
   const papers = publications.filter(pub => pub.type === 'paper');
   const articles = publications.filter(pub => pub.type === 'article');
@@ -313,11 +347,13 @@ export default function CV() {
           if (b.endDate === "Present") return 1;
           return b.endDate.localeCompare(a.endDate);
         }).map((edu) => (
-          <div key={edu.degree} className="flex flex-col space-y-1 mb-4">
-            <div className="w-full flex flex-col md:flex-row space-x-0 md:space-x-2">
-              <p className="text-neutral-600 dark:text-neutral-400 w-[100px] whitespace-nowrap tabular-nums">
-                {edu.endDate ? `${edu.startDate} - ${edu.endDate}` : edu.startDate}
-              </p>
+          <div key={edu.degree} className="mb-4">
+            <div className="flex flex-col md:flex-row">
+              <div className="md:w-[100px] md:flex-none md:pr-2">
+                <p className="text-neutral-600 dark:text-neutral-400 tabular-nums">
+                  {edu.endDate ? `${edu.startDate} - ${edu.endDate}` : edu.startDate}
+                </p>
+              </div>
               <div className="flex-1">
                 <p className="text-zinc-950 dark:text-zinc-50 tracking-tight">
                   {edu.degree}
@@ -339,11 +375,13 @@ export default function CV() {
       <section className="mb-8">
         <h2 className="font-bold text-2xl mb-8 tracking-tighter">Experience</h2>
         {experience.map((exp) => (
-          <div key={`${exp.title}-${exp.organization}`} className="flex flex-col space-y-1 mb-4">
-            <div className="w-full flex flex-col md:flex-row space-x-0 md:space-x-2">
-              <p className="text-neutral-600 dark:text-neutral-400 w-[100px] whitespace-nowrap tabular-nums">
-                {exp.endDate ? `${exp.startDate} - ${exp.endDate}` : exp.startDate}
-              </p>
+          <div key={`${exp.title}-${exp.organization}`} className="mb-4">
+            <div className="flex flex-col md:flex-row">
+              <div className="md:w-[100px] md:flex-none md:pr-2">
+                <p className="text-neutral-600 dark:text-neutral-400 tabular-nums">
+                  {exp.endDate ? `${exp.startDate} - ${exp.endDate}` : exp.startDate}
+                </p>
+              </div>
               <div className="flex-1">
                 <p className="text-zinc-950 dark:text-zinc-50 tracking-tight">
                   {exp.title}
@@ -371,14 +409,13 @@ export default function CV() {
             if (showYear) usedYearsPapers.add(paper.year);
 
             return (
-              <div
-                key={paper.title}
-                className="flex flex-col space-y-1 mb-4"
-              >
-                <div className="w-full flex flex-col md:flex-row space-x-0 md:space-x-2">
-                  <p className="text-neutral-600 dark:text-neutral-400 w-[100px] whitespace-nowrap tabular-nums">
-                    {showYear ? paper.year : ''}
-                  </p>
+              <div key={paper.title} className="mb-4">
+                <div className="flex flex-col md:flex-row">
+                  <div className="md:w-[100px] md:flex-none md:pr-2">
+                    <p className="text-neutral-600 dark:text-neutral-400 tabular-nums">
+                      {showYear ? paper.year : ''}
+                    </p>
+                  </div>
                   <div className="flex-1">
                     <p className="text-zinc-950 dark:text-zinc-50 tracking-tight">
                       {paper.title}
@@ -418,14 +455,13 @@ export default function CV() {
             if (showYear) usedYearsArticles.add(article.year);
 
             return (
-              <div
-                key={article.title}
-                className="flex flex-col space-y-1 mb-4"
-              >
-                <div className="w-full flex flex-col md:flex-row space-x-0 md:space-x-2">
-                  <p className="text-neutral-600 dark:text-neutral-400 w-[100px] whitespace-nowrap tabular-nums">
-                    {showYear ? article.year : ''}
-                  </p>
+              <div key={article.title} className="mb-4">
+                <div className="flex flex-col md:flex-row">
+                  <div className="md:w-[100px] md:flex-none md:pr-2">
+                    <p className="text-neutral-600 dark:text-neutral-400 tabular-nums">
+                      {showYear ? article.year : ''}
+                    </p>
+                  </div>
                   <div className="flex-1">
                     <p className="text-zinc-950 dark:text-zinc-50 tracking-tight">
                       {article.title}
@@ -457,6 +493,53 @@ export default function CV() {
       </section>
 
       <section className="mb-8">
+        <h2 className="font-bold text-2xl mb-8 tracking-tighter">Posters</h2>
+        {publications
+          .filter(pub => pub.type === 'poster')
+          .sort((a, b) => b.year - a.year)
+          .map((poster) => {
+            const showYear = !usedYearsPosters.has(poster.year);
+            if (showYear) usedYearsPosters.add(poster.year);
+
+            return (
+              <div key={poster.title} className="mb-4">
+                <div className="flex flex-col md:flex-row">
+                  <div className="md:w-[100px] md:flex-none md:pr-2">
+                    <p className="text-neutral-600 dark:text-neutral-400 tabular-nums">
+                      {showYear ? poster.year : ''}
+                    </p>
+                  </div>
+                  <div className="flex-1">
+                    <p className="text-zinc-950 dark:text-zinc-50 tracking-tight">
+                      {poster.title}
+                    </p>
+                    <div className="text-zinc-600 dark:text-zinc-300 text-sm">
+                      <span className="font-medium">{poster.venue}</span>
+                    </div>
+                    <div className="text-zinc-600 dark:text-zinc-300 text-sm">
+                      {poster.authors.join(', ')}
+                    </div>
+                    <div className="flex flex-wrap gap-3">
+                      {poster.links.map((link, index) => (
+                        <a
+                          key={index}
+                          href={link.url}
+                          className="text-zinc-500 hover:text-zinc-800 dark:text-zinc-400 dark:hover:text-zinc-50 transition-all text-sm font-medium"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          {link.text}
+                        </a>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            );
+          })}
+      </section>
+
+      <section className="mb-8">
         <h2 className="font-bold text-2xl mb-8 tracking-tighter">Awards and Honors</h2>
         {awards
           .sort((a, b) => b.year - a.year)
@@ -465,11 +548,13 @@ export default function CV() {
             if (showYear) usedYears.add(award.year);
 
             return (
-              <div key={`${award.name}-${award.year}`} className="flex flex-col space-y-1 mb-4">
-                <div className="w-full flex flex-col md:flex-row space-x-0 md:space-x-2">
-                  <p className="text-neutral-600 dark:text-neutral-400 w-[100px] whitespace-nowrap tabular-nums">
-                    {showYear ? award.year : ''}
-                  </p>
+              <div key={`${award.name}-${award.year}`} className="mb-4">
+                <div className="flex flex-col md:flex-row">
+                  <div className="md:w-[100px] md:flex-none md:pr-2">
+                    <p className="text-neutral-600 dark:text-neutral-400 tabular-nums">
+                      {showYear ? award.year : ''}
+                    </p>
+                  </div>
                   <div className="flex-1">
                     <p className="text-zinc-950 dark:text-zinc-50 tracking-tight">
                       {award.name}
